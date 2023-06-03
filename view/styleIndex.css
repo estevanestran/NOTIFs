@@ -80,6 +80,7 @@ input[type=submit]{
     border-radius: 15px;
     position: relative;
     left: 32%;
+    transition: background-color .4s;
 }
 
 input#botao:hover{
