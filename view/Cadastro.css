@@ -8,7 +8,7 @@
     height: 100%;
 }
 .superior {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -111,7 +111,7 @@ h4 {
 }
 
 h4:hover {
-    color: #d9d7d7;
+    color: #f3f3f3;
 }
 
 a {
@@ -119,18 +119,17 @@ a {
 }
 
 a#caminhoAlt{
-    padding-left: 60px;
     font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
     position: relative;
-    left: 30%;
+    text-decoration: underline;
 }
 
 p#recuperar{
     padding-left: 55px;
     color: black;
-    font-family: 'Geologica', sans-serif;
+    font-family: 'Noto sans', sans-serif;
 }
 
 p#descTelaIni{
@@ -139,7 +138,16 @@ p#descTelaIni{
     font-size: 25px;
     text-align: center;
     text-shadow: 1px 1px 1px #042b5280;
-    font-family: 'Geologica', sans-serif;
+    font-family: 'Noto sans', sans-serif;
+}
+
+p {
+    font-family: 'Noto sans', sans-serif;
+}
+
+p#jatem {
+    color: #f3f3f3;
+    padding-left: 9%;
 }
 
 /*FORMULÁRIO*/
@@ -157,7 +165,7 @@ input[type=submit]{
 
 input#botao:hover{
     background-color: #042B52;
-    color: white;
+    color: #f3f3f3;
     
 }
 
@@ -194,7 +202,7 @@ input[type=password]{
 .logo {
     position: absolute;
     width: 40%;
-    height: 50%;
-    top: 25%;
+    height: 90%;
+    top: 22.5%;
     left: 9%;
 }

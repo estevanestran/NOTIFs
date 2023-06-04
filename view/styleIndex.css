@@ -111,7 +111,7 @@ h4 {
 }
 
 h4:hover {
-    color: #d9d7d7;
+    color: #f3f3f3;
 }
 
 a {
@@ -119,18 +119,16 @@ a {
 }
 
 a#caminhoAlt{
-    padding-left: 60px;
     font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
-    position: relative;
-    left: 30%;
+    padding-left: 9%;
 }
 
 p#recuperar{
     padding-left: 55px;
     color: black;
-    font-family: 'Geologica', sans-serif;
+    font-family: 'Noto sans', sans-serif;
 }
 
 p#descTelaIni{
@@ -139,7 +137,7 @@ p#descTelaIni{
     font-size: 25px;
     text-align: center;
     text-shadow: 1px 1px 1px #042b5280;
-    font-family: 'Geologica', sans-serif;
+    font-family: 'Noto sans', sans-serif;
 }
 
 /*FORMULÁRIO*/
@@ -157,7 +155,7 @@ input[type=submit]{
 
 input#botao:hover{
     background-color: #042B52;
-    color: white;
+    color: #f3f3f3;
     
 }
 
@@ -195,6 +193,6 @@ input[type=password]{
     position: absolute;
     width: 40%;
     height: 50%;
-    top: 25%;
+    top: 22.5%;
     left: 9%;
 }
