@@ -30,7 +30,7 @@
             </div>
             <div class="inferior_direito_cadastro">
                 <h3>Cadastro</h3>
-                <form action="../controller/usuario.php?acao=cadastrar" method="post">
+                <form action="../controller/usuario.php?acao=cadastrar" method="post" onsubmit="validarFormulario(event)">
                     <label for="email">E-mail institucional</label><br>
                     <input type="text" id="email" name="email" required><br><br>
                     <label for="nome">Nome completo</label><br>
@@ -83,7 +83,21 @@
                         mostrarCurso();
                         </script>
                     <br><br>
-                    <input type="submit" id="botao" value="Finalizar"><br><br>
+                    <input type="submit" id="botao" value="Finalizar" onclick="validarFormulario()"><br><br>
+                    <script>
+                        function validarFormulario() {
+                          var emailInput = document.getElementById('email');
+                          var email = emailInput.value;
+                        
+                          // Verificar se o e-mail contém a sequência de caracteres desejada
+                          if (!email.includes('canoas.ifrs.edu.br')) {
+                            alert('Por favor, insira seu e-mail institucional.');
+                            emailInput.focus(); // Colocar o foco de volta ao campo de e-mail
+                            event.preventDefault(); // Impedir o envio do formulário
+                          }
+                        
+                        }
+                        </script>
                 </form>
                 
                 <p id="jatem">Já tem uma conta? <a id="caminhoAlt" href="index.html">Faça login</a></p>

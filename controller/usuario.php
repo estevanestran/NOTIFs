@@ -9,10 +9,10 @@ if ($acao == 'cadastrar'){
     $usuario->setSenha($_POST['senha']);
     $usuario->setEstado($_POST['estado']);
     // Obtém o nome do curso selecionado
-$nomeCurso = $_POST['curso'];
+    $nomeCurso = $_POST['curso'];
 
-// Verifica se o campo foi preenchido (o valor será vazio se a opção padrão "Selecione..." for selecionada)
-if (!empty($nomeCurso)) {
+    // Verifica se o campo foi preenchido (o valor será vazio se a opção padrão "Selecione..." for selecionada)
+    if (!empty($nomeCurso)) {
     // Consulta o banco de dados para obter o ID do curso com base no nome
     $pdo = conexao();
     $stmt = $pdo->prepare('SELECT id FROM curso WHERE nome = :curso');
