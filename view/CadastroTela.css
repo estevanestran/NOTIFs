@@ -60,10 +60,10 @@
 
 .inferior_direito_cadastro {
     position: absolute;
-    width: 40%;
-    left: 50%;
+    width: 33%;
+    left: 56.5%;
     top: 12%;
-    height: 70%;
+    height: 74%;
     background-color: #042B52;
     border: 2.5px solid #042B52;
     border-radius: 10px 10px 10px 10px;
@@ -148,7 +148,8 @@ p {
 
 p#jatem {
     color: #f3f3f3;
-    padding-left: 9%;
+    /*padding-left: 7%;*/
+    text-align: center;
 }
 
 /*FORMULÁRIO*/
@@ -160,7 +161,7 @@ input[type=submit]{
     border: 1.5px solid white;
     border-radius: 15px;
     position: relative;
-    left: 32%;
+    left: 29%;
     transition: background-color .4s;
 }
 
@@ -175,41 +176,48 @@ label {
     font-family: 'Noto sans', sans-serif;
     position: relative;
     text-shadow: 1.5px 1.5px 1px #042b5280;
-    left: 9%;
+    left: 7%;
 }
 
 input[type=text]{
     width: 400px;
-    height: 30px;
+    height: 33px;
     border: 1.5px solid white;
     border-radius: 6px 6px 6px 6px;
     background-color: white;
     position: relative;
-    left: 17%;
+    left: 12%;
 }
 
 input[type=password]{
     width: 400px;
-    height: 30px;
+    height: 33px;
     border: 1.5px solid #e9cef4;
     border-radius: 6px 6px 6px 6px;
     background-color: white;
     position: relative;
-    left: 17%;
+    left: 12%;
 }
 
-.radio-group {
-    margin-left: 20px;
-  }
+
   
 .radio-group input[type="radio"]{
     vertical-align: middle;
-    margin-left: 20px;
+    
+
 }
 .radio-group label {
     vertical-align: middle;
     color: #f3f3f3;
+    margin-left: 17%;
   }
+
+#curso {
+    position: relative;
+    font-family: 'Noto sans', serif;
+    left: 9%;
+    color: #042B52;
+}
 /*IMAGENS*/
 
 .logo {

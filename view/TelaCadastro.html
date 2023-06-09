@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="Cadastro.css">
+    <link rel="stylesheet" href="CadastroTela.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -36,10 +36,53 @@
                     <label for="nome">Nome completo</label><br>
                     <input type="text" id="nome" name="nome" required><br><br>
                     <label for="senha">Senha</label><br>
-                    <input type="password" id="senha" name="senha" required><br><br><br>
+                    <input type="password" id="senha" name="senha" required><br><br>
+                    <label for="tipo">Você é aluno ou servidor?</label>
+                        <label for="radio-aluno">
+                          <input type="radio" name="tipo" value="Aluno" id="radio-aluno" onclick="mostrarCurso()">
+                          Aluno
+                        </label>
+                        <label for="radio-servidor">
+                          <input type="radio" name="tipo" value="Servidor" id="radio-servidor" onclick="mostrarCurso()">
+                          Servidor
+                        </label>
+                      <br><br>
+                      <label for="curso">Curso </label>
+                      <select name="curso" id="curso" disabled>
+                            <option value="">Selecione...</option>
+                            <option value="Administracao">Administração</option>
+                            <option value="DS">DS</option>
+                            <option value="Eletronica">Eletrônica</option>
+                            <option value="EngEle">Eng. Ele.</option>
+                            <option value="TADS">TADS</option>
+                            <option value="TAI">TAI</option>
+                            <option value="Logistica">Logística</option>
+                            <option value="Matematica">Matemática</option>
+                            <option value="Comercio">Comércio</option>
+                            <option value="TMSI">TMSI</option>
+                            <option value="GPI">GPI</option>
+                            <option value="EIS">EIS</option>
+                            <option value="LCE">LCE</option>
+                            <option value="PROFMAT">PROFMAT</option>
+                      </select>
+                      <script>
+                        function mostrarCurso() {
+                          var radioAluno = document.getElementById('radio-aluno');
+                          var cursoSelect = document.getElementById('curso');
+                        
+                          if (radioAluno.checked) {
+                            cursoSelect.disabled = false;
+                          } else {
+                            cursoSelect.disabled = true;
+                          }
+                        }
+
+                        mostrarCurso();
+                        </script>
+                    <br><br>
                     <input type="submit" id="botao" value="Finalizar"><br><br>
                 </form>
-                <br>
+                
                 <p id="jatem">Já tem uma conta? <a id="caminhoAlt" href="index.html">Faça login</a></p>
             </div>
     </div>
