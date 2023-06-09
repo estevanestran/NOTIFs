@@ -65,15 +65,18 @@
                             <option value="LCE">LCE</option>
                             <option value="PROFMAT">PROFMAT</option>
                       </select>
+                      <input type="hidden" id="id_curso" name="id_curso">
                       <script>
                         function mostrarCurso() {
                           var radioAluno = document.getElementById('radio-aluno');
                           var cursoSelect = document.getElementById('curso');
+                          var idCursoInput = document.getElementById('id_curso');
                         
                           if (radioAluno.checked) {
                             cursoSelect.disabled = false;
                           } else {
                             cursoSelect.disabled = true;
+                            idCursoInput.value = '';
                           }
                         }
 

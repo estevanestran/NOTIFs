@@ -7,6 +7,8 @@ include_once 'conexao.php';
         private $email;
         private $nome;
         private $senha;
+        private $estado;
+        private $id_curso;
 
         public function getId(){
             return $this->id;
@@ -14,6 +16,14 @@ include_once 'conexao.php';
     
         public function setId($id){
             $this->id = $id;
+        }
+
+        public function getIdCurso(){
+            return $this->id_curso;
+        }
+    
+        public function setIdCurso($id_curso){
+            $this->id_curso = $id_curso;
         }
 
         public function getNome(){
@@ -32,6 +42,14 @@ include_once 'conexao.php';
             return $this->senha;
         }
 
+        public function setEstado($estado){
+            $this->estado = $estado;
+        }
+
+        public function getEstado(){
+            return $this->estado;
+        }
+
         public function setEmail($email){
             if(str_contains($email, 'canoas.ifrs.edu.br')){
                 $this->email = $email;
@@ -46,13 +64,15 @@ include_once 'conexao.php';
             $pdo = conexao();
 
             try{
-                $stmt = $pdo->prepare('INSERT INTO usuario (id, nome, senha, email) VALUES(:id, :nome, :senha, :email)');
+                $stmt = $pdo->prepare('INSERT INTO usuario (id, nome, senha, email, estado, id_curso) VALUES(:id, :nome, :senha, :email, :estado, :id_curso)');
 
                 $stmt->execute([
                     ':id' => $this->id,
                     ':nome' => $this->nome,
                     ':senha' => $this->senha,
                     ':email' => $this->email,
+                    ':estado' => 'comum',
+                    ':id_curso' => $this->id_curso,
                 ]);
                 
                 return true;
