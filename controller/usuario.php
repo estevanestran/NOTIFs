@@ -32,8 +32,7 @@ if (!empty($nomeCurso)) {
     $usuario->setIdCurso(null);
 }
     $usuario->save();
-    //header('Location: ../view/TelaPrincipal.html ');
-    var_dump($usuario);
+    header('Location: ../view/TelaPrincipal.html ');
     } else if($acao == 'deletar') {
         Usuario::deletar($_REQUEST['id']);
     }
