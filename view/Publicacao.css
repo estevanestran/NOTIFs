@@ -50,10 +50,6 @@
     left: 2%;
     background-color: #042B52;
     box-shadow: 1px 1px 15px #323232;
-    /*#e9cef4; #eddbf5*/
-    /*border-right: 2.7px solid #042B52;
-    border-bottom: 2.7px solid #042B52;
-    border-left: 2.7px solid #042B52;*/
 }
 
 h1 {
@@ -84,6 +80,7 @@ h5:hover {
 }
 
 p#menu {
+    position: fixed;
     padding-left: 6px;
     font-weight: 500;
     color: #f3f3f3;
@@ -93,12 +90,17 @@ p#menu {
 
 a {
     text-decoration: none;
-    font-weight: normal ;
+    font-weight: normal;
+}
+
+a#escrever {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 img#bookmarkSF {
     width: 40px;
-    height: 40px;
+    height: 38px;
     position: relative;
-    left: 0;
+    left: -5%;
 }

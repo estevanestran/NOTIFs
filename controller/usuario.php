@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $acao = $_GET['acao'];
 include_once '../model/Usuario.class.php';
 
@@ -32,7 +33,11 @@ if ($acao == 'cadastrar'){
     $usuario->setIdCurso(null);
 }
     $usuario->save();
-    header('Location: ../view/TelaPrincipal.html ');
+    if ($usuario->save()) {
+        $_SESSION['usuario_comum'] = true;
+        header('Location: ../view/TelaPrincipal.php ');
+        exit;
+    }
     } else if($acao == 'deletar') {
         Usuario::deletar($_REQUEST['id']);
     }
