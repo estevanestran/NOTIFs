@@ -52,6 +52,15 @@
     box-shadow: 1px 1px 15px #323232;
 }
 
+.inferior_direito {
+    position: relative;
+    width: 80%;
+    height: 78.3%;
+    top: 10%;
+    left: 30%;
+    background-color: #042B52;
+}
+
 h1 {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;

@@ -32,12 +32,13 @@
             <div class="inferior_esquerdo">
                 <p id="menu">Auxílios<br>Bolsas<br>Comunicados<br>Cursos<br>Editais<br>Eventos<br>Oportunidades<br><br><br><br><br><br><br><br><br><br><br><br><a href="TelaPublicacao.php" id="escrever" <?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Escrever notícia</a><br><a href="TelaPublicacao.php" id="escrever" <?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Minhas notícias</a><br>Favoritos<img src="bookmarkSF.png" id="bookmarkSF"></p>
             </div>
-            <div>
-      <textarea id="tiny">&lt;p&gt;Welcome to the TinyMCE jQuery example!&lt;/p&gt;</textarea>
+            <div class="inferior_direito">
+              <textarea id="tiny" style="width: 80%;">&lt;p&gt;Welcome to the TinyMCE jQuery example!&lt;/p&gt;</textarea>
+            </div>
     </div>
     <script>
       $('textarea#tiny').tinymce({
-        height: 500,
+        height: 800,
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
