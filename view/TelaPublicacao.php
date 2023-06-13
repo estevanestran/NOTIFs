@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="Publicacao.css">
+    <link rel="stylesheet" href="PublicacaoTela.css">
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -30,15 +30,57 @@
         </div>
         <div class="inferior">
             <div class="inferior_esquerdo">
-                <p id="menu">Auxílios<br>Bolsas<br>Comunicados<br>Cursos<br>Editais<br>Eventos<br>Oportunidades<br><br><br><br><br><br><br><br><br><br><br><br><a href="TelaPublicacao.php" id="escrever" <?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Escrever notícia</a><br><a href="TelaPublicacao.php" id="escrever" <?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Minhas notícias</a><br>Favoritos<img src="bookmarkSF.png" id="bookmarkSF"></p>
+                <p id="menu">Auxílios<br>Bolsas<br>Comunicados<br>Cursos<br>Editais<br>Eventos<br>Oportunidades<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><a href="TelaPublicacao.php" id="escrever" <?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Escrever notícia</a><br><a href="TelaPublicacao.php" id="escrever" <?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>>Minhas notícias</a><br>Favoritos<img src="bookmarkSF.png" id="bookmarkSF"></p>
             </div>
             <div class="inferior_direito">
-              <textarea id="tiny" style="width: 80%;">&lt;p&gt;Welcome to the TinyMCE jQuery example!&lt;/p&gt;</textarea>
+              <form action="../controller/noticia.php?acao=publicar" method="post">
+                <label for="titulo">TÍTULO DA NOTÍCIA</label><br>
+                  <input type="text" id="titulo" name="titulo"> <br><br>
+                <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>
+                  <input type="text" id="subtitulo" name="subtitulo"> <br><br>
+                <label for="corpo">CORPO DA NOTÍCIA</label><br>
+                <textarea id="tiny" style="width: 85%;"></textarea>
+                <br>
+                <label for="categoria">CATEGORIA DA NOTÍCIA</label>
+                <select name="categoria" id="categoria">
+                  <option value="">Selecione...</option>
+                  <option value="Auxilios">Auxílios</option>
+                  <option value="Bolsas">Bolsas</option>
+                  <option value="Comunicados">Comunicados</option>
+                  <option value="Cursos">Cursos</option>
+                  <option value="Editais">Editais</option>
+                  <option value="Eventos">Eventos</option>
+                  <option value="Oportunidades">Oportunidades</option>
+                </select>
+                <br><br>
+                <label for="imagem">IMAGEM DE CAPA</label>
+                <input type="file">
+                <fieldset>
+                <label for="curso" style="color: #042B52; font-size: larger;">CURSOS ALVO</label><br>
+                <input class="caixas" type="checkbox" name="curso" value="ADM" required><label for="curso">ADM</label>
+                <input class="caixas" type="checkbox" name="curso" value="DS" required><label for="curso">DS</label>
+                <input class="caixas" type="checkbox" name="curso" value="Eletronica" required><label for="curso">Eletrônica</label>
+                <input class="caixas" type="checkbox" name="curso" value="EngEle" required><label for="curso">EngEle</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso" value="TADS" required><label for="curso">TADS</label>
+                <input class="caixas" type="checkbox" name="curso" value="Logistica" required><label for="curso">Logística</label>
+                <input class="caixas" type="checkbox" name="curso" value="Matematica" required><label for="curso">Matemática</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso" value="Comercio" required><label for="curso">Comércio</label>
+                <input class="caixas" type="checkbox" name="curso" value="TMSI" required><label for="curso">TMSI</label>
+                <input class="caixas" type="checkbox" name="curso" value="GPI" required><label for="curso">GPI</label>
+                <input class="caixas" type="checkbox" name="curso" value="EIS" required><label for="curso">EIS</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso" value="LCE" required><label for="curso">LCE</label>
+                <input class="caixas" type="checkbox" name="curso" value="PROFMAT" required><label for="cursp">PROFMAT</label>
+                </fieldset> <br><br><br><br>
+                <input type="submit" id="botao"value="PUBLICAR">
+              </form>
             </div>
     </div>
     <script>
       $('textarea#tiny').tinymce({
-        height: 800,
+        height: 500,
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
