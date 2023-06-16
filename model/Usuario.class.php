@@ -80,7 +80,7 @@ include_once 'conexao.php';
                 return false;
             }
             
-    }
+        }
 
         public static function deletar($id){
             $pdo = conexao();

@@ -21,17 +21,17 @@ if ($acao == 'cadastrar'){
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Verifica se foi encontrado o ID do curso
-    if ($resultado) {
-        $idCurso = $resultado['id'];
+        if ($resultado) {
+            $idCurso = $resultado['id'];
         // Define o ID do curso no objeto Usuario
-        $usuario->setIdCurso($idCurso);
-    } else {
+            $usuario->setIdCurso($idCurso);
+        } else {
         // Curso não encontrado, trata o erro conforme necessário
-    }
-} else {
+        }
+    } else {
     // Define o ID do curso como nulo
     $usuario->setIdCurso(null);
-}
+    }
     $usuario->save();
     if ($usuario->save()) {
         $_SESSION['usuario_comum'] = true;

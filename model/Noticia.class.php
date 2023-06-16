@@ -8,7 +8,7 @@ class Noticia{
     private $titulo;
     private $subtitulo;
     private $corpo;
-    private $data;
+    private $data_noticia;
     private $id_usuario;
 
     public function getId(){
@@ -52,13 +52,38 @@ class Noticia{
     }
 
     public function getData(){
-        return $this->data;
+        return $this->data_noticia;
     }
 
-    public function setData($data){
-        $this->data = $data;
+    public function setData($data_noticia){
+        $this->data_noticia = $data_noticia;
     }
 
+    public function getCurrentDate(){
+        return date('Y-m-d H:i:s');
     }
+
+    public function save(){
+        $pdo = conexao();
+
+        try{
+            $stmt = $pdo->prepare('INSERT INTO usuario (id, titulo, subtitulo, corpo, data_noticia, id_usuario) VALUES(:id, :titulo, :subtitulo, :corpo, :data_noticia, :id_usuario)');
+
+            $stmt->execute([
+                ':id' => $this->id,
+                ':titulo' => $this->titulo,
+                ':subtitulo' => $this->subtitulo,
+                ':corpo' => $this->corpo,
+                ':data_noticia' => $this->data_noticia,
+                ':id_usuario' => $this->id_usuario,
+            ]);
+            
+            return true;
+        }catch(Exception $e){
+            return false;
+        }
+        
+    }
+}
 
 ?>

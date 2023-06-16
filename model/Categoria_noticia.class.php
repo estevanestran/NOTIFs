@@ -23,6 +23,22 @@ include_once 'conexao.php';
             $this->id_noticia = $id_noticia;
         }
 
-    }
+        public function save() {
+            $pdo = conexao();
+    
+            try {
+                $stmt = $pdo->prepare('INSERT INTO categoria_noticia (id_categoria, id_noticia) VALUES (:id_categoria, :id_noticia)');
+    
+                $stmt->execute([
+                    ':id_curso' => $this->id_categoria,
+                    ':id_noticia' => $this->id_noticia,
+                ]);
+    
+                return true;
+            } catch (Exception $e) {
+                return false;
+            }
+        }
+}
 
 ?>

@@ -23,5 +23,21 @@
         $this->id_noticia = $id_noticia;
     }
 
+    public function save() {
+        $pdo = conexao();
+
+        try {
+            $stmt = $pdo->prepare('INSERT INTO curso_noticia (id_curso, id_noticia) VALUES (:id_curso, :id_noticia)');
+
+            $stmt->execute([
+                ':id_curso' => $this->id_curso,
+                ':id_noticia' => $this->id_noticia,
+            ]);
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
+}
 ?>

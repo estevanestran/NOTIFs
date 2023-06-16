@@ -1,3 +1,6 @@
+<?php 
+include_once '../model/Noticia.class.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+      src="https://cdn.tiny.cloud/1/p6cepsntwtf4gffjxl409dppeu7zzg5e0hrohycxu9ldemig/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
@@ -39,7 +42,7 @@
                 <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>
                   <input type="text" id="subtitulo" name="subtitulo"> <br><br>
                 <label for="corpo">CORPO DA NOTÍCIA</label><br>
-                <textarea id="tiny" style="width: 85%;"></textarea>
+                <textarea id="corpo" name="corpo" style="width: 85%;"></textarea>
                 <br>
                 <label for="categoria">CATEGORIA DA NOTÍCIA</label>
                 <select name="categoria" id="categoria">
@@ -79,11 +82,11 @@
             </div>
     </div>
     <script>
-      $('textarea#tiny').tinymce({
+      $('textarea#corpo').tinymce({
         height: 500,
         menubar: false,
         plugins: [
-          'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+          'advlist', 'autolink', 'link', 'lists', 'image', 'charmap', 'preview',
           'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
           'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
         ],
