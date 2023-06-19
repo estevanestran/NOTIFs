@@ -60,24 +60,25 @@ include_once '../model/Noticia.class.php';
                 <input type="file">
                 <fieldset>
                 <label for="curso" style="color: #042B52; font-size: larger;">CURSOS ALVO</label><br>
-                <input class="caixas" type="checkbox" name="curso" value="ADM" required><label for="curso">ADM</label>
-                <input class="caixas" type="checkbox" name="curso" value="DS" required><label for="curso">DS</label>
-                <input class="caixas" type="checkbox" name="curso" value="Eletronica" required><label for="curso">Eletrônica</label>
-                <input class="caixas" type="checkbox" name="curso" value="EngEle" required><label for="curso">EngEle</label>
+                <input class="caixas" type="checkbox" name="curso" value="ADM"><label for="curso">ADM</label>
+                <input class="caixas" type="checkbox" name="curso" value="DS"><label for="curso">DS</label>
+                <input class="caixas" type="checkbox" name="curso" value="Eletronica"><label for="curso">Eletrônica</label>
+                <input class="caixas" type="checkbox" name="curso" value="EngEle"><label for="curso">EngEle</label>
                 <br>
-                <input class="caixas" type="checkbox" name="curso" value="TADS" required><label for="curso">TADS</label>
-                <input class="caixas" type="checkbox" name="curso" value="Logistica" required><label for="curso">Logística</label>
-                <input class="caixas" type="checkbox" name="curso" value="Matematica" required><label for="curso">Matemática</label>
+                <input class="caixas" type="checkbox" name="curso" value="TADS"><label for="curso">TADS</label>
+                <input class="caixas" type="checkbox" name="curso" value="Logistica"><label for="curso">Logística</label>
+                <input class="caixas" type="checkbox" name="curso" value="Matematica"><label for="curso">Matemática</label>
                 <br>
-                <input class="caixas" type="checkbox" name="curso" value="Comercio" required><label for="curso">Comércio</label>
-                <input class="caixas" type="checkbox" name="curso" value="TMSI" required><label for="curso">TMSI</label>
-                <input class="caixas" type="checkbox" name="curso" value="GPI" required><label for="curso">GPI</label>
-                <input class="caixas" type="checkbox" name="curso" value="EIS" required><label for="curso">EIS</label>
+                <input class="caixas" type="checkbox" name="curso" value="Comercio"><label for="curso">Comércio</label>
+                <input class="caixas" type="checkbox" name="curso" value="TMSI"><label for="curso">TMSI</label>
+                <input class="caixas" type="checkbox" name="curso" value="GPI"><label for="curso">GPI</label>
+                <input class="caixas" type="checkbox" name="curso" value="EIS"><label for="curso">EIS</label>
                 <br>
-                <input class="caixas" type="checkbox" name="curso" value="LCE" required><label for="curso">LCE</label>
-                <input class="caixas" type="checkbox" name="curso" value="PROFMAT" required><label for="cursp">PROFMAT</label>
+                <input class="caixas" type="checkbox" name="curso" value="LCE"><label for="curso">LCE</label>
+                <input class="caixas" type="checkbox" name="curso" value="PROFMAT"><label for="curso">PROFMAT</label>
                 </fieldset> <br><br><br><br>
-                <input type="submit" id="botao"value="PUBLICAR">
+                <input type="hidden" id="id" name="id">
+                <input type="submit" id="botao" value="PUBLICAR" onclick="validarFormulario()">
               </form>
             </div>
     </div>
@@ -95,6 +96,26 @@ include_once '../model/Noticia.class.php';
           'bullist numlist outdent indent | removeformat | help'
       });
     </script>
+
+<script>
+  function validarFormulario() {
+    var checkboxes = document.getElementsByName("curso");
+    var selecionado = false;
+
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked) {
+        selecionado = true;
+        break;
+      }
+    }
+
+    if (!selecionado) {
+      event.preventDefault();
+      alert("Selecione pelo menos um curso!");
+      return;
+    }
+  }
+</script>
         </div>
     </div>
 </body>

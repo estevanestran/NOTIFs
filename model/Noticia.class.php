@@ -67,16 +67,18 @@ class Noticia{
         $pdo = conexao();
 
         try{
-            $stmt = $pdo->prepare('INSERT INTO usuario (id, titulo, subtitulo, corpo, data_noticia, id_usuario) VALUES(:id, :titulo, :subtitulo, :corpo, :data_noticia, :id_usuario)');
+            $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario)');
 
             $stmt->execute([
-                ':id' => $this->id,
+                //':id' => $this->id,
                 ':titulo' => $this->titulo,
                 ':subtitulo' => $this->subtitulo,
                 ':corpo' => $this->corpo,
                 ':data_noticia' => $this->data_noticia,
                 ':id_usuario' => $this->id_usuario,
             ]);
+
+            $this->id = $pdo->lastInsertId();
             
             return true;
         }catch(Exception $e){
