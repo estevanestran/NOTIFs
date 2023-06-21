@@ -171,12 +171,12 @@ label {
 
 input[type=text]{
     width: 400px;
-    height: 30px;
+    height: 33px;
     border: 1.5px solid white;
     border-radius: 6px 6px 6px 6px;
     background-color: white;
     position: relative;
-    left: 13%;
+    left: 7%;
 }
 
 input[type=password]{
