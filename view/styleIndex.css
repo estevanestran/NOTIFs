@@ -172,9 +172,9 @@ label {
 input[type=text]{
     width: 400px;
     height: 33px;
-    border: 1.5px solid white;
+    border: 1.5px solid #f3f3f3;
     border-radius: 6px 6px 6px 6px;
-    background-color: white;
+    background-color: #f3f3f3;
     position: relative;
     left: 7%;
 }

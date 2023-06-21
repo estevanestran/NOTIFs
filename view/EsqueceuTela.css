@@ -8,7 +8,7 @@
     height: 100%;
 }
 .superior {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -58,12 +58,12 @@
     top: 22%;
 }
 
-.inferior_direito_cadastro {
+.inferior_direito_esqueceu {
     position: absolute;
-    width: 33%;
-    left: 56.5%;
-    top: 12%;
-    height: 74%;
+    width: 33.5%;
+    left: 55%;
+    top: 24%;
+    height: 50%;
     background-color: #042B52;
     border: 2.5px solid #042B52;
     border-radius: 10px 10px 10px 10px;
@@ -98,7 +98,7 @@ h3 {
     font-family: 'Noto sans', sans-serif;
     font-weight: 700;
     text-align: center;
-    text-shadow: 2px 2px 2px #042b5280;
+    text-shadow: 1px 1px 1px black;
 }
 
 h4 {
@@ -123,13 +123,12 @@ a#caminhoAlt{
     font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
-    position: relative;
     text-decoration: underline;
 }
 
 p#recuperar{
-    padding-left: 55px;
-    color: black;
+    padding-left: 5%;
+    color: #d9d7d7;
     font-family: 'Noto sans', sans-serif;
 }
 
@@ -142,11 +141,7 @@ p#descTelaIni{
     font-family: 'Noto sans', sans-serif;
 }
 
-p {
-    font-family: 'Noto sans', sans-serif;
-}
-
-p#jatem {
+p#naotem {
     color: #f3f3f3;
     text-align: center;
 }
@@ -160,7 +155,7 @@ input[type=submit]{
     border: 1.5px solid white;
     border-radius: 15px;
     position: relative;
-    left: 29%;
+    left: 28%;
     transition: background-color .4s;
 }
 
@@ -175,7 +170,7 @@ label {
     font-family: 'Noto sans', sans-serif;
     position: relative;
     text-shadow: 1.5px 1.5px 1px #042b5280;
-    left: 7%;
+    left: 5%;
 }
 
 input[type=text]{
@@ -185,38 +180,9 @@ input[type=text]{
     border-radius: 6px 6px 6px 6px;
     background-color: #f3f3f3;
     position: relative;
-    left: 12%;
+    left: 10%;
 }
 
-input[type=password]{
-    width: 400px;
-    height: 33px;
-    border: 1.5px solid #e9cef4;
-    border-radius: 6px 6px 6px 6px;
-    background-color: white;
-    position: relative;
-    left: 12%;
-}
-
-
-  
-.radio-group input[type="radio"]{
-    vertical-align: middle;
-    
-
-}
-.radio-group label {
-    vertical-align: middle;
-    color: #f3f3f3;
-    margin-left: 17%;
-  }
-
-#curso {
-    position: relative;
-    font-family: 'Noto sans', serif;
-    left: 9%;
-    color: #042B52;
-}
 /*IMAGENS*/
 
 .logo {
