@@ -7,6 +7,10 @@
     height: 100%;
 }
 
+body {
+    background-color: #d9d7d7;
+}
+
 .superior {
     position: absolute;
     top: 0;
@@ -52,6 +56,13 @@
     box-shadow: 1px 1px 15px #323232;
 }
 
+.inferior_direito_principal {
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    top: 10%;
+}
+
 h1 {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
@@ -85,6 +96,12 @@ p#menu {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
+}
+
+p#titulo {
+    font-family: 'Noto sans', sans-serif;
+    color: #323232;
+    padding-left: 10%;
 }
 
 a {

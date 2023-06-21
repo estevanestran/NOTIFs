@@ -90,5 +90,22 @@ include_once 'conexao.php';
                 ':id' => $id
             ]);
         }
+
+        public static function getAll(){
+            $pdo = conexao();
+            $lista = [];
+            foreach($pdo->query('SELECT * FROM usuario') as $linha){
+                $usuario = new Usuario();
+                $usuario->setNome($linha['nome']);
+                $usuario->setEmail($linha['email']);
+                $usuario->setSenha($linha['senha']);
+                $usuario->setId($linha['id']);
+                $usuario->setEstado($linha['estado']);
+                $usuario->setIdCurso($linha['id_curso']);
+                $lista[] = $usuario;
+            }
+    
+            return $lista;
+        }
     }
 ?>

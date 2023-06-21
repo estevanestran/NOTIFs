@@ -24,9 +24,7 @@ include_once '../model/Noticia.class.php';
 <body>
     <div class="container">
         <div class="superior">
-            <div class="superior_esquerdo">
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
-            </div>
             <div class="superior_direito">
                 <a href="TelaPerfil.html"><h5>Nome usuário</h5></a>
             </div>

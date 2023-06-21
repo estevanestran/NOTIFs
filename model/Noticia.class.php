@@ -86,6 +86,23 @@ class Noticia{
         }
         
     }
+
+    public static function getAll(){
+        $pdo = conexao();
+        $lista = [];
+        foreach($pdo->query('SELECT * FROM noticia') as $linha){
+            $noticia = new Noticia();
+            $noticia->setTitulo($linha['titulo']);
+            $noticia->setSubtitulo($linha['subtitulo']);
+            $noticia->setCorpo($linha['corpo']);
+            $noticia->setId($linha['id']);
+            $noticia->setData($linha['data_noticia']);
+            $noticia->setIdUsuario($linha['id_usuario']);
+            $lista[] = $noticia;
+        }
+
+        return $lista;
+    }
 }
 
 ?>
