@@ -56,11 +56,44 @@ body {
     box-shadow: 1px 1px 15px #323232;
 }
 
-.inferior_direito_principal {
+.foto {
     position: absolute;
-    width: 70%;
+    height: 35;
+    width: 25%;
     left: 15%;
     top: 10%;
+}
+
+.inferior_direito_principal {
+    position: absolute;
+    width: 55%;
+    left: 15%;
+    top: 10%;
+}
+
+.div_imagem {
+    position: relative;
+    width: 20%;
+}
+
+.dados_noticia {
+    position: relative;
+    top: 20%;
+}
+
+section {
+    position: relative;
+    left: 40%;
+}
+
+article {
+    position: relative;
+    left: 40%;
+}
+
+aside {
+    position: relative;
+    left: 40%;
 }
 
 h1 {
@@ -98,10 +131,21 @@ p#menu {
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
 }
 
-p#titulo {
+h2 {
     font-family: 'Noto sans', sans-serif;
+    font-weight: 600;
     color: #323232;
-    padding-left: 10%;
+}
+
+p#subtitulo {
+    color: #323232;
+    font-weight: 400;
+    font-size: large;
+}
+
+p#data {
+    color: #042B52;
+    font-size: large;
 }
 
 a {
@@ -119,4 +163,22 @@ img#bookmarkSF {
     height: 38px;
     position: relative;
     left: -5%;
+}
+
+fieldset#imagem {
+    position: relative;
+    top: 15%;
+
+}
+
+.noticia {
+    position: absolute;
+    top: 10;
+    height: 35%;
+}
+
+img#marrom {
+    position: relative;
+    width: 70%;
+    height: 35%;
 }

@@ -32,14 +32,22 @@ $noticias = Noticia::getAll();
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
             < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
-        <div class="inferior_direito_principal">
-            <fieldset id="noticia">
+        <div class="foto">
             <?php foreach ($noticias as $noticia){?>
-              <section><p id="titulo"><?php echo $noticia->getTitulo(); ?></p></section>
+                <img src="cor-marrom.jpg" id="marrom">
+                <br>
+                <br>
+            <?php }?>
+        </div>
+        <div class="inferior_direito_principal">
+            <div class="noticia">
+            <?php foreach ($noticias as $noticia){?>
+              <section><h2><?php echo $noticia->getTitulo(); ?></h2></section>
               <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
               <aside><p id="data"><?php echo $noticia->getData(); ?></p></aside>
+              <br><br>
             <?php } ?>
-            </fieldset>
+            </div>
         </div>
     </div>
 </body>

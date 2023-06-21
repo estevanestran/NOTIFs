@@ -2,27 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&display=swap');
 
+/*PEDAÇOS DA TELA*/
 .container {
     width: 100%;
     height: 100%;
 }
-
-body {
-    background-color: #d9d7d7;
-}
-
 .superior {
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
-}
-
-.superior_esquerdo {
-    background-color: #042B52;
 }
 
 .superior_direito {
@@ -43,31 +35,42 @@ body {
 
 .inferior {
     background-color: #d9d7d7;
-    height: 140%;
+    height: 88%;
     width: 100%;
     position: absolute;
     top: 12%;
     left: 0;
 }
 
-.inferior_esquerdo {
-    position: relative;
-    width: 10%;
-    height: 56%;
-    top: 3%;
-    left: 2%;
-    background-color: #042B52;
-    box-shadow: 1px 1px 15px #323232;
-}
-
-.inferior_direito {
+.inferior_esquerdo_um {
     position: absolute;
-    width: 80%;
-    height: 50%;
-    top: 5%;
-    left: 20%;
+    width: 40%;
+    height: 10%;
+    left: 7%;
+    top: 12%;
 }
 
+.inferior_esquerdo_dois {
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    left: 5%;
+    top: 22%;
+}
+
+.inferior_direito_login {
+    position: absolute;
+    width: 33.5%;
+    left: 55%;
+    top: 18%;
+    height: 57%;
+    background-color: #042B52;
+    border: 2.5px solid #042B52;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 13px #323232;
+}
+
+/*LETRAS E TEXTOS*/
 h1 {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
@@ -81,9 +84,26 @@ h1 {
     font-weight: 700;
 }
 
-h5 {
+h2{
     color: #042B52;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-shadow: 1.5px 1.5px 1.5px #042b5280;
+    padding-left: 2.5%;
+}
+
+h3 {
+    color: #f3f3f3;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
+h4 {
+    color: #042B52;
+    font-family: 'Noto sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
     font-size: x-large;
     height: 20px;
@@ -91,45 +111,47 @@ h5 {
     text-align: center;
 }
 
-h5:hover {
-    color: #d9d7d7;
-}
-
-p#menu {
-    position: relative;
-    padding-left: 6px;
-    font-weight: 500;
+h4:hover {
     color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
 }
 
 a {
     text-decoration: none;
-    font-weight: normal;
 }
 
-a#escrever {
+a#caminhoAlt{
+    font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    padding-left: 31.2%;
+    text-decoration: underline;
 }
 
-img#bookmarkSF {
-    width: 40px;
-    height: 38px;
-    position: relative;
-    left: -5%;
+p#recuperar{
+    padding-left: 55px;
+    color: black;
+    font-family: 'Noto sans', sans-serif;
 }
+
+p#descTelaIni{
+    font-weight: 200;
+    color: #323232;
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #042b5280;
+    font-family: 'Noto sans', sans-serif;
+}
+
+/*FORMULÁRIO*/
 
 input[type=submit]{
     width: 200px;
     font-family: 'Noto sans', sans-serif;
-    font-size: larger;
     color: #042B52;
     border: 1.5px solid white;
     border-radius: 15px;
     position: relative;
-    left: 35%;
+    left: 28%;
     transition: background-color .4s;
 }
 
@@ -140,48 +162,39 @@ input#botao:hover{
 }
 
 label {
-    color: #042B52;
+    color: #f3f3f3;
     font-family: 'Noto sans', sans-serif;
     position: relative;
-    font-size: larger;
-    /*text-shadow: 1.5px 1.5px 1px #042b5280;*/
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    left: 5%;
 }
 
 input[type=text]{
-    width: 85%;
+    width: 400px;
     height: 33px;
-    border: 1.5px solid white;
+    border: 1.5px solid #f3f3f3;
+    border-radius: 6px 6px 6px 6px;
+    background-color: #f3f3f3;
+    position: relative;
+    left: 9%;
+}
+
+input[type=password]{
+    width: 400px;
+    height: 33px;
+    border: 1.5px solid #e9cef4;
     border-radius: 6px 6px 6px 6px;
     background-color: white;
     position: relative;
+    left: 9%;
 }
 
-input#subtitulo {
-    height: 66px;
-}
+/*IMAGENS*/
 
-input[type=checkbox]{
-    position: relative;
-    left: 50%;
-}
-
-select{
-    font-family: 'Noto sans', sans-serif;
-}
-
-input[type=file]{
-    font-family: 'Noto sans', sans-serif;
-}
-
-fieldset {
+.logo {
     position: absolute;
-    top: 145%;
-    left: 50%;
-}
-
-fieldset > label {
-    position: relative;
-    left: 50%;
-    font-size: large;
-    color: #323232;
+    width: 40%;
+    height: 50%;
+    top: 22.5%;
+    left: 9%;
 }
