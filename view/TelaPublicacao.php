@@ -1,3 +1,4 @@
+<!-- 100% PRONTO -->
 <?php 
 include_once '../model/Noticia.class.php';
 ?>
