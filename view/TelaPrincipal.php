@@ -1,9 +1,10 @@
 <?php 
 include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
-include_once '../model/Curso_noticia.class.php';
 
 $noticias = Noticia::getAll();
+$categorias = Categoria_noticia::getAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,9 @@ $noticias = Noticia::getAll();
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
             < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
+            <div class="pesquisa">
+                
+            </div>
         <div class="foto">
             <?php foreach ($noticias as $noticia){?>
                 <img src="cor-marrom.jpg" id="marrom">

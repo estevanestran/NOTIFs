@@ -39,6 +39,19 @@ include_once 'conexao.php';
                 return false;
             }
         }
+
+        public static function getAll(){
+            $pdo = conexao();
+            $lista = [];
+            foreach($pdo->query('SELECT * FROM categoria_noticia') as $linha){
+                $Categoria_noticia = new Categoria_noticia();
+                $Categoria_noticia->setId_categoria($linha['id_categoria']);
+                $Categoria_noticia->setId_noticia($linha['id_noticia']);
+                $lista[] = $Categoria_noticia;
+            }
+    
+            return $lista;
+        }
 }
 
 ?>
