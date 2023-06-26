@@ -23,6 +23,20 @@ include_once 'conexao.php';
             $this->id_noticia = $id_noticia;
         }
 
+        public function getNome() {
+              /*$pdo = conexao();
+              $pdo->query('SELECT nome FROM categoria where id = (SELECT id_categoria from categoria_noticia where id_noticia = :id_noticia)');
+              return true;*/
+
+              $pdo = conexao();
+              $stmt = $pdo->prepare('SELECT c.nome FROM categoria c INNER JOIN categoria_noticia cn ON c.id = cn.id_categoria WHERE cn.id_noticia = :id_noticia');
+              $stmt->bindValue(':id_noticia', $this->id_noticia);
+              $stmt->execute();
+
+              $result = $stmt->fetch(PDO::FETCH_ASSOC);
+              return $result['nome'] ?? '';
+        }
+
         public function save() {
             $pdo = conexao();
     

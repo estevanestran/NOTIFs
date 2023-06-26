@@ -64,6 +64,12 @@ body {
     top: 10%;
 }
 
+.noticia {
+    position: relative;
+    top: 10;
+    height: 35%;
+}
+
 .inferior_direito_principal {
     position: absolute;
     width: 55%;
@@ -169,12 +175,6 @@ fieldset#imagem {
     position: relative;
     top: 15%;
 
-}
-
-.noticia {
-    position: absolute;
-    top: 10;
-    height: 35%;
 }
 
 img#marrom {
