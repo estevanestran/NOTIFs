@@ -58,7 +58,7 @@ body {
 
 .foto {
     position: absolute;
-    height: 35;
+    height: 75%;
     width: 25%;
     left: 15%;
     top: 10%;
@@ -66,8 +66,8 @@ body {
 
 .noticia {
     position: relative;
-    top: 10;
-    height: 35%;
+    min-height: 20%;
+    margin-bottom: 20px;
 }
 
 .inferior_direito_principal {
@@ -75,16 +75,6 @@ body {
     width: 55%;
     left: 15%;
     top: 10%;
-}
-
-.div_imagem {
-    position: relative;
-    width: 20%;
-}
-
-.dados_noticia {
-    position: relative;
-    top: 20%;
 }
 
 section {

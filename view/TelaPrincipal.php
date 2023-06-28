@@ -33,24 +33,24 @@ $categorias = Categoria_noticia::getAll();
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
             < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
-        <div class="foto">
-            <?php foreach ($noticias as $noticia){?>
+        <!--<div class="foto">
+            <?php /*foreach ($noticias as $noticia){*/?>
                 <img src="cor-marrom.jpg" id="marrom">
-            <?php }?>
-            <br><br>
-        </div>
+                <br><br>
+            <?php /* }*/?>
+        </div>-->
         <div class="inferior_direito_principal">
-            <div class="noticia">
+            <div class="noticia" style="margin-bottom: 20px;">
             <?php foreach ($noticias as $noticia) {
             $categoria_noticia = new Categoria_noticia();
             $categoria_noticia->setId_noticia($noticia->getId());
             $categoria_nome = $categoria_noticia->getNome();
             ?>
-                <section><h2><?php echo $noticia->getTitulo(); ?></h2></section>
-                <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
-                <aside><p id="data"><?php echo $noticia->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p></aside>
+            <?php echo "<img src='" . $noticia->getFoto() . "'>"; ?>
+            <section><h2><?php echo $noticia->getTitulo(); ?></h2></section>
+            <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
+            <aside><p id="data"><?php echo $noticia->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p></aside>
             <?php } ?>
-            <br><br>
             </div>
         </div>
     </div>

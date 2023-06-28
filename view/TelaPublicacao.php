@@ -52,8 +52,8 @@ include_once '../model/Noticia.class.php';
                   <option value="Oportunidades">Oportunidades</option>
                 </select>
                 <br><br>
-                <label for="imagem">IMAGEM DE CAPA</label>
-                <input type="file">
+                <label for="foto">IMAGEM DE CAPA</label>
+                <input type="file" id="foto" name="foto">
                 <fieldset>
                 <label for="curso" style="color: #042B52; font-size: larger;">CURSOS ALVO</label><br>
                 <input class="caixas" type="checkbox" name="curso[]" value="ADM"><label for="curso">ADM</label>

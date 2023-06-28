@@ -14,6 +14,7 @@ if($acao=='publicar'){
     $noticia->setSubtitulo($_POST['subtitulo']);
     $noticia->setCorpo($_POST['corpo']);
     $noticia->setData($noticia->getCurrentDate());
+    $noticia->setFoto($_POST['foto']);
     //$noticia->setIdUsuario($_POST[$ultimoUsuario]);
     $noticia->save();
 
@@ -45,7 +46,6 @@ if($acao=='publicar'){
 
     if (!empty($nomeCursos)) {
         foreach ($nomeCursos as $nomeCurso){
-        // Consulta o banco de dados para obter o ID do curso com base no nome
         $pdo = conexao();
         $stmt = $pdo->prepare('SELECT id FROM curso WHERE nome = :curso');
         $stmt->execute([':curso' => $nomeCurso]);
@@ -63,7 +63,7 @@ if($acao=='publicar'){
             }
         }
     }
-    //var_dump($CursoNoticia);
+    //var_dump($noticia);
     header('Location:../view/TelaPrincipal.php');
 
 }

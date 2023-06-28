@@ -10,6 +10,7 @@ class Noticia{
     private $corpo;
     private $data_noticia;
     private $id_usuario;
+    private $foto;
 
     public function getId(){
         return $this->id;
@@ -51,6 +52,14 @@ class Noticia{
         $this->corpo = $corpo;
     }
 
+    public function getFoto(){
+        return $this->foto;
+    }
+
+    public function setFoto($foto){
+        $this->foto = $foto;
+    }
+
     public function getData(){
         return $this->data_noticia;
     }
@@ -67,7 +76,7 @@ class Noticia{
         $pdo = conexao();
 
         try{
-            $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario)');
+            $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario, foto) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario, :foto)');
 
             $stmt->execute([
                 //':id' => $this->id,
@@ -76,6 +85,7 @@ class Noticia{
                 ':corpo' => $this->corpo,
                 ':data_noticia' => $this->data_noticia,
                 ':id_usuario' => $this->id_usuario,
+                ':foto' => $this->foto,
             ]);
 
             $this->id = $pdo->lastInsertId();
@@ -98,6 +108,7 @@ class Noticia{
             $noticia->setId($linha['id']);
             $noticia->setData($linha['data_noticia']);
             $noticia->setIdUsuario($linha['id_usuario']);
+            $noticia->setFoto($linha['foto']);
             $lista[] = $noticia;
         }
 
