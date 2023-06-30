@@ -129,6 +129,7 @@ p#menu {
 
 a#titulo {
     font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
     font-weight: 600;
     color: #323232;
 }
