@@ -74,12 +74,33 @@ class Noticia{
 
     public function save(){
         $pdo = conexao();
+        if(isset($_FILES['foto'])){
+                        
+            $foto = $_FILES['foto'];
 
-        try{
+            if($foto['error']){
+                die("Falha ao enviar arquivo");
+            }
+
+            $pasta = "../uploads/";
+            $name = $foto['name'];
+            $nomeArquivo = uniqid();
+            $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+            $endereco = $pasta . $nomeArquivo . "." . $extensao;
+
+            if($extensao != "jpg" && $extensao != "png"){
+                die("Tipo de arquivo não aceito");
+            }
+
+            $deu_certo = move_uploaded_file($foto["tmp_name"], $pasta . $nomeArquivo . "." . $extensao);
+
+        if($deu_certo){
+
+            $this->setFoto($endereco);
+            try{
             $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario, foto) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario, :foto)');
 
             $stmt->execute([
-                //':id' => $this->id,
                 ':titulo' => $this->titulo,
                 ':subtitulo' => $this->subtitulo,
                 ':corpo' => $this->corpo,
@@ -93,6 +114,8 @@ class Noticia{
             return true;
         }catch(Exception $e){
             return false;
+        }
+        }
         }
         
     }

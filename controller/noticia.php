@@ -14,7 +14,7 @@ if($acao=='publicar'){
     $noticia->setSubtitulo($_POST['subtitulo']);
     $noticia->setCorpo($_POST['corpo']);
     $noticia->setData($noticia->getCurrentDate());
-    $noticia->setFoto($_POST['foto']);
+    $noticia->setFoto($_FILES['foto']['tmp_name']);
     //$noticia->setIdUsuario($_POST[$ultimoUsuario]);
     $noticia->save();
 

@@ -56,14 +56,6 @@ body {
     box-shadow: 1px 1px 15px #323232;
 }
 
-.foto {
-    position: absolute;
-    height: 75%;
-    width: 25%;
-    left: 15%;
-    top: 10%;
-}
-
 .noticia {
     position: relative;
     min-height: 20%;
@@ -129,6 +121,7 @@ p#menu {
 
 a#titulo {
     font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
     font-weight: 600;
     color: #323232;
 }
@@ -161,14 +154,8 @@ img#bookmarkSF {
     left: -5%;
 }
 
-fieldset#imagem {
-    position: relative;
-    top: 15%;
-
-}
-
 img#marrom {
     position: relative;
-    width: 70%;
-    height: 35%;
+    width: 25%;
+    height: 10%;
 }

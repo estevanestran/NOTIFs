@@ -32,7 +32,7 @@ include_once '../model/Noticia.class.php';
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
             < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
             <div class="inferior_direito">
-              <form action="../controller/noticia.php?acao=publicar" method="post">
+              <form action="../controller/noticia.php?acao=publicar" method="post" enctype="multipart/form-data">
                 <label for="titulo">TÍTULO DA NOTÍCIA</label><br>
                   <input type="text" id="titulo" name="titulo" required> <br><br>
                 <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>

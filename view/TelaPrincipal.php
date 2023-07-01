@@ -13,7 +13,7 @@ $categorias = Categoria_noticia::getAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="PrincipalTela.css">
+    <link rel="stylesheet" href="Principal.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -33,12 +33,8 @@ $categorias = Categoria_noticia::getAll();
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
             < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
-        <!--<div class="foto">
-            <?php /*foreach ($noticias as $noticia){*/?>
-                <img src="cor-marrom.jpg" id="marrom">
-                <br><br>
-            <?php /* }*/?>
-        </div>-->
+            <!--<div class="foto">
+            </div>-->
         <div class="inferior_direito_principal">
             <div class="noticia" style="margin-bottom: 20px;">
             <?php foreach ($noticias as $noticia) {
@@ -47,15 +43,13 @@ $categorias = Categoria_noticia::getAll();
             $categoria_nome = $categoria_noticia->getNome();
             
             ?>
-            <?php echo "<img src='" . $noticia->getFoto() . "'>"; ?>
+            <?php echo "<img id='marrom' src='" . $noticia->getFoto() . "'>"; ?>
             <section><?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'>" . $noticia->getTitulo(); "</a>"?></section>
-            <!--<section><h2><?php echo $noticia->getTitulo(); ?></h2></section>-->
             <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
             <aside><p id="data"><?php echo $noticia->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p></aside>
             <?php } ?>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>
