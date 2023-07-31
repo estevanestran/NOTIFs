@@ -56,20 +56,14 @@ body {
     box-shadow: 1px 1px 15px #323232;
 }
 
-.noticia {
-    position: relative;
-    min-height: 20%;
-    margin-bottom: 20px;
-}
-
 .inferior_direito_principal {
     position: absolute;
-    width: 55%;
+    width: 80%;
     left: 15%;
     top: 10%;
 }
 
-section {
+/*section {
     position: relative;
     left: 40%;
 }
@@ -82,7 +76,43 @@ article {
 aside {
     position: relative;
     left: 40%;
-}
+}*/
+
+.noticia {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+  }
+  
+.noticia img {
+    max-width: 9em;
+    min-width: 9em;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+section {
+    /*grid-row: 1;
+    grid-column: 1;*/
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+article {
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+aside {
+    position: relative;
+    left: 2%;
+  }
 
 h1 {
     color: #f3f3f3;
@@ -152,10 +182,4 @@ img#bookmarkSF {
     height: 38px;
     position: relative;
     left: -5%;
-}
-
-img#marrom {
-    position: relative;
-    width: 25%;
-    height: 10%;
 }

@@ -63,7 +63,7 @@
     width: 33%;
     left: 56.5%;
     top: 12%;
-    height: 76%;
+    height: 82%;
     background-color: #042B52;
     border: 2.5px solid #042B52;
     border-radius: 10px 10px 10px 10px;
@@ -124,6 +124,13 @@ a#caminhoAlt{
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
     position: relative;
+    text-decoration: underline;
+}
+
+a#termosdeuso {
+    font-family: 'Noto sans', sans-serif;
+    color: #f3f3f3;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
     text-decoration: underline;
 }
 

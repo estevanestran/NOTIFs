@@ -36,17 +36,19 @@ $categorias = Categoria_noticia::getAll();
             <!--<div class="foto">
             </div>-->
         <div class="inferior_direito_principal">
-            <div class="noticia" style="margin-bottom: 20px;">
+            <div class="noticia">
             <?php foreach ($noticias as $noticia) {
             $categoria_noticia = new Categoria_noticia();
             $categoria_noticia->setId_noticia($noticia->getId());
             $categoria_nome = $categoria_noticia->getNome();
             
             ?>
-            <?php echo "<img id='marrom' src='" . $noticia->getFoto() . "'>"; ?>
+            <?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><img src='" . $noticia->getFoto() . "'></a>"; ?>
+            <nav>
             <section><?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'>" . $noticia->getTitulo(); "</a>"?></section>
             <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
             <aside><p id="data"><?php echo $noticia->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p></aside>
+            </nav>
             <?php } ?>
             </div>
         </div>

@@ -74,7 +74,7 @@ include_once '../model/Noticia.class.php';
                 <input class="caixas" type="checkbox" name="curso[]" value="PROFMAT"><label for="curso">PROFMAT</label>
                 </fieldset> <br><br><br><br>
                 <input type="hidden" id="id" name="id">
-                <input type="submit" id="botao" value="PUBLICAR" onclick="validarFormulario()">
+                <input type="submit" id="botao" value="PUBLICAR" onclick="validarFormulario(event)">
               </form>
             </div>
     </div>
@@ -89,7 +89,7 @@ include_once '../model/Noticia.class.php';
     </script>
 
 <script>
-  function validarFormulario() {
+  function validarFormulario(event) {
     var checkboxes = document.getElementsByName("curso[]");
     var selecionado = false;
 

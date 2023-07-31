@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&display=swap');
+
+/*PEDAÇOS DA TELA*/
+
+body {
+    background-color: #d9d7d7;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    background-color: #042B52;
+    border: 2.7px solid #042B52;
+}
+
+.superior_direito {
+    background-color: #d9d7d7;
+    width: 170px;
+    position: absolute;
+    height: 35px;
+    border: 1.5px solid white;
+    border-radius: 15px;
+    top: 30%;
+    left: 83.5%;
+    transition: background-color .4s;
+}
+
+.superior_direito:hover{
+    background-color: #042B52;
+}
+
+.inferior {
+    top: 15%;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+}
+
+/*LETRAS E TEXTOS*/
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
+}
+
+h4 {
+    color: #042B52;
+    font-family: 'Noto sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-size: x-large;
+    height: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+h4:hover {
+    color: #f3f3f3;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #042B52;
+}
+
+h3 {
+    font-family: 'Noto sans', sans-serif;
+    font-weight: bold;
+    color: #323232;
+    font-size: large;
+}
+
+p {
+    font-family: 'Noto sans', sans-serif;
+    color: #323232;
+    text-align: justify;
+}
