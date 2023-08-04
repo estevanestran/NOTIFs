@@ -94,8 +94,6 @@ aside {
   }
   
 section {
-    /*grid-row: 1;
-    grid-column: 1;*/
     position: relative;
     left: 2%;
     min-width: 800px;

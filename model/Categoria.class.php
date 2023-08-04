@@ -1,4 +1,4 @@
-<?php 
+(<?php 
 
 include_once 'conexao.php';
 
@@ -22,6 +22,19 @@ include_once 'conexao.php';
         public function setNome($nome){
             $this->nome = $nome;
         }
+
+        public static function getAll(){
+            $pdo = conexao();
+            $lista = [];
+            foreach($pdo->query('SELECT * FROM categoria') as $linha){
+                $categoria = new Categoria();
+                $categoria->setId($linha['id']);
+                $categoria->setNome($linha['nome']);
+                $lista[] = $categoria;
+            }
+    
+            return $lista;
+        }
     }
 
-?>
+?>)

@@ -50,47 +50,70 @@ body {
     position: relative;
     width: 10%;
     height: 78.3%;
-    top: 10%;
+    top: 9%;
     left: 2%;
     background-color: #042B52;
     box-shadow: 1px 1px 15px #323232;
 }
 
-.foto {
+.menu_topo {
+    position: relative;
+    top: 2%;
+}
+
+.menu_baixo {
+    position: relative;
+    top: 64%;
+    left: 2%;
+}
+
+.inferior_direito_principal {
     position: absolute;
-    height: 75%;
-    width: 25%;
-    left: 15%;
+    width: 80%;
+    left: 19%;
     top: 10%;
 }
 
 .noticia {
     position: relative;
-    min-height: 20%;
-    margin-bottom: 20px;
-}
+    max-width: 1100px;
+  }
 
-.inferior_direito_principal {
-    position: absolute;
-    width: 55%;
-    left: 15%;
-    top: 10%;
+.imagem {
+    position: relative;
+    max-width: 1100px;
+    top: 20%;
 }
+  
+.imagem img {
+    width: 50%;
+    display: block;
+    margin-left: 22%;
+    margin-top: auto;
+  }
 
+.corpo {
+    position: relative;
+}
+  
 section {
     position: relative;
-    left: 40%;
-}
-
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
 article {
     position: relative;
-    left: 40%;
-}
-
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
 aside {
     position: relative;
-    left: 40%;
-}
+    left: 2%;
+  }
 
 h1 {
     color: #f3f3f3;
@@ -103,6 +126,14 @@ h1 {
     width: 420px;
     margin: 0px 10px 0px 10px;
     font-weight: 700;
+}
+
+h2 {
+    color: #323232;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    height: 50px;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
 }
 
 h5 {
@@ -119,12 +150,20 @@ h5:hover {
     color: #d9d7d7;
 }
 
-p#menu {
+h6 {
+    font-family: 'Noto Sans', sans-serif;
+    color: #323232;
+    padding-top: 20px;
+    font-size: large;
+}
+
+a#menu {
     padding-left: 6px;
     font-weight: 500;
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    line-height: 3px;
 }
 
 a#titulo {
@@ -138,6 +177,12 @@ p#subtitulo {
     color: #323232;
     font-weight: 400;
     font-size: large;
+    padding-top: 10px;
+}
+
+p#corpo {
+    color: #323232;
+    font-size: small;
 }
 
 p#data {
@@ -153,6 +198,7 @@ a {
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    line-height: 3px;
 }
 
 img#bookmarkSF {
@@ -162,14 +208,10 @@ img#bookmarkSF {
     left: -5%;
 }
 
-fieldset#imagem {
-    position: relative;
-    top: 15%;
-
-}
-
-img#marrom {
-    position: relative;
-    width: 25%;
-    height: 10%;
+@media (max-width: 75%) {
+    a {
+        text-decoration: none;
+        font-weight: normal;
+        color: red;
+    }
 }

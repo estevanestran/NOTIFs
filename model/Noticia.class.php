@@ -137,6 +137,41 @@ class Noticia{
 
         return $lista;
     }
+
+    public function buscarNoticiaPorId($id){
+        try {
+        $pdo = conexao();
+
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $sql = "SELECT id, titulo, subtitulo, corpo, data_noticia, foto FROM noticia WHERE id = ?";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        // Verificar se a notícia foi encontrada
+        if ($stmt->rowCount() > 0) {
+            // Obter os dados da notícia
+            $noticiaEncontrada = $stmt->fetchObject('Noticia');
+
+            // Fechar a conexão com o banco de dados
+            $pdo = null;
+
+            return $noticiaEncontrada;
+        } else {
+            // Caso o ID não exista, retornar null indicando que a notícia não foi encontrada.
+
+            // Fechar a conexão com o banco de dados
+            $pdo = null;
+
+            return null;
+        }
+    } catch (PDOException $e) {
+        // Caso ocorra algum erro na conexão ou na consulta, exibir a mensagem de erro
+        die("Erro na conexão com o banco de dados: " . $e->getMessage());
+    }
+    }
 }
 
 ?>
