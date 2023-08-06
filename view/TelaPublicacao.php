@@ -1,6 +1,9 @@
 <!-- 100% PRONTO -->
 <?php 
 include_once '../model/Noticia.class.php';
+include_once '../model/Categoria.class.php';
+
+$categorias = Categoria::getAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +12,7 @@ include_once '../model/Noticia.class.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="PublicacaoTela.css">
+    <link rel="stylesheet" href="Publicacao.css">
     <script
       src="https://cdn.tiny.cloud/1/p6cepsntwtf4gffjxl409dppeu7zzg5e0hrohycxu9ldemig/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
@@ -26,7 +29,15 @@ include_once '../model/Noticia.class.php';
         </div>
         <div class="inferior">
             <div class="inferior_esquerdo">
-                <p id="menu">Auxílios<br>Bolsas<br>Comunicados<br>Cursos<br>Editais<br>Eventos<br>Oportunidades<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><br><a href="TelaPublicacao.php" id="escrever">Minhas notícias</a><br>Favoritos<img src="bookmarkSF.png" id="bookmarkSF"></p>
+                <div class="menu_topo">
+                <?php foreach($categorias as $categoria){
+                echo "<p><a id='menu' href='TelaCategoria.php?id=" . $categoria->getId() . "'>" . $categoria->getNome(); "</a></p>";
+                }
+                ?>
+                </div>
+                <div class="menu_baixo">
+                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="escrever">Minhas notícias</a></p>
+                </div>
             </div>
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
             < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 

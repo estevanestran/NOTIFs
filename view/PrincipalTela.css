@@ -13,16 +13,12 @@ body {
 
 .superior {
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
-}
-
-.superior_esquerdo {
-    background-color: #042B52;
 }
 
 .superior_direito {
@@ -43,7 +39,7 @@ body {
 
 .inferior {
     background-color: #d9d7d7;
-    height: 140%;
+    height: 88%;
     width: 100%;
     position: absolute;
     top: 12%;
@@ -53,20 +49,79 @@ body {
 .inferior_esquerdo {
     position: relative;
     width: 10%;
-    height: 56%;
-    top: 3%;
+    height: 78.3%;
+    top: 10%;
     left: 2%;
     background-color: #042B52;
     box-shadow: 1px 1px 15px #323232;
 }
 
-.inferior_direito {
+.menu_topo {
+    position: relative;
+    top: 2%;
+}
+
+.menu_baixo {
+    position: relative;
+    top: 64%;
+    left: 2%;
+}
+
+.inferior_direito_principal {
     position: absolute;
     width: 80%;
-    height: 50%;
-    top: 5%;
-    left: 20%;
+    left: 15%;
+    top: 10%;
 }
+
+/*section {
+    position: relative;
+    left: 40%;
+}
+
+article {
+    position: relative;
+    left: 40%;
+}
+
+aside {
+    position: relative;
+    left: 40%;
+}*/
+
+.noticia {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+  }
+  
+.noticia img {
+    max-width: 9em;
+    min-width: 9em;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+section {
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+article {
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+aside {
+    position: relative;
+    left: 2%;
+  }
 
 h1 {
     color: #f3f3f3;
@@ -96,12 +151,38 @@ h5:hover {
 }
 
 p#menu {
-    position: relative;
     padding-left: 6px;
     font-weight: 500;
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
+}
+
+a#titulo {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #323232;
+}
+
+a#menu {
+    padding-left: 6px;
+    font-weight: 500;
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    line-height: 3px;
+}
+
+p#subtitulo {
+    color: #323232;
+    font-weight: 400;
+    font-size: large;
+}
+
+p#data {
+    color: #042B52;
+    font-size: large;
 }
 
 a {
@@ -119,69 +200,4 @@ img#bookmarkSF {
     height: 38px;
     position: relative;
     left: -5%;
-}
-
-input[type=submit]{
-    width: 200px;
-    font-family: 'Noto sans', sans-serif;
-    font-size: larger;
-    color: #042B52;
-    border: 1.5px solid white;
-    border-radius: 15px;
-    position: relative;
-    left: 35%;
-    transition: background-color .4s;
-}
-
-input#botao:hover{
-    background-color: #042B52;
-    color: #f3f3f3;
-    
-}
-
-label {
-    color: #042B52;
-    font-family: 'Noto sans', sans-serif;
-    position: relative;
-    font-size: larger;
-    /*text-shadow: 1.5px 1.5px 1px #042b5280;*/
-}
-
-input[type=text]{
-    width: 85%;
-    height: 33px;
-    border: 1.5px solid white;
-    border-radius: 6px 6px 6px 6px;
-    background-color: white;
-    position: relative;
-}
-
-input#subtitulo {
-    height: 66px;
-}
-
-input[type=checkbox]{
-    position: relative;
-    left: 50%;
-}
-
-select{
-    font-family: 'Noto sans', sans-serif;
-}
-
-input[type=file]{
-    font-family: 'Noto sans', sans-serif;
-}
-
-fieldset {
-    position: absolute;
-    top: 145%;
-    left: 50%;
-}
-
-fieldset > label {
-    position: relative;
-    left: 50%;
-    font-size: large;
-    color: #323232;
 }
