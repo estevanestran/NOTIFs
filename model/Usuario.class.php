@@ -107,5 +107,6 @@ include_once 'conexao.php';
     
             return $lista;
         }
+
     }
 ?>
