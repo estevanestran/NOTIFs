@@ -37,6 +37,16 @@ include_once 'conexao.php';
               return $result['nome'] ?? '';
         }
 
+        public function getCategoriaId() {
+            $pdo = conexao();
+            $stmt = $pdo->prepare('SELECT id_categoria FROM categoria_noticia WHERE id_noticia = :id_noticia');
+            $stmt->bindValue(':id_noticia', $this->id_noticia);
+            $stmt->execute();
+        
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['id_categoria'] ?? null;
+        }
+
         public function save() {
             $pdo = conexao();
     

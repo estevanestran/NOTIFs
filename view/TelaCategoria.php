@@ -4,7 +4,12 @@ include_once '../model/Categoria.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Noticia.class.php';
 
-$noticias = Noticia::getAll();
+if(isset($_GET['id'])) {
+    $categoria_id = $_GET['id'];
+    $noticias = Noticia::getByCategoryId($categoria_id); // Implemente a função que busca notícias por categoria
+} else {
+    $noticias = Noticia::getAll();
+}
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();
 

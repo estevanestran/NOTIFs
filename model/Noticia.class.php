@@ -172,6 +172,19 @@ class Noticia{
         die("Erro na conexão com o banco de dados: " . $e->getMessage());
     }
     }
+
+    public static function getByCategoryId($categoria_id) {
+        $pdo = conexao();
+        $sql = "SELECT * FROM noticia n 
+                INNER JOIN categoria_noticia cn ON n.id = cn.id_noticia
+                WHERE cn.id_categoria = :categoria_id";
+    
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':categoria_id', $categoria_id, PDO::PARAM_INT);
+        $stmt->execute();
+    
+        return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+    }
 }
 
 ?>

@@ -15,7 +15,7 @@ $categoriasMenu = Categoria::getAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="PrincipalTela.css">
+    <link rel="stylesheet" href="Principal.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -37,7 +37,7 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 </div>
                 <div class="menu_baixo">
-                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="escrever">Minhas notícias</a></p>
+                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
                 </div>
             </div>
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
@@ -55,9 +55,13 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 <?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><img src='" . $noticia->getFoto() . "'></a>"; ?>
                 <nav>
-                <section><?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'>" . $noticia->getTitulo(); "</a>"?></section>
+                <section><a id='titulo' href='TelaNoticia.php?id=<?php echo $noticia->getId(); ?>'><?php echo $noticia->getTitulo(); ?></a></section>
                 <article><p id="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
-                <aside><p id="data"><?php echo $noticia->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p></aside>
+                <aside><p id="data">
+                        <?php echo $noticia->getData(); ?> &#8226; 
+                        <a href='TelaCategoria.php?id=<?php echo $categoria_noticia->getCategoriaId(); ?>'><?php echo $categoria_nome; ?></a>
+                        </p>
+                </aside>
                 </nav>
                 <?php } ?>
             </div>

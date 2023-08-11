@@ -3,7 +3,7 @@ include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
 
-$noticias = Noticia::getAll();
+
 $categorias = Categoria::getAll();
 
 if (isset($_GET['id'])){
