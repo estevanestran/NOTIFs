@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 function conexao(){
  try {
     $pdo = new PDO('mysql:host=localhost;dbname=tcc;charset=utf8', 'root', '');
