@@ -1,7 +1,7 @@
 <!-- 100% PRONTO -->
 <?php 
 include_once '../model/conexao.php';
-if(isset($_Session['id']) && !empty($_SESSION['id'])):
+if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
 include_once '../controller/verifica.php';
 include_once '../model/Noticia.class.php';
