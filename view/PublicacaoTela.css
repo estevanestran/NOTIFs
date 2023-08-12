@@ -26,19 +26,12 @@ body {
 }
 
 .superior_direito {
-    background-color: #d9d7d7;
-    width: 170px;
+    background-color: #042B52;
+    width: 300px;
     position: absolute;
     height: 35px;
-    border: 1.5px solid white;
-    border-radius: 15px;
     top: 30%;
-    left: 83.5%;
-    transition: background-color .4s;
-}
-
-.superior_direito:hover{
-    background-color: #042B52;
+    right: 5%;
 }
 
 .inferior {
@@ -53,8 +46,8 @@ body {
 .inferior_esquerdo {
     position: relative;
     width: 10%;
-    height: 56%;
-    top: 3%;
+    height: 77%;
+    top: 5%;
     left: 2%;
     background-color: #042B52;
     box-shadow: 1px 1px 15px #323232;
@@ -62,13 +55,12 @@ body {
 
 .menu_topo {
     position: relative;
-    top: 2%;
+    padding-top: 2%;
 }
 
 .menu_baixo {
-    position: relative;
-    top: 64%;
-    left: 2%;
+    position: absolute;
+    bottom: 0.1%;
 }
 
 .inferior_direito {
@@ -93,26 +85,13 @@ h1 {
 }
 
 h5 {
-    color: #042B52;
+    color: #d9d7d7;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
     font-size: x-large;
     height: 20px;
     padding-bottom: 15px;
     text-align: center;
-}
-
-h5:hover {
-    color: #d9d7d7;
-}
-
-p#menu {
-    position: relative;
-    padding-left: 6px;
-    font-weight: 500;
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
 }
 
 a {
@@ -129,9 +108,19 @@ a#menu {
     line-height: 3px;
 }
 
+.menu_topo p {
+    margin-bottom: 5px;
+}
+
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+}
+
+a#minhas {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 img#bookmarkSF {

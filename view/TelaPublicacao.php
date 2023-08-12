@@ -16,11 +16,12 @@ $categorias = Categoria::getAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="Publicacao.css">
+    <link rel="stylesheet" href="PublicacaoTela.css">
     <script
       src="https://cdn.tiny.cloud/1/p6cepsntwtf4gffjxl409dppeu7zzg5e0hrohycxu9ldemig/tinymce/6/tinymce.min.js"
       referrerpolicy="origin"
     ></script>
+    <script src="https://kit.fontawesome.com/f61e3910a0.js" crossorigin="anonymous"></script>
     <title>Notifs</title>
 </head>
 <body>
@@ -28,7 +29,7 @@ $categorias = Categoria::getAll();
         <div class="superior">
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
             <div class="superior_direito">
-                <a href="TelaPerfil.html"><h5><?php echo $nomeUser; ?></h5></a>
+                <a href="TelaPerfil.html"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
             </div>
         </div>
         <div class="inferior">
@@ -40,7 +41,7 @@ $categorias = Categoria::getAll();
                 ?>
                 </div>
                 <div class="menu_baixo">
-                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="escrever">Minhas notícias</a></p>
+                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
                 </div>
             </div>
             <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
