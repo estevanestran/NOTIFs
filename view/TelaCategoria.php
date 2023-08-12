@@ -1,5 +1,8 @@
 <?php 
+include_once '../model/conexao.php';
+if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
+    include_once '../controller/verifica.php';
 include_once '../model/Categoria.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Noticia.class.php';
@@ -21,7 +24,7 @@ $categoriasMenu = Categoria::getAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="PrincipalTela.css">
+    <link rel="stylesheet" href="CategoriaTela.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -31,7 +34,7 @@ $categoriasMenu = Categoria::getAll();
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
             </div>
             <div class="superior_direito">
-                <a href="TelaPerfil.html"><h5>Nome usuário</h5></a>
+                <a href="TelaPerfil.html"><h5><?php echo $nomeUser; ?></h5></a>
             </div>
         </div>
         <div class="inferior">
@@ -67,3 +70,4 @@ $categoriasMenu = Categoria::getAll();
     </div>
 </body>
 </html>
+<?php else: header('Location: index.html'); endif;?>

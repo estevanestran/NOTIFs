@@ -1,4 +1,8 @@
 <?php 
+include_once '../model/conexao.php';
+if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
+
+include_once '../controller/verifica.php';
 include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
@@ -25,7 +29,7 @@ $categoriasMenu = Categoria::getAll();
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
             </div>
             <div class="superior_direito">
-                <a href="TelaPerfil.html"><h5>Nome usuário</h5></a>
+                <a href="TelaPerfil.html"><h5><?php echo $nomeUser; ?></h5></a>
             </div>
         </div>
         <div class="inferior">
@@ -70,3 +74,4 @@ $categoriasMenu = Categoria::getAll();
     </div>
 </body>
 </html>
+<?php else: header('Location: index.html'); endif;?>

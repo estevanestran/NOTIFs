@@ -128,5 +128,22 @@ include_once 'conexao.php';
             }
         }
 
+        public function pegaNome($id){
+            $pdo = conexao();
+
+            $array = array();
+
+            $sql = "SELECT nome FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("id", $id);
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $array = $sql->fetch();
+            }
+
+            return $array;
+        }
+
     }
 ?>
