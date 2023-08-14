@@ -77,9 +77,12 @@ if (isset($_GET['id'])){
                 $categoria_nome = $categoria_noticia->getNome();
                 ?>
                 <nav>
-                <?php echo "<h2 id='titulo'>" . $noticiaEncontrada->getTitulo(); "</h2>"?>
+                <h2 id="titulo"><?php echo $noticiaEncontrada->getTitulo();?></h2>
                 <p id="subtitulo"><?php echo $noticiaEncontrada->getSubtitulo(); ?></p>
-                <p id="data"><?php echo $noticiaEncontrada->getData(); ?> &#8226; <?php echo $categoria_nome; ?></p>
+                <p id="data">
+                        <?php echo $noticiaEncontrada->getData(); ?> &#8226; 
+                        <a href='TelaCategoria.php?id=<?php echo $categoria_noticia->getCategoriaId(); ?>'><?php echo $categoria_nome; ?></a>
+                </p>
                 <div class="imagem">
                     <?php echo "<img src='" . $noticiaEncontrada->getFoto() . "'>"; ?>
                 </div>

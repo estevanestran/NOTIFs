@@ -47,7 +47,7 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 </div>
                 <div class="menu_baixo">
-                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="escrever">Minhas notícias</a></p>
+                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
                 </div>
             </div>
         <div class="inferior_direito_principal">

@@ -27,7 +27,7 @@ body {
     position: absolute;
     height: 35px;
     top: 30%;
-    right: 5%;
+    right: 2%;
 }
 
 .inferior {
@@ -120,7 +120,6 @@ h5 {
     font-size: x-large;
     height: 20px;
     padding-bottom: 15px;
-    text-align: center;
 }
 
 
@@ -177,11 +176,4 @@ a#minhas {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     padding-left: 5%;
-}
-
-img#bookmarkSF {
-    width: 40px;
-    height: 38px;
-    position: relative;
-    left: -5%;
 }
