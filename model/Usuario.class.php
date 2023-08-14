@@ -64,12 +64,13 @@ include_once 'conexao.php';
             $pdo = conexao();
 
             try{
+                $senhaHash = password_hash($this->senha, PASSWORD_DEFAULT); // Gera um hash da senha
                 $stmt = $pdo->prepare('INSERT INTO usuario (id, nome, senha, email, estado, id_curso) VALUES(:id, :nome, :senha, :email, :estado, :id_curso)');
 
                 $stmt->execute([
                     ':id' => $this->id,
                     ':nome' => $this->nome,
-                    ':senha' => $this->senha,
+                    ':senha' => $senhaHash,
                     ':email' => $this->email,
                     ':estado' => 'comum',
                     ':id_curso' => $this->id_curso,
@@ -108,20 +109,18 @@ include_once 'conexao.php';
             return $lista;
         }
 
-        public function login($email, $senha){
+        public function login($email, $senha) {
             $pdo = conexao();
-
-            $sql = "SELECT * FROM usuario WHERE email = :email AND senha = :senha";
-            $sql = $pdo->prepare($sql);
-            $sql->bindValue("email", $email);
-            $sql->bindValue("senha", $senha);
-            $sql->execute();
-
-            if($sql->rowCount() > 0){
-                $dado = $sql->fetch();
-
-                $_SESSION['id'] = $dado['id'];
-
+        
+            $sql = "SELECT id, senha FROM usuario WHERE email = :email";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(":email", $email);
+            $stmt->execute();
+            
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+            if ($user && password_verify($senha, $user['senha'])) {
+                $_SESSION['id'] = $user['id'];
                 return true;
             } else {
                 return false;
@@ -143,6 +142,17 @@ include_once 'conexao.php';
             }
 
             return $array;
+        }
+
+        public function pegaEstado($id) {
+            $pdo = conexao();
+            $query = "SELECT estado FROM usuario WHERE id = :id";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['estado'];
         }
 
     }

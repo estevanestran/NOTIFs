@@ -168,15 +168,36 @@ a {
     font-weight: normal;
 }
 
+a#solicitacoes {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#denuncias {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+a#pedido {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 a#minhas {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     padding-left: 5%;
+}
+
+.menu_baixo p {
+    margin-bottom: 5px;
 }
 
 img#bookmarkSF {

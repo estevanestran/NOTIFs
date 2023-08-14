@@ -61,14 +61,19 @@ if (isset($_GET['id'])){
                 ?>
                 </div>
                 <div class="menu_baixo">
-                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php if ($isComum): ?>
+                    <p><a href="TelaPedir.php" id="pedido">Solicitar cargo</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
+                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin || $isPromoted): ?>
+                    <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
+                    <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php endif; ?>
                 </div>
             </div>
-            <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
-            < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
-            < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
-            <!--<div class="foto">
-            </div>-->
         <div class="inferior_direito_principal">
             <div class="noticia">
             <?php

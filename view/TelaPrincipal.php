@@ -20,7 +20,7 @@ $categoriasMenu = Categoria::getAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f61e3910a0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="PrincipalTela.css">
+    <link rel="stylesheet" href="Principal.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -42,14 +42,19 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 </div>
                 <div class="menu_baixo">
-                <a href="TelaPublicacao.php" id="escrever" >Escrever notícia</a><p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php if ($isComum): ?>
+                    <p><a href="TelaPedir.php" id="pedido">Solicitar cargo</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
+                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin || $isPromoted): ?>
+                    <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
+                    <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php endif; ?>
                 </div>
             </div>
-            <!-- COMANDO DE OCULTAMENTO DAS OPÇÕES ECREVER E MINHAS NOTÍCIAS (ANTES TAVA FUNCIONANDO MAS PAROU POR ALGUM MOTIVO) 
-            < ?php session_start(); echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?> 
-            < ?php echo isset($_SESSION['usuario_comum']) && $_SESSION['usuario_comum'] ? 'style="display: inline;"' : 'style="display: none;"'; ?>-->
-            <!--<div class="foto">
-            </div>-->
         <div class="inferior_direito_principal">
             <div class="noticia">
                 <?php foreach ($noticias as $noticia) {
