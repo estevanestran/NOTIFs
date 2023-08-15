@@ -115,6 +115,7 @@ a#menu {
 a#solicitacoes {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 a#denuncias {
@@ -126,7 +127,6 @@ a#denuncias {
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
 }
 
 a#minhas {

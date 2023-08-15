@@ -64,13 +64,13 @@ if (isset($_GET['id'])){
                     <?php if ($isComum): ?>
                     <p><a href="TelaPedir.php" id="pedido">Solicitar cargo</a></p>
                     <?php endif; ?>
-                    <?php if ($isAdmin): ?>
-                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
-                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
-                    <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
                     <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
+                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
                     <?php endif; ?>
                 </div>
             </div>
