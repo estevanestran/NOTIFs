@@ -69,6 +69,21 @@ include_once 'conexao.php';
             return $this->email;
         }
 
+        public function getNomeCurso(){
+            $pdo = conexao();
+
+            $sql = $pdo->prepare("SELECT nome FROM curso WHERE id = :id_curso");
+            $sql->bindValue(":id_curso", $this->getIdCurso());
+            $sql->execute();
+
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            if ($result !== false && isset($result['nome'])) {
+                return " - " . $result['nome'];
+            } else {
+                return " - Servidor";
+            }
+        }
+
         public function save(){
             $pdo = conexao();
 
@@ -106,6 +121,40 @@ include_once 'conexao.php';
             $pdo = conexao();
             $lista = [];
             foreach($pdo->query('SELECT * FROM usuario') as $linha){
+                $usuario = new Usuario();
+                $usuario->setNome($linha['nome']);
+                $usuario->setEmail($linha['email']);
+                $usuario->setSenha($linha['senha']);
+                $usuario->setId($linha['id']);
+                $usuario->setEstado($linha['estado']);
+                $usuario->setIdCurso($linha['id_curso']);
+                $lista[] = $usuario;
+            }
+    
+            return $lista;
+        }
+
+        public static function getPedidos(){
+            $pdo = conexao();
+            $lista = [];
+            foreach($pdo->query('SELECT * FROM usuario WHERE pedido = 1') as $linha){
+                $usuario = new Usuario();
+                $usuario->setNome($linha['nome']);
+                $usuario->setEmail($linha['email']);
+                $usuario->setSenha($linha['senha']);
+                $usuario->setId($linha['id']);
+                $usuario->setEstado($linha['estado']);
+                $usuario->setIdCurso($linha['id_curso']);
+                $lista[] = $usuario;
+            }
+    
+            return $lista;
+        }
+
+        public static function getPromovidos(){
+            $pdo = conexao();
+            $lista = [];
+            foreach($pdo->query('SELECT * FROM usuario WHERE estado = "administrador"') as $linha){
                 $usuario = new Usuario();
                 $usuario->setNome($linha['nome']);
                 $usuario->setEmail($linha['email']);

@@ -60,8 +60,6 @@ $categoriasMenu = Categoria::getAll();
                             alert("Sua solicitação foi encaminhada para o administrador!");
                         <?php elseif($pediu): ?>
                             alert("A sua solicitação está sendo analisada pelo administrador.");
-                        <?php else: ?>
-                            alert("Teste");
                         <?php endif;?>
                     }
                 </script>
