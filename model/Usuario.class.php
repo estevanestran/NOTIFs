@@ -165,5 +165,16 @@ include_once 'conexao.php';
             return $result['estado'];
         }
 
+        public function pegaPedido($id) {
+            $pdo = conexao();
+            $sql = "SELECT pedido FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindParam(':id', $id, PDO::PARAM_INT);
+            $sql->execute();
+
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            return $result['pedido'];
+        }
+
     }
 ?>

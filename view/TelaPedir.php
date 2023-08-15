@@ -53,7 +53,18 @@ $categoriasMenu = Categoria::getAll();
         <div class="inferior_direito_principal">
                 <h2>Quer publicar notícias? Solicite aqui.</h2>
                 <p>Tenha em mente que apenas servidores e membros do Grêmio Estudantil terão as suas solicitações aceitas.</p>
-                <a id="pedido" href="">Quero publicar!</a>
+                <a id="pedir" href="../controller/pedir.php" onclick="avisar()">Quero publicar!</a>
+                <script>
+                    function avisar() {
+                        <?php if ($naoPediu): ?>
+                            alert("Sua solicitação foi encaminhada para o administrador!");
+                        <?php elseif($pediu): ?>
+                            alert("A sua solicitação está sendo analisada pelo administrador.");
+                        <?php else: ?>
+                            alert("Teste");
+                        <?php endif;?>
+                    }
+                </script>
         </div>
     </div>
     </div>

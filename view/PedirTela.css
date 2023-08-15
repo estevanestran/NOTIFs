@@ -95,12 +95,14 @@ h2 {
     font-size: xx-large;
     font-weight: 600;
     color: #323232;
+    text-align: center;
 }
 
 .inferior_direito_principal p {
     font-family: 'Noto sans', sans-serif;
     color: #323232; 
     font-size: large;
+    text-align: center;
 }
 
 a#menu {
@@ -152,6 +154,21 @@ a#minhas {
     margin-bottom: 5px;
 }
 
-a#pedido {
+a#pedir {
+    width: 400px;
+    font-family: 'Noto sans', sans-serif;
+    font-size: x-large;
     color: #042B52;
+    border: 1.5px solid #042B52;
+    border-radius: 15px;
+    padding: 3px 5px 3px 5px;
+    position: relative;
+    transition: background-color .4s;
+    text-align: center;
+    left: 40%;
+}
+
+a#pedir:hover {
+    background-color: #042B52;
+    color: #f3f3f3;
 }
