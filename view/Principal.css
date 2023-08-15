@@ -182,12 +182,12 @@ a#denuncias {
 a#pedido {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
 }
 
 a#minhas {

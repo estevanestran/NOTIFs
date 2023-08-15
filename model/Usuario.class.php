@@ -154,7 +154,7 @@ include_once 'conexao.php';
         public static function getPromovidos(){
             $pdo = conexao();
             $lista = [];
-            foreach($pdo->query('SELECT * FROM usuario WHERE estado = "administrador"') as $linha){
+            foreach($pdo->query('SELECT * FROM usuario WHERE estado = "promovido"') as $linha){
                 $usuario = new Usuario();
                 $usuario->setNome($linha['nome']);
                 $usuario->setEmail($linha['email']);

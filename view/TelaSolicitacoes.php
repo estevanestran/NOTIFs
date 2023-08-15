@@ -72,9 +72,16 @@ $promovidos = Usuario::getPromovidos();
             <h2>Usuários promovidos</h2>
             <div class="promovidos">
                     <?php foreach ($promovidos as $usuario) {?>
-                        <p id="nome"><?php echo "<strong>Nome:</strong> " . $usuario->getNome() . $usuario->getNomeCurso();?><a href="">Remover</a></p>
-                        <p><?php echo "<strong>E-mail:</strong> " . $usuario->getEmail(); ?></p>
+                        <div class="pedido">
+                            <p class="nome">
+                            <?php echo "<strong>Nome:</strong> " . $usuario->getNome() . " (" . $usuario->getEmail() . ") " . $usuario->getNomeCurso();?>
+                            <div class="links">
+                            <?php echo "<a class='acao' href='../controller/cargos.php?acao=remover&id=" . $usuario->getId() . "'>Remover</a>" ?>
+                            </div>
+                            </p>
+                        </div>
                     <?php } ?>
+                    
             </div>
         </div>
     </div>

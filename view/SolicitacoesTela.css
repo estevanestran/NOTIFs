@@ -158,6 +158,12 @@ a#minhas {
     font-size: large;
 }
 
+.promovidos {
+    font-family: 'Noto sans', sans-serif;
+    color: #323232;
+    font-size: large;
+}
+
 .pedido {
     display: flex;
     align-items: flex-start;
@@ -197,6 +203,11 @@ a#minhas {
 }
 
 .pedidos a:hover {
+    background-color: #042B52;
+    color: #f3f3f3;
+}
+
+.promovidos a:hover {
     background-color: #042B52;
     color: #f3f3f3;
 }
