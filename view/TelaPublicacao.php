@@ -53,6 +53,7 @@ $categorias = Categoria::getAll();
                     <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
                     <?php endif; ?>
                 </div>
+            </div>
             <div class="inferior_direito">
               <form action="../controller/noticia.php?acao=publicar" method="post" enctype="multipart/form-data">
                 <label for="titulo">TÍTULO DA NOTÍCIA</label><br>

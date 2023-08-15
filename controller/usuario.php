@@ -9,6 +9,7 @@ if ($acao == 'cadastrar'){
     $usuario->setEmail($_POST['email']);
     $usuario->setSenha($_POST['senha']);
     $usuario->setEstado($_POST['estado']);
+    $usuario->setPedido($_POST['pedido']);
     // Obtém o nome do curso selecionado
     $nomeCurso = $_POST['curso'];
 

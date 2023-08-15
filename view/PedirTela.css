@@ -62,50 +62,9 @@ body {
 .inferior_direito_principal {
     position: absolute;
     width: 80%;
-    left: 19%;
+    left: 15%;
     top: 10%;
 }
-
-.noticia {
-    position: relative;
-    max-width: 1100px;
-  }
-
-.imagem {
-    position: relative;
-    max-width: 1100px;
-    top: 20%;
-}
-  
-.imagem img {
-    width: 50%;
-    display: block;
-    margin-left: 22%;
-    margin-top: auto;
-  }
-
-.corpo {
-    position: relative;
-}
-  
-section {
-    position: relative;
-    left: 2%;
-    min-width: 800px;
-    max-width: 800px;
-  }
-  
-article {
-    position: relative;
-    left: 2%;
-    min-width: 800px;
-    max-width: 800px;
-  }
-  
-aside {
-    position: relative;
-    left: 2%;
-  }
 
 h1 {
     color: #f3f3f3;
@@ -120,14 +79,6 @@ h1 {
     font-weight: 700;
 }
 
-h2 {
-    color: #323232;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
-    height: 50px;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-}
-
 h5 {
     color: #d9d7d7;
     font-family: 'Noto Sans', sans-serif;
@@ -138,10 +89,17 @@ h5 {
     text-align: center;
 }
 
-h6 {
-    font-family: 'Noto Sans', sans-serif;
+
+h2 {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
     color: #323232;
-    padding-top: 20px;
+}
+
+.inferior_direito_principal p {
+    font-family: 'Noto sans', sans-serif;
+    color: #323232; 
     font-size: large;
 }
 
@@ -149,46 +107,12 @@ a#menu {
     padding-left: 6px;
     font-weight: 500;
     color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
-    line-height: 3px;
 }
 
 .menu_topo p {
+    font-family: 'Noto Sans', sans-serif;
     margin-bottom: 5px;
-}
-
-a#titulo {
-    font-family: 'Noto sans', sans-serif;
-    font-size: xx-large;
-    font-weight: 600;
-    color: #323232;
-}
-
-p#subtitulo {
-    color: #323232;
-    font-weight: 400;
-    font-size: large;
-    padding-top: 10px;
-}
-
-p#corpo {
-    color: #323232;
-    font-size: small;
-}
-
-p#data {
-    color: #042B52;
-    font-size: large;
-}
-
-p#data > a {
-    color: #042B52;
-    font-size: large;
-}
-
-p#data > a:hover {
-    text-decoration: underline;
 }
 
 a {
@@ -207,6 +131,11 @@ a#denuncias {
     padding-left: 5%;
 }
 
+a#pedido {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
@@ -223,17 +152,6 @@ a#minhas {
     margin-bottom: 5px;
 }
 
-img#bookmarkSF {
-    width: 40px;
-    height: 38px;
-    position: relative;
-    left: -5%;
-}
-
-@media (max-width: 75%) {
-    a {
-        text-decoration: none;
-        font-weight: normal;
-        color: red;
-    }
+a#pedido {
+    color: #042B52;
 }

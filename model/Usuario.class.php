@@ -9,6 +9,7 @@ include_once 'conexao.php';
         private $senha;
         private $estado;
         private $id_curso;
+        private $pedido;
 
         public function getId(){
             return $this->id;
@@ -50,6 +51,14 @@ include_once 'conexao.php';
             return $this->estado;
         }
 
+        public function setPedido($pedido){
+            $this->pedido = $pedido;
+        }
+
+        public function getPedido(){
+            return $this->pedido;
+        }
+
         public function setEmail($email){
             if(str_contains($email, 'canoas.ifrs.edu.br')){
                 $this->email = $email;
@@ -65,7 +74,7 @@ include_once 'conexao.php';
 
             try{
                 $senhaHash = password_hash($this->senha, PASSWORD_DEFAULT); // Gera um hash da senha
-                $stmt = $pdo->prepare('INSERT INTO usuario (id, nome, senha, email, estado, id_curso) VALUES(:id, :nome, :senha, :email, :estado, :id_curso)');
+                $stmt = $pdo->prepare('INSERT INTO usuario (id, nome, senha, email, estado, id_curso, pedido) VALUES(:id, :nome, :senha, :email, :estado, :id_curso, :pedido)');
 
                 $stmt->execute([
                     ':id' => $this->id,
@@ -74,6 +83,7 @@ include_once 'conexao.php';
                     ':email' => $this->email,
                     ':estado' => 'comum',
                     ':id_curso' => $this->id_curso,
+                    ':pedido' => 0,
                 ]);
                 
                 return true;
