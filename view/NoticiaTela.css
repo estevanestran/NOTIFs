@@ -57,6 +57,7 @@ body {
 .menu_baixo {
     position: absolute;
     bottom: 0.1%;
+    width: 102%;
 }
 
 .inferior_direito_principal {
@@ -155,6 +156,7 @@ a#menu {
 }
 
 .menu_topo p {
+    font-family: 'Noto sans', sans-serif;
     margin-bottom: 5px;
 }
 
@@ -217,6 +219,11 @@ a#minhas {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     padding-left: 5%;
+}
+
+a#pedido {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .menu_baixo p {

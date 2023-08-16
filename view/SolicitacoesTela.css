@@ -108,6 +108,8 @@ a#menu {
     font-weight: 500;
     color: #f3f3f3;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 3px;
 }
 
 .menu_topo p {

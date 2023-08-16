@@ -35,7 +35,7 @@ if ($acao == 'cadastrar'){
     }
     $usuario->save();
     if ($usuario->save()) {
-        $_SESSION['usuario_comum'] = true;
+        $_SESSION['id'] = true;
         exit;
     }
     header("Location: ../view/TelaPrincipal.php");

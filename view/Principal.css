@@ -57,6 +57,7 @@ body {
 .menu_baixo {
     position: absolute;
     bottom: 0.1%;
+    width: 102%;
 }
 
 .inferior_direito_principal {
@@ -137,6 +138,7 @@ a#menu {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
     text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    line-height: 3px;
 }
 
 .menu_topo p {
@@ -171,6 +173,7 @@ a {
 a#solicitacoes {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 a#denuncias {
@@ -182,7 +185,6 @@ a#denuncias {
 a#pedido {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
 }
 
 a#escrever {

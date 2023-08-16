@@ -61,6 +61,7 @@ body {
 .menu_baixo {
     position: absolute;
     bottom: 0.1%;
+    width: 102%;
 }
 
 .inferior_direito {
