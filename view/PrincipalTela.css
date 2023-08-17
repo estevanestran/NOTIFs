@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&display=swap');
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #d9d7d7;
+}
+
+.superior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12%;
+    background-color: #042B52;
+    border: 2.7px solid #042B52;
+}
+
+.superior_direito {
+    background-color: #042B52;
+    width: 300px;
+    position: absolute;
+    height: 35px;
+    top: 30%;
+    right: 5%;
+}
+
+.inferior {
+    background-color: #d9d7d7;
+    height: 88%;
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    left: 0;
+}
+
+.inferior_esquerdo {
+    position: relative;
+    width: 10%;
+    height: 82%;
+    top: 10%;
+    left: 2%;
+    background-color: #042B52;
+    box-shadow: 1px 1px 15px #323232;
+}
+
+.menu_topo {
+    position: relative;
+    padding-top: 2%;
+}
+
+.menu_baixo {
+    position: absolute;
+    bottom: 0.1%;
+}
+
+.inferior_direito_principal {
+    position: absolute;
+    width: 80%;
+    left: 15%;
+    top: 10%;
+}
+
+.noticia {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+  }
+  
+.noticia img {
+    max-width: 9em;
+    min-width: 9em;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+section {
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+article {
+    position: relative;
+    left: 2%;
+    min-width: 800px;
+    max-width: 800px;
+  }
+  
+aside {
+    position: relative;
+    left: 2%;
+  }
+
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
+}
+
+h5 {
+    color: #d9d7d7;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-size: x-large;
+    height: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+
+a#titulo {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #323232;
+}
+
+a#menu {
+    padding-left: 6px;
+    font-weight: 500;
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+}
+
+.menu_topo p {
+    margin-bottom: 5px;
+}
+
+p#subtitulo {
+    color: #323232;
+    font-weight: 400;
+    font-size: large;
+}
+
+p#data {
+    color: #042B52;
+    font-size: large;
+}
+
+p#data > a {
+    color: #042B52;
+    font-size: large;
+}
+
+p#data > a:hover {
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a#escrever {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#minhas {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+img#bookmarkSF {
+    width: 40px;
+    height: 38px;
+    position: relative;
+    left: -5%;
+}

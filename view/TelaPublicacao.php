@@ -61,7 +61,7 @@ $categorias = Categoria::getAll();
                 <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>
                   <input type="text" id="subtitulo" name="subtitulo" required> <br><br>
                 <label for="corpo">CORPO DA NOTÍCIA</label><br>
-                <textarea id="corpo" name="corpo" style="width: 85%;" required></textarea>
+                <textarea id="corpo" name="corpo" style="width: 85%;"></textarea>
                 <br>
                 <label for="categoria">CATEGORIA DA NOTÍCIA</label>
                 <select name="categoria" id="categoria" required>
@@ -106,7 +106,7 @@ $categorias = Categoria::getAll();
         height: 500,
         menubar: false,
         selector: 'textarea',
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount',
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         })
     </script>

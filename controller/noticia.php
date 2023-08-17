@@ -1,13 +1,18 @@
 <?php 
+if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
 
+    include_once '../model/Usuario.class.php';
+    $u = new Usuario();
+
+    $idUser = $u->pegaId($_SESSION['id']);
+
+}
 $acao = $_GET['acao'];
 include_once '../model/Noticia.class.php';
 include_once '../model/Curso_noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
-include_once '../model/Usuario.class.php';
 
-if($acao=='publicar'){
-    //$ultimoUsuario = $usuario->getId();
+if($acao === 'publicar'){
 
     $noticia = new Noticia();
     $noticia->setTitulo($_POST['titulo']);
@@ -15,7 +20,7 @@ if($acao=='publicar'){
     $noticia->setCorpo($_POST['corpo']);
     $noticia->setData($noticia->getCurrentDate());
     $noticia->setFoto($_FILES['foto']['tmp_name']);
-    //$noticia->setIdUsuario($_POST[$ultimoUsuario]);
+    $noticia->setIdUsuario($idUser);
     $noticia->save();
 
     $ultimoID = $noticia->getId();
@@ -50,20 +55,14 @@ if($acao=='publicar'){
         $stmt = $pdo->prepare('SELECT id FROM curso WHERE nome = :curso');
         $stmt->execute([':curso' => $nomeCurso]);
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        // Verifica se foi encontrado o ID do curso
             if ($resultado) {
                 $idCurso = $resultado['id'];
-            // Define o ID do curso no objeto Usuario
                 $CursoNoticia->setId_curso($idCurso);
                 $CursoNoticia->setId_noticia($ultimoID);
                 $CursoNoticia->save();
-            } else {
-            // Curso não encontrado, trata o erro conforme necessário
             }
         }
     }
-    //var_dump($noticia);
     header('Location:../view/TelaPrincipal.php');
 
 }

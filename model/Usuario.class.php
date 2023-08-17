@@ -128,6 +128,7 @@ include_once 'conexao.php';
                 $usuario->setId($linha['id']);
                 $usuario->setEstado($linha['estado']);
                 $usuario->setIdCurso($linha['id_curso']);
+                $usuario->setPedido($linha['pedido']);
                 $lista[] = $usuario;
             }
     
@@ -145,6 +146,7 @@ include_once 'conexao.php';
                 $usuario->setId($linha['id']);
                 $usuario->setEstado($linha['estado']);
                 $usuario->setIdCurso($linha['id_curso']);
+                $usuario->setPedido($linha['pedido']);
                 $lista[] = $usuario;
             }
     
@@ -162,6 +164,7 @@ include_once 'conexao.php';
                 $usuario->setId($linha['id']);
                 $usuario->setEstado($linha['estado']);
                 $usuario->setIdCurso($linha['id_curso']);
+                $usuario->setPedido($linha['pedido']);
                 $lista[] = $usuario;
             }
     
@@ -201,6 +204,18 @@ include_once 'conexao.php';
             }
 
             return $array;
+        }
+
+        public function pegaId($id){
+            $pdo = conexao();
+
+            $sql = "SELECT id FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindParam(':id', $id, PDO::PARAM_INT);
+            $sql->execute();
+
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            return $result['id'];
         }
 
         public function pegaEstado($id) {

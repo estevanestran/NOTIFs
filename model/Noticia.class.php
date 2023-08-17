@@ -144,31 +144,23 @@ class Noticia{
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT id, titulo, subtitulo, corpo, data_noticia, foto FROM noticia WHERE id = ?";
+        $sql = "SELECT id, titulo, subtitulo, corpo, data_noticia, id_usuario, foto FROM noticia WHERE id = ?";
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-
-        // Verificar se a notícia foi encontrada
         if ($stmt->rowCount() > 0) {
-            // Obter os dados da notícia
             $noticiaEncontrada = $stmt->fetchObject('Noticia');
 
-            // Fechar a conexão com o banco de dados
             $pdo = null;
 
             return $noticiaEncontrada;
         } else {
-            // Caso o ID não exista, retornar null indicando que a notícia não foi encontrada.
-
-            // Fechar a conexão com o banco de dados
             $pdo = null;
 
             return null;
         }
     } catch (PDOException $e) {
-        // Caso ocorra algum erro na conexão ou na consulta, exibir a mensagem de erro
         die("Erro na conexão com o banco de dados: " . $e->getMessage());
     }
     }
@@ -184,6 +176,18 @@ class Noticia{
         $stmt->execute();
     
         return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+    }
+
+    public function pegaNomeAutor($id){
+        $pdo = conexao();
+
+        $sql = "SELECT nome FROM usuario WHERE id = :id_usuario";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(':id_usuario', $id, PDO::PARAM_INT);
+        $sql->execute();
+
+        $result = $sql->fetch(PDO::FETCH_ASSOC);
+        return " &#8226; Publicado por " . $result['nome'];
     }
 }
 

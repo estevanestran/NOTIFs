@@ -2,7 +2,7 @@
 include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
-    include_once '../controller/verifica.php';
+include_once '../controller/verifica.php';
 include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
@@ -24,7 +24,6 @@ if (isset($_GET['id'])){
             echo "Notícia não encontrada.";
         }
     } catch (PDOException $e) {
-        // Caso ocorra algum erro na conexão ou na busca, exibir a mensagem de erro
         echo "Erro na conexão com o banco de dados: " . $e->getMessage();
     }
 } else {
@@ -86,7 +85,10 @@ if (isset($_GET['id'])){
                 <p id="subtitulo"><?php echo $noticiaEncontrada->getSubtitulo(); ?></p>
                 <p id="data">
                         <?php echo $noticiaEncontrada->getData(); ?> &#8226; 
-                        <a href='TelaCategoria.php?id=<?php echo $categoria_noticia->getCategoriaId(); ?>'><?php echo $categoria_nome; ?></a>
+                        <a href='TelaCategoria.php?id=<?php echo $categoria_noticia->getCategoriaId(); ?>'><?php echo $categoria_nome; ?></a><?php $autorID = $noticiaEncontrada->getIdUsuario(); // Obtém o ID do autor
+                                $nomeAutor = $noticiaEncontrada->pegaNomeAutor($autorID); // Obtém o nome do autor
+                                if($nomeAutor){
+                                echo $nomeAutor;} ?>
                 </p>
                 <div class="imagem">
                     <?php echo "<img src='" . $noticiaEncontrada->getFoto() . "'>"; ?>
