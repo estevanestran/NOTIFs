@@ -21,6 +21,7 @@ if($acao === 'publicar'){
     $noticia->setData($noticia->getCurrentDate());
     $noticia->setFoto($_FILES['foto']['tmp_name']);
     $noticia->setIdUsuario($idUser);
+    $noticia->setAlerta($_POST['alerta']);
     $noticia->save();
 
     $ultimoID = $noticia->getId();

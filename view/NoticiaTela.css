@@ -72,6 +72,11 @@ body {
     max-width: 1100px;
   }
 
+.alerta {
+    position: absolute;
+    right: 10%;
+  }
+
 .imagem {
     position: relative;
     max-width: 1100px;
@@ -230,11 +235,14 @@ a#pedido {
     margin-bottom: 5px;
 }
 
-img#bookmarkSF {
-    width: 40px;
-    height: 38px;
-    position: relative;
-    left: -5%;
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 @media (max-width: 75%) {

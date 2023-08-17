@@ -11,6 +11,7 @@ class Noticia{
     private $data_noticia;
     private $id_usuario;
     private $foto;
+    private $alerta;
 
     public function getId(){
         return $this->id;
@@ -60,6 +61,14 @@ class Noticia{
         $this->foto = $foto;
     }
 
+    public function getAlerta(){
+        return $this->alerta;
+    }
+
+    public function setAlerta($alerta){
+        $this->alerta = $alerta;
+    }
+
     public function getData(){
         return $this->data_noticia;
     }
@@ -98,7 +107,7 @@ class Noticia{
 
             $this->setFoto($endereco);
             try{
-            $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario, foto) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario, :foto)');
+            $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario, foto, alerta) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario, :foto, :alerta)');
 
             $stmt->execute([
                 ':titulo' => $this->titulo,
@@ -107,6 +116,7 @@ class Noticia{
                 ':data_noticia' => $this->data_noticia,
                 ':id_usuario' => $this->id_usuario,
                 ':foto' => $this->foto,
+                ':alerta' => 0,
             ]);
 
             $this->id = $pdo->lastInsertId();
@@ -132,6 +142,7 @@ class Noticia{
             $noticia->setData($linha['data_noticia']);
             $noticia->setIdUsuario($linha['id_usuario']);
             $noticia->setFoto($linha['foto']);
+            $noticia->setAlerta($linha['alerta']);
             $lista[] = $noticia;
         }
 
@@ -144,7 +155,7 @@ class Noticia{
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "SELECT id, titulo, subtitulo, corpo, data_noticia, id_usuario, foto FROM noticia WHERE id = ?";
+        $sql = "SELECT id, titulo, subtitulo, corpo, data_noticia, id_usuario, foto, alerta FROM noticia WHERE id = ?";
 
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(1, $id, PDO::PARAM_INT);
