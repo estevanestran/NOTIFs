@@ -3,6 +3,8 @@ include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
 include_once '../controller/verifica.php';
+
+if ($isAdmin) {
 include_once '../model/Categoria.class.php';
 include_once '../model/Usuario.class.php';
 
@@ -88,4 +90,7 @@ $promovidos = Usuario::getPromovidos();
     </div>
 </body>
 </html>
+<?php } else {
+  header('Location: TelaPrincipal.php');
+}?>
 <?php else: header('Location: index.html'); endif;?>
