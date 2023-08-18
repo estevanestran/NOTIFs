@@ -206,6 +206,40 @@ include_once 'conexao.php';
             return $array;
         }
 
+        public function pegaEmail($id){
+            $pdo = conexao();
+
+            $array = array();
+
+            $sql = "SELECT email FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue("id", $id);
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $array = $sql->fetch();
+            }
+
+            return $array;
+        }
+
+        public function pegaNomeCurso($id){
+            $pdo = conexao();
+
+            $array = array();
+
+            $sql = "SELECT nome FROM curso WHERE id = :id_curso";
+            $sql = $pdo->prepare($sql);
+            $sql->bindValue(':id_curso', $id);
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $array = $sql->fetch();
+            }
+
+            return $array;
+        }
+
         public function pegaId($id){
             $pdo = conexao();
 

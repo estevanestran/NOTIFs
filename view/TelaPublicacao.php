@@ -31,7 +31,7 @@ $categorias = Categoria::getAll();
         <div class="superior">
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
             <div class="superior_direito">
-                <a href="TelaPerfil.html"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
+                <a href="TelaPerfil.php"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
             </div>
         </div>
         <div class="inferior">

@@ -3,14 +3,9 @@ include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
 include_once '../controller/verifica.php';
-
-if ($isAdmin) {
 include_once '../model/Categoria.class.php';
-include_once '../model/Usuario.class.php';
 
 $categoriasMenu = Categoria::getAll();
-$usuarios = Usuario::getPedidos();
-$promovidos = Usuario::getPromovidos();
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +16,7 @@ $promovidos = Usuario::getPromovidos();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f61e3910a0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="SolicitacoesTela.css">
+    <link rel="stylesheet" href="PerfilTela.css">
     <title>Notifs</title>
 </head>
 <body>
@@ -57,40 +52,16 @@ $promovidos = Usuario::getPromovidos();
                 </div>
             </div>
         <div class="inferior_direito_principal">
-            <h2>Solicitações de promoção</h2>
-            <div class="pedidos">
-                <?php foreach ($usuarios as $usuario) {?>
-                    <div class="pedido">
-                            <p class="nome">
-                                <?php echo "<strong>Nome:</strong> " . $usuario->getNome() . " (" . $usuario->getEmail() . ") " . $usuario->getNomeCurso();?>
-                                <div class="links">
-                                <?php echo "<a class='acao' href='../controller/cargos.php?acao=aprovar&id=" . $usuario->getId() . "'>Aprovar</a>" ?>
-                                <?php echo "<a class='acao' href='../controller/cargos.php?acao=negar&id=" . $usuario->getId() . "'>Negar</a>" ?>
-                                </div>
-                            </p>
-                    </div>
-                <?php } ?>
-            </div>
-            <h2>Usuários promovidos</h2>
-            <div class="promovidos">
-                    <?php foreach ($promovidos as $usuario) {?>
-                        <div class="pedido">
-                            <p class="nome">
-                            <?php echo "<strong>Nome:</strong> " . $usuario->getNome() . " (" . $usuario->getEmail() . ") " . $usuario->getNomeCurso();?>
-                            <div class="links">
-                            <?php echo "<a class='acao' href='../controller/cargos.php?acao=remover&id=" . $usuario->getId() . "'>Remover</a>" ?>
-                            </div>
-                            </p>
-                        </div>
-                    <?php } ?>
-                    
+            <div class="perfil">
+            <h2>MEU PERFIL</h2>
+                <form action="../controller/mudaperfil.php">
+                    <label for="nome">Nome completo</label><br>
+                    <input type="text" id="nome" name="nome" placeholder="<?php echo $nomeUser; ?>">
+                </form>
             </div>
         </div>
     </div>
     </div>
 </body>
 </html>
-<?php } else {
-  header('Location: TelaPrincipal.php');
-}?>
 <?php else: header('Location: index.html'); endif;?>
