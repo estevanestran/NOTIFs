@@ -108,6 +108,24 @@ include_once 'conexao.php';
             
         }
 
+        public function editar(){
+            $pdo = conexao();
+
+            try{
+                $senhaHash = password_hash($this->senha, PASSWORD_DEFAULT);
+                $stmt = $pdo->prepare('UPDATE usuario SET nome = :nome, senha = :senha WHERE id = :id');
+
+                $stmt->execute([
+                    ':id' => $this->id,
+                    ':nome' => $this->nome,
+                    ':senha' => $senhaHash,
+                ]);
+                return true;
+            }catch(Exception $e){
+                return false;
+            }
+        }
+
         public static function deletar($id){
             $pdo = conexao();
 

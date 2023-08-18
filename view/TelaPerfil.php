@@ -19,11 +19,7 @@ $categoriasMenu = Categoria::getAll();
     <link rel="stylesheet" href="PerfilTela.css">
     <script>
         function habilitarEdicao() {
-            var elementos = document.querySelectorAll("input[type='text'], input[type='password'], label");
-            for (var i = 0; i < elementos.length; i++) {
-                elementos[i].removeAttribute("readonly");
-            }
-            
+            document.getElementById("nome").removeAttribute("readonly");
             document.getElementById("senha").style.display = "block";
             document.getElementById("labelsenha").style.display = "block";
             document.getElementById("botao").style.display = "block";
@@ -67,7 +63,8 @@ $categoriasMenu = Categoria::getAll();
             <div class="perfil">
             <h2>MEU PERFIL</h2>
                 <button id="editar" onclick="habilitarEdicao()">Editar perfil</button>
-                <form action="../controller/mudaperfil.php">
+                <form action="../controller/mudaperfil.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                     <label for="nome">Nome completo</label><br>
                     <input type="text" id="nome" name="nome" placeholder="<?php echo $nomeUser; ?>" readonly><br>
                     <label for="email">E-mail institucional</label><br>

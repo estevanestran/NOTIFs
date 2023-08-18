@@ -183,7 +183,7 @@ a#titulo:hover {
     font-size: x-large;
     color: #042B52;
     position: relative;
-    left: 81.5%;
+    left: 82%;
     border: 1.5px solid #042B52;
     border-radius: 10px;
     padding: 3px 20px;
@@ -230,7 +230,7 @@ input[type=submit]{
     font-family: 'Noto sans', sans-serif;
     color: #042B52;
     border: 1.5px solid #042B52;
-    border-radius: 15px;
+    border-radius: 8px;
     position: relative;
     left: 40%;
     margin-top: 10px;
