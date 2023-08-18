@@ -149,6 +149,25 @@ class Noticia{
         return $lista;
     }
 
+    public static function getAlertas(){
+        $pdo = conexao();
+        $lista = [];
+        foreach($pdo->query('SELECT * FROM noticia WHERE alerta = 1') as $linha){
+            $noticia = new Noticia();
+            $noticia->setTitulo($linha['titulo']);
+            $noticia->setSubtitulo($linha['subtitulo']);
+            $noticia->setCorpo($linha['corpo']);
+            $noticia->setId($linha['id']);
+            $noticia->setData($linha['data_noticia']);
+            $noticia->setIdUsuario($linha['id_usuario']);
+            $noticia->setFoto($linha['foto']);
+            $noticia->setAlerta($linha['alerta']);
+            $lista[] = $noticia;
+        }
+
+        return $lista;
+    }
+
     public function buscarNoticiaPorId($id){
         try {
         $pdo = conexao();
