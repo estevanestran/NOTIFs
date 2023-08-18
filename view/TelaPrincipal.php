@@ -75,7 +75,6 @@ $categoriasMenu = Categoria::getAll();
                 </nav>
                 <?php } ?>
             </div>
-            <a href="../controller/logout.php">Sair</a>
         </div>
     </div>
     </div>

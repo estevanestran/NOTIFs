@@ -49,6 +49,21 @@ body {
     box-shadow: 1px 1px 15px #323232;
 }
 
+.perfil {
+    position: relative;
+    font-family: 'Noto sans', sans-serif;
+    font-size: large;
+    width: 80%;
+    left: 10%;
+    top: 15%;
+    height: 100%;
+    /*background-color: #eaedf0;*/
+    background-color: #f3f3f3;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px #042B52;
+    padding-bottom: 20px;
+}
+
 .menu_topo {
     position: relative;
     padding-top: 2%;
@@ -163,41 +178,16 @@ a#titulo:hover {
     margin-bottom: 5px;
 }
 
-.perfil {
-    font-family: 'Noto sans', sans-serif;
-    color: #323232;
-    font-size: large;
-}
-
-.pedido {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.nome {
-    flex-grow: 1;
-}
-
-.acoes {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left: 20px;
-}
-
-.email {
-    margin-top: 5px;
-}
-
-.acao {
+.perfil a {
     font-family: 'Noto sans', sans-serif;
     font-size: x-large;
     color: #042B52;
+    position: relative;
+    left: 81.5%;
     border: 1.5px solid #042B52;
-    border-radius: 15px;
-    padding: 3px 5px;
-    margin-bottom: 5px;
+    border-radius: 10px;
+    padding: 3px 20px;
+    background-color: #f3f3f3;
     transition: background-color .4s;
     text-align: center;
 }
@@ -207,7 +197,75 @@ a#titulo:hover {
     left: 75%;
 }
 
-.links a:hover {
+.perfil a:hover {
     background-color: #042B52;
     color: #f3f3f3;
+}
+
+button {
+    background: none;
+	padding: 0;
+	font: inherit;
+    font-size: larger;
+	cursor: pointer;
+	outline: inherit;
+    position: relative;
+    left: 80%;
+    text-shadow: 0.2px 0.2px 0.2px #323232;
+    background-color: #f3f3f3;
+    color: #042B52;
+    border: solid 0.5px #042B52;
+    padding: 5px;
+    border-radius: 10px;
+    transition: background-color .4s;
+}
+
+button:hover {
+    background-color: #042B52;
+    color: #f3f3f3;
+}
+
+input[type=submit]{
+    width: 200px;
+    font-family: 'Noto sans', sans-serif;
+    color: #042B52;
+    border: 1.5px solid #042B52;
+    border-radius: 15px;
+    position: relative;
+    left: 40%;
+    margin-top: 10px;
+    transition: background-color .4s;
+}
+
+input#botao:hover{
+    background-color: #042B52;
+    color: #f3f3f3;
+    
+}
+
+label {
+    color: #042B52;
+    font-family: 'Noto sans', sans-serif;
+    position: relative;
+    left: 7%;
+}
+
+input[type=text]{
+    width: 400px;
+    height: 33px;
+    border: 1.5px solid #042B52;
+    border-radius: 6px 6px 6px 6px;
+    background-color: #f3f3f3;
+    position: relative;
+    left: 12%;
+}
+
+input[type=password]{
+    width: 400px;
+    height: 33px;
+    border: 1.5px solid #042B52;
+    border-radius: 6px 6px 6px 6px;
+    background-color: #f3f3f3;
+    position: relative;
+    left: 12%;
 }
