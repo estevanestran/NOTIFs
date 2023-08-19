@@ -2,11 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans:wght@400;700&display=swap');
 
-/*PEDAÇOS DA TELA*/
+
 .container {
     width: 100%;
     height: 100%;
 }
+
+/*PARTE DE CIMA*/
 .superior {
     position: absolute;
     top: 0;
@@ -15,6 +17,23 @@
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
 }
 
 .superior_direito {
@@ -33,74 +52,6 @@
     background-color: #042B52;
 }
 
-.inferior {
-    background-color: #d9d7d7;
-    height: 88%;
-    width: 100%;
-    position: absolute;
-    top: 12%;
-    left: 0;
-}
-
-.inferior_esquerdo_um {
-    position: absolute;
-    width: 40%;
-    height: 10%;
-    left: 7%;
-    top: 12%;
-}
-
-.inferior_esquerdo_dois {
-    position: absolute;
-    width: 40%;
-    height: 20%;
-    left: 5%;
-    top: 22%;
-}
-
-.inferior_direito_login {
-    position: absolute;
-    width: 33.5%;
-    left: 55%;
-    top: 18%;
-    height: 57%;
-    background-color: #042B52;
-    border: 2.5px solid #042B52;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 1px 1px 13px #323232;
-}
-
-/*LETRAS E TEXTOS*/
-h1 {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 1.5px 1.5px 1px #042b5280;
-    height: 40px;
-    padding-top: 13.5px;
-    padding-left: 60px;
-    padding-bottom: 5px;
-    width: 420px;
-    margin: 0px 10px 0px 10px;
-    font-weight: 700;
-}
-
-h2{
-    color: #042B52;
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    text-shadow: 1.5px 1.5px 1.5px #042b5280;
-    padding-left: 2.5%;
-}
-
-h3 {
-    color: #f3f3f3;
-    font-family: 'Noto sans', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    text-shadow: 1px 1px 1px black;
-}
-
 h4 {
     color: #042B52;
     font-family: 'Noto sans', sans-serif;
@@ -115,22 +66,42 @@ h4:hover {
     color: #f3f3f3;
 }
 
-a {
-    text-decoration: none;
+/*PARTE INFERIOR*/
+
+.inferior {
+    background-color: #d9d7d7;
+    height: 88%;
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    left: 0;
 }
 
-a#caminhoAlt{
-    font-family: 'Noto sans', sans-serif;
-    color: #f3f3f3;
-    text-shadow: 1.5px 1.5px 1px #042b5280;
-    padding-left: 31.2%;
-    text-decoration: underline;
+/*LADO ESQUERDO*/
+
+.inferior_esquerdo_um {
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    left: 7%;
+    top: 12%;
 }
 
-p#recuperar{
-    padding-left: 55px;
-    color: black;
+h2{
+    color: #042B52;
     font-family: 'Noto sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    text-shadow: 1.5px 1.5px 1.5px #042b5280;
+    padding-left: 2.5%;
+}
+
+.inferior_esquerdo_dois {
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    left: 5%;
+    top: 22%;
 }
 
 p#descTelaIni{
@@ -140,6 +111,44 @@ p#descTelaIni{
     text-align: center;
     text-shadow: 1px 1px 1px #042b5280;
     font-family: 'Noto sans', sans-serif;
+}
+
+.logo {
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    top: 22.5%;
+    left: 9%;
+}
+
+/*LADO DIREITO*/
+
+.inferior_direito_login {
+    position: absolute;
+    width: 33.5%;
+    left: 55%;
+    top: 18%;
+    height: 57%;
+    background-color: #042B52;
+    border: 2.5px solid #042B52;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 13px #323232;
+}
+
+h3 {
+    color: #f3f3f3;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
+a#caminhoAlt{
+    font-family: 'Noto sans', sans-serif;
+    color: #f3f3f3;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    padding-left: 31.2%;
+    text-decoration: underline;
 }
 
 /*FORMULÁRIO*/
@@ -186,15 +195,5 @@ input[type=password]{
     border-radius: 6px 6px 6px 6px;
     background-color: white;
     position: relative;
-    left: 9%;
-}
-
-/*IMAGENS*/
-
-.logo {
-    position: absolute;
-    width: 40%;
-    height: 50%;
-    top: 22.5%;
     left: 9%;
 }

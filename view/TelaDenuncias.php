@@ -45,13 +45,13 @@ $noticias = Noticia::getAlertas();
                     <?php if ($isComum): ?>
                     <p><a href="TelaPedir.php" id="pedido">Solicitar cargo</a></p>
                     <?php endif; ?>
-                    <?php if ($isAdmin): ?>
-                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
-                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
-                    <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
                     <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
+                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -63,7 +63,7 @@ $noticias = Noticia::getAlertas();
                             <p class="nome">
                                 <?php echo "<strong>Título:</strong> <a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'>" . $noticia->getTitulo() . "</a>"?>
                                 <div class="links">
-                                <?php echo "<a class='acao' href='../controller/denuncias.php?acao=apagar&id=" . $noticia->getId() . "'>Apagar</a>" ?>
+                                <?php echo "<a class='acao' href='../controller/denuncias.php?acao=apagar&id=" . $noticia->getId() . "'>Apagar notícia</a>" ?>
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=ignorar&id=" . $noticia->getId() . "'>Ignorar</a>" ?>
                                 </div>
                             </p>

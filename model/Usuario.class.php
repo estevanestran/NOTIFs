@@ -246,28 +246,16 @@ include_once 'conexao.php';
 
             $array = array();
 
-            $sql = "SELECT nome FROM curso WHERE id = :id_curso";
+            $sql = "SELECT nome FROM curso WHERE id = (SELECT id_curso FROM usuario WHERE id = :id)";
             $sql = $pdo->prepare($sql);
-            $sql->bindValue(':id_curso', $id);
+            $sql->bindValue('id', $id, PDO::PARAM_INT);
             $sql->execute();
 
             if($sql->rowCount() > 0){
                 $array = $sql->fetch();
+                return $array;
             }
-
-            return $array;
-        }
-
-        public function pegaId($email){
-            $pdo = conexao();
-
-            $sql = "SELECT id FROM usuario WHERE email = :email";
-            $sql = $pdo->prepare($sql);
-            $sql->bindParam(':email', $email);
-            $sql->execute();
-
-            $result = $sql->fetch(PDO::FETCH_ASSOC);
-            return $result['id'];
+            
         }
 
         public function pegaEstado($id) {

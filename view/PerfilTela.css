@@ -62,6 +62,7 @@ body {
     border-radius: 10px 10px 10px 10px;
     box-shadow: 1px 1px 8px #042B52;
     padding-bottom: 20px;
+    padding-top: 15px;
 }
 
 .menu_topo {
@@ -140,6 +141,7 @@ a {
 a#solicitacoes {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
 }
 
 a#denuncias {
@@ -156,7 +158,6 @@ a#pedido {
 a#escrever {
     color: #f3f3f3;
     font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
 }
 
 a#minhas {
@@ -180,7 +181,6 @@ a#titulo:hover {
 
 .perfil a {
     font-family: 'Noto sans', sans-serif;
-    font-size: x-large;
     color: #042B52;
     position: relative;
     left: 82%;
@@ -206,12 +206,10 @@ button {
     background: none;
 	padding: 0;
 	font: inherit;
-    font-size: larger;
 	cursor: pointer;
 	outline: inherit;
     position: relative;
     left: 80%;
-    text-shadow: 0.2px 0.2px 0.2px #323232;
     background-color: #f3f3f3;
     color: #042B52;
     border: solid 0.5px #042B52;

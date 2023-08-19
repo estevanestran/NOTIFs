@@ -11,6 +11,9 @@ body {
     background-color: #d9d7d7;
 }
 
+
+/*PARTE SUPERIOR*/
+
 .superior {
     position: absolute;
     top: 0;
@@ -21,14 +24,44 @@ body {
     border: 2.7px solid #042B52;
 }
 
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
+}
+
 .superior_direito {
     background-color: #042B52;
     width: 300px;
     position: absolute;
     height: 35px;
     top: 30%;
-    right: 2%;
+    right: 5%;
 }
+
+h5 {
+    color: #d9d7d7;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-size: x-large;
+    height: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/*PARTE INFERIOR*/
 
 .inferior {
     background-color: #d9d7d7;
@@ -38,6 +71,8 @@ body {
     top: 12%;
     left: 0;
 }
+
+/*MENU LATERAL*/
 
 .inferior_esquerdo {
     position: relative;
@@ -54,11 +89,58 @@ body {
     padding-top: 2%;
 }
 
+a#menu {
+    padding-left: 6px;
+    font-weight: 500;
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    line-height: 3px;
+}
+
+.menu_topo p {
+    margin-bottom: 5px;
+}
+
 .menu_baixo {
     position: absolute;
     bottom: 0.1%;
     width: 102%;
 }
+
+.menu_baixo p {
+    margin-bottom: 5px;
+}
+
+a#solicitacoes {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+a#denuncias {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+a#pedido {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#escrever {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#minhas {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+/*PARTE PRINCIPAL*/
 
 .inferior_direito_principal {
     position: absolute;
@@ -81,73 +163,38 @@ body {
     height: auto;
     margin-bottom: 10px;
   }
-  
+
+
 section {
-    position: relative;
-    left: 2%;
-    min-width: 800px;
-    max-width: 800px;
-  }
+   position: relative;
+   left: 2%;
+   min-width: 800px;
+   max-width: 800px;
+}
+
+  a#titulo {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #323232;
+}
   
 article {
     position: relative;
     left: 2%;
     min-width: 800px;
     max-width: 800px;
-  }
-  
-aside {
-    position: relative;
-    left: 2%;
-  }
-
-h1 {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 1.5px 1.5px 1px #042b5280;
-    height: 40px;
-    padding-top: 13.5px;
-    padding-left: 60px;
-    padding-bottom: 5px;
-    width: 420px;
-    margin: 0px 10px 0px 10px;
-    font-weight: 700;
-}
-
-h5 {
-    color: #d9d7d7;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-    font-size: x-large;
-    height: 20px;
-    padding-bottom: 15px;
-}
-
-
-a#titulo {
-    font-family: 'Noto sans', sans-serif;
-    font-size: xx-large;
-    font-weight: 600;
-    color: #323232;
-}
-
-a#menu {
-    padding-left: 6px;
-    font-weight: 500;
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-    line-height: 3px;
-}
-
-.menu_topo p {
-    margin-bottom: 5px;
 }
 
 p#subtitulo {
     color: #323232;
     font-weight: 400;
     font-size: large;
+}
+  
+aside {
+    position: relative;
+    left: 2%;
 }
 
 p#data {
@@ -162,41 +209,4 @@ p#data > a {
 
 p#data > a:hover {
     text-decoration: underline;
-}
-
-a {
-    text-decoration: none;
-    font-weight: normal;
-}
-
-a#solicitacoes {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
-}
-
-a#denuncias {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
-}
-
-a#escrever {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-a#minhas {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
-}
-
-a#pedido {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.menu_baixo p {
-    margin-bottom: 5px;
 }

@@ -11,6 +11,9 @@ body {
     background-color: #d9d7d7;
 }
 
+
+/*PARTE SUPERIOR*/
+
 .superior {
     position: absolute;
     top: 0;
@@ -19,6 +22,24 @@ body {
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
+}
+
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
 }
 
 .superior_direito {
@@ -30,6 +51,18 @@ body {
     right: 5%;
 }
 
+h5 {
+    color: #d9d7d7;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-size: x-large;
+    height: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/*PARTE INFERIOR*/
+
 .inferior {
     background-color: #d9d7d7;
     height: 88%;
@@ -38,6 +71,8 @@ body {
     top: 12%;
     left: 0;
 }
+
+/*MENU LATERAL*/
 
 .inferior_esquerdo {
     position: relative;
@@ -54,103 +89,6 @@ body {
     padding-top: 2%;
 }
 
-.menu_baixo {
-    position: absolute;
-    bottom: 0.1%;
-    width: 102%;
-}
-
-.inferior_direito_principal {
-    position: absolute;
-    width: 80%;
-    left: 19%;
-    top: 10%;
-}
-
-.noticia {
-    position: relative;
-    max-width: 1100px;
-  }
-
-.alerta {
-    position: absolute;
-    right: 10%;
-  }
-
-.imagem {
-    position: relative;
-    max-width: 1100px;
-    top: 20%;
-}
-  
-.imagem img {
-    width: 50%;
-    display: block;
-    margin-left: 22%;
-    margin-top: auto;
-  }
-
-.corpo {
-    position: relative;
-}
-  
-section {
-    position: relative;
-    left: 2%;
-    min-width: 800px;
-    max-width: 800px;
-  }
-  
-article {
-    position: relative;
-    left: 2%;
-    min-width: 800px;
-    max-width: 800px;
-  }
-  
-aside {
-    position: relative;
-    left: 2%;
-  }
-
-h1 {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 1.5px 1.5px 1px #042b5280;
-    height: 40px;
-    padding-top: 13.5px;
-    padding-left: 60px;
-    padding-bottom: 5px;
-    width: 420px;
-    margin: 0px 10px 0px 10px;
-    font-weight: 700;
-}
-
-h2 {
-    color: #323232;
-    font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
-    height: 50px;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-}
-
-h5 {
-    color: #d9d7d7;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-    font-size: x-large;
-    height: 20px;
-    padding-bottom: 15px;
-    text-align: center;
-}
-
-h6 {
-    font-family: 'Noto Sans', sans-serif;
-    color: #323232;
-    padding-top: 20px;
-    font-size: large;
-}
-
 a#menu {
     padding-left: 6px;
     font-weight: 500;
@@ -161,15 +99,89 @@ a#menu {
 }
 
 .menu_topo p {
-    font-family: 'Noto sans', sans-serif;
     margin-bottom: 5px;
 }
 
-a#titulo {
-    font-family: 'Noto sans', sans-serif;
-    font-size: xx-large;
-    font-weight: 600;
+.menu_baixo {
+    position: absolute;
+    bottom: 0.1%;
+    width: 102%;
+}
+
+.menu_baixo p {
+    margin-bottom: 5px;
+}
+
+a#solicitacoes {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+a#denuncias {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+a#pedido {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#escrever {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a#minhas {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    padding-left: 5%;
+}
+
+
+/*PARTE PRINCIPAL*/
+
+.inferior_direito_principal {
+    position: absolute;
+    width: 80%;
+    left: 19%;
+    top: 10%;
+}
+
+.alerta {
+    position: absolute;
+    right: 10%;
+  }
+
+  button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.noticia {
+    position: relative;
+    max-width: 1100px;
+  }
+
+.imagem {
+    position: relative;
+    max-width: 1100px;
+    top: 20%;
+}
+
+h2 {
     color: #323232;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    height: 50px;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
 }
 
 p#subtitulo {
@@ -177,11 +189,6 @@ p#subtitulo {
     font-weight: 400;
     font-size: large;
     padding-top: 10px;
-}
-
-p#corpo {
-    color: #323232;
-    font-size: small;
 }
 
 p#data {
@@ -197,52 +204,28 @@ p#data > a {
 p#data > a:hover {
     text-decoration: underline;
 }
+  
+.imagem img {
+    width: 50%;
+    display: block;
+    margin-left: 22%;
+    margin-top: auto;
+  }
 
-a {
-    text-decoration: none;
-    font-weight: normal;
+.corpo {
+    position: relative;
 }
 
-a#solicitacoes {
-    color: #f3f3f3;
+h6 {
     font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
+    color: #323232;
+    padding-top: 20px;
+    font-size: large;
 }
 
-a#denuncias {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
-}
-
-a#escrever {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-a#minhas {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 5%;
-}
-
-a#pedido {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.menu_baixo p {
-    margin-bottom: 5px;
-}
-
-button {
-    background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+p#corpo {
+    color: #323232;
+    font-size: small;
 }
 
 @media (max-width: 75%) {

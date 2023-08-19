@@ -58,7 +58,6 @@ if (isset($_GET['id'])){
         });
     });
     </script>
-
     <title>Notifs</title>
 </head>
 <body>
@@ -104,7 +103,7 @@ if (isset($_GET['id'])){
                 $categoria_nome = $categoria_noticia->getNome();
                 ?>
                 <nav>
-                <h2 id="titulo"><?php echo $noticiaEncontrada->getTitulo();?></h2>
+                <h2><?php echo $noticiaEncontrada->getTitulo();?></h2>
                 <p id="subtitulo"><?php echo $noticiaEncontrada->getSubtitulo(); ?></p>
                 <p id="data">
                         <?php echo $noticiaEncontrada->getData(); ?> &#8226; 

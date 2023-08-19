@@ -11,8 +11,8 @@ if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
     $listlogged = $u->pegaEmail($_SESSION['id']);
     $emailUser = $listlogged['email'];
 
-    $listlogged = $u->pegaNomeCurso($_SESSION['id']);
-    $cursoUser = $listlogged['nome'];
+    $teste = $u->pegaNomeCurso($_SESSION['id']);
+    $cursoUser = $teste['nome'];
 
     $userState = $u->pegaEstado($_SESSION['id']);
     $isAdmin = $userState === 'administrador';

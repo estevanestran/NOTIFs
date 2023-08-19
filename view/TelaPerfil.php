@@ -19,11 +19,26 @@ $categoriasMenu = Categoria::getAll();
     <link rel="stylesheet" href="PerfilTela.css">
     <script>
         function habilitarEdicao() {
-            document.getElementById("nome").removeAttribute("readonly");
-            document.getElementById("senha").style.display = "block";
-            document.getElementById("labelsenha").style.display = "block";
-            document.getElementById("botao").style.display = "block";
-        }
+    var senhaElement = document.getElementById("senha");
+    var nomeElement = document.getElementById("nome");
+    var labelSenhaElement = document.getElementById("labelsenha");
+    var botaoElement = document.getElementById("botao");
+    
+    if (senhaElement.style.display === "none") {
+        nomeElement.removeAttribute("readonly");
+        senhaElement.style.display = "block";
+        labelSenhaElement.style.display = "block";
+        botaoElement.style.display = "block";
+    } else {
+        nomeElement.setAttribute("readonly", true);
+        senhaElement.style.display = "none";
+        labelSenhaElement.style.display = "none";
+        botaoElement.style.display = "none";
+
+        nomeElement.value = "<?php echo $nomeUser; ?>";
+        senhaElement.value = "";
+    }
+}
     </script>
     <title>Notifs</title>
 </head>
@@ -49,13 +64,13 @@ $categoriasMenu = Categoria::getAll();
                     <?php if ($isComum): ?>
                     <p><a href="TelaPedir.php" id="pedido">Solicitar cargo</a></p>
                     <?php endif; ?>
-                    <?php if ($isAdmin): ?>
-                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
-                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
-                    <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
                     <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                    <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
+                    <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -69,12 +84,8 @@ $categoriasMenu = Categoria::getAll();
                     <input type="text" id="nome" name="nome" placeholder="<?php echo $nomeUser; ?>" readonly><br>
                     <label for="email">E-mail institucional</label><br>
                     <input type="text" id="email" name="email" placeholder="<?php echo $emailUser; ?>" readonly><br>
-                    <?php 
-                    if ($cursoUser){
-                    ?>
-                    <label for="curso">Curso</label><br>
+                    <label for="curso" id="labelcurso">Curso</label><br>
                     <input type="text" id="curso" name="curso" placeholder="<?php echo $cursoUser; ?>" readonly><br>
-                    <?php }?>
                     <label for="senha" id="labelsenha" style="display: none;">Senha</label>
                     <input type="password" id="senha" name="senha" style="display: none;"><br>
                     <input type="submit" id="botao" value="Salvar mudanças" style="display: none;">

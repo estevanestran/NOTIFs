@@ -31,7 +31,7 @@ if ($acao == 'cadastrar'){
         }
     } else {
     // Define o ID do curso como nulo
-    $usuario->setIdCurso(null);
+    $usuario->setIdCurso(16);
     }
     $usuario->save();
     if ($usuario->save()) {
