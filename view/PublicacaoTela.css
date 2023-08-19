@@ -11,6 +11,8 @@ body {
     background-color: #d9d7d7;
 }
 
+/*PARTE SUPERIOR*/
+
 .superior {
     position: absolute;
     top: 0%;
@@ -19,6 +21,24 @@ body {
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
+}
+
+a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+h1 {
+    color: #f3f3f3;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 1.5px 1.5px 1px #042b5280;
+    height: 40px;
+    padding-top: 13.5px;
+    padding-left: 60px;
+    padding-bottom: 5px;
+    width: 420px;
+    margin: 0px 10px 0px 10px;
+    font-weight: 700;
 }
 
 .superior_esquerdo {
@@ -34,6 +54,18 @@ body {
     right: 5%;
 }
 
+h5 {
+    color: #d9d7d7;
+    font-family: 'Noto Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.2px #042b5280;
+    font-size: x-large;
+    height: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/*PARTE INFERIOR*/
+
 .inferior {
     background-color: #d9d7d7;
     height: 140%;
@@ -42,6 +74,8 @@ body {
     top: 12%;
     left: 0;
 }
+
+/*MENU LATERAL*/
 
 .inferior_esquerdo {
     position: relative;
@@ -58,48 +92,6 @@ body {
     padding-top: 2%;
 }
 
-.menu_baixo {
-    position: absolute;
-    bottom: 0.1%;
-    width: 102%;
-}
-
-.inferior_direito {
-    position: absolute;
-    width: 80%;
-    height: 50%;
-    top: 5%;
-    left: 20%;
-}
-
-h1 {
-    color: #f3f3f3;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 1.5px 1.5px 1px #042b5280;
-    height: 40px;
-    padding-top: 13.5px;
-    padding-left: 60px;
-    padding-bottom: 5px;
-    width: 420px;
-    margin: 0px 10px 0px 10px;
-    font-weight: 700;
-}
-
-h5 {
-    color: #d9d7d7;
-    font-family: 'Noto Sans', sans-serif;
-    text-shadow: 0.5px 0.5px 0.2px #042b5280;
-    font-size: x-large;
-    height: 20px;
-    padding-bottom: 15px;
-    text-align: center;
-}
-
-a {
-    text-decoration: none;
-    font-weight: normal;
-}
-
 a#menu {
     padding-left: 6px;
     font-weight: 500;
@@ -111,6 +103,12 @@ a#menu {
 
 .menu_topo p {
     margin-bottom: 5px;
+}
+
+.menu_baixo {
+    position: absolute;
+    bottom: 0.1%;
+    width: 102%;
 }
 
 a#solicitacoes {
@@ -140,12 +138,17 @@ a#minhas {
     margin-bottom: 5px;
 }
 
-img#bookmarkSF {
-    width: 40px;
-    height: 38px;
-    position: relative;
-    left: -5%;
+/*LADO DIREITO*/
+
+.inferior_direito {
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top: 5%;
+    left: 20%;
 }
+
+/*FORMULÁRIO*/
 
 input[type=submit]{
     width: 200px;

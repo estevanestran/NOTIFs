@@ -223,11 +223,6 @@ h6 {
     font-size: large;
 }
 
-p#corpo {
-    color: #323232;
-    font-size: small;
-}
-
 @media (max-width: 75%) {
     a {
         text-decoration: none;

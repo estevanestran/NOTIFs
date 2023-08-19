@@ -61,7 +61,7 @@ $noticias = Noticia::getAlertas();
                 <?php foreach ($noticias as $noticia) {?>
                     <div class="pedido">
                             <p class="nome">
-                                <?php echo "<strong>Título:</strong> <a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'>" . $noticia->getTitulo() . "</a>"?>
+                                <?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><strong>Título: </strong>" . $noticia->getTitulo() . "</a>"?>
                                 <div class="links">
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=apagar&id=" . $noticia->getId() . "'>Apagar notícia</a>" ?>
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=ignorar&id=" . $noticia->getId() . "'>Ignorar</a>" ?>

@@ -11,6 +11,8 @@ body {
     background-color: #d9d7d7;
 }
 
+/*PARTE SUPERIOR*/
+
 .superior {
     position: absolute;
     top: 0;
@@ -21,65 +23,9 @@ body {
     border: 2.7px solid #042B52;
 }
 
-.superior_direito {
-    background-color: #042B52;
-    width: 300px;
-    position: absolute;
-    height: 35px;
-    top: 30%;
-    right: 5%;
-}
-
-.inferior {
-    background-color: #d9d7d7;
-    height: 88%;
-    width: 100%;
-    position: absolute;
-    top: 12%;
-    left: 0;
-}
-
-.inferior_esquerdo {
-    position: relative;
-    width: 10%;
-    height: 82%;
-    top: 10%;
-    left: 2%;
-    background-color: #042B52;
-    box-shadow: 1px 1px 15px #323232;
-}
-
-.perfil {
-    position: relative;
-    font-family: 'Noto sans', sans-serif;
-    font-size: large;
-    width: 80%;
-    left: 10%;
-    top: 15%;
-    height: 100%;
-    /*background-color: #eaedf0;*/
-    background-color: #f3f3f3;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 1px 1px 8px #042B52;
-    padding-bottom: 20px;
-    padding-top: 15px;
-}
-
-.menu_topo {
-    position: relative;
-    padding-top: 2%;
-}
-
-.menu_baixo {
-    position: absolute;
-    bottom: 0.1%;
-}
-
-.inferior_direito_principal {
-    position: absolute;
-    width: 80%;
-    left: 15%;
-    top: 10%;
+a {
+    text-decoration: none;
+    font-weight: normal;
 }
 
 h1 {
@@ -95,6 +41,15 @@ h1 {
     font-weight: 700;
 }
 
+.superior_direito {
+    background-color: #042B52;
+    width: 300px;
+    position: absolute;
+    height: 35px;
+    top: 30%;
+    right: 5%;
+}
+
 h5 {
     color: #d9d7d7;
     font-family: 'Noto Sans', sans-serif;
@@ -105,17 +60,36 @@ h5 {
     text-align: center;
 }
 
+/*PARTE INFERIOR*/
 
-h2 {
-    font-family: 'Noto sans', sans-serif;
-    font-size: xx-large;
-    font-weight: 600;
-    color: #042B52;
-    text-align: center;
+.inferior {
+    background-color: #d9d7d7;
+    height: 88%;
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    left: 0;
 }
 
-p#nome {
-    margin-top: 40px;
+/*MENU LATERAL*/
+
+.inferior_esquerdo {
+    position: relative;
+    width: 10%;
+    height: 82%;
+    top: 10%;
+    left: 2%;
+    background-color: #042B52;
+    box-shadow: 1px 1px 15px #323232;
+}
+
+.menu_topo {
+    position: relative;
+    padding-top: 2%;
+}
+
+.menu_topo p {
+    font-family: 'Noto Sans', sans-serif;
     margin-bottom: 5px;
 }
 
@@ -128,14 +102,13 @@ a#menu {
     line-height: 3px;
 }
 
-.menu_topo p {
-    font-family: 'Noto Sans', sans-serif;
-    margin-bottom: 5px;
+.menu_baixo {
+    position: absolute;
+    bottom: 0.1%;
 }
 
-a {
-    text-decoration: none;
-    font-weight: normal;
+.menu_baixo p {
+    margin-bottom: 5px;
 }
 
 a#solicitacoes {
@@ -166,40 +139,37 @@ a#minhas {
     padding-left: 5%;
 }
 
-a#titulo {
-    color: #323232;
-    font-family: 'Noto Sans', sans-serif;
-}
+/*PARTE PRINCIPAL*/
 
-a#titulo:hover {
-    text-decoration: underline;
-}
-
-.menu_baixo p {
-    margin-bottom: 5px;
-}
-
-.perfil a {
-    font-family: 'Noto sans', sans-serif;
-    color: #042B52;
-    position: relative;
-    left: 82%;
-    border: 1.5px solid #042B52;
-    border-radius: 10px;
-    padding: 3px 20px;
-    background-color: #f3f3f3;
-    transition: background-color .4s;
-    text-align: center;
-}
-
-.links {
+.inferior_direito_principal {
     position: absolute;
-    left: 75%;
+    width: 80%;
+    left: 15%;
+    top: 10%;
 }
 
-.perfil a:hover {
-    background-color: #042B52;
-    color: #f3f3f3;
+.perfil {
+    position: relative;
+    font-family: 'Noto sans', sans-serif;
+    font-size: large;
+    width: 80%;
+    left: 10%;
+    top: 15%;
+    height: 100%;
+    /*background-color: #eaedf0;*/
+    background-color: #f3f3f3;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px #042B52;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+h2 {
+    font-family: 'Noto sans', sans-serif;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #042B52;
+    text-align: center;
 }
 
 button {
@@ -222,6 +192,26 @@ button:hover {
     background-color: #042B52;
     color: #f3f3f3;
 }
+
+.perfil a {
+    font-family: 'Noto sans', sans-serif;
+    color: #042B52;
+    position: relative;
+    left: 82%;
+    border: 1.5px solid #042B52;
+    border-radius: 10px;
+    padding: 3px 20px;
+    background-color: #f3f3f3;
+    transition: background-color .4s;
+    text-align: center;
+}
+
+.perfil a:hover {
+    background-color: #042B52;
+    color: #f3f3f3;
+}
+
+/*FORMULÁRIO*/
 
 input[type=submit]{
     width: 200px;
