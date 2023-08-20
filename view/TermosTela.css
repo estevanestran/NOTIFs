@@ -95,3 +95,23 @@ p {
     color: #323232;
     text-align: justify;
 }
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 50px;
+        padding-left: 5px; /* Tamanho menor para o título */
+    }
+
+    .superior_direito {
+        left: 60%;
+        width: 130px;
+    }
+
+    h4 {
+        font-size: larger;
+        padding-bottom: 5px;
+        margin-top: 5px;
+    }
+
+}
