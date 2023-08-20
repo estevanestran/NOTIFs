@@ -79,6 +79,7 @@ h4:hover {
 /*LADO ESQUERDO*/
 
 .inferior_esquerdo_um {
+    display: block;
     position: absolute;
     width: 40%;
     height: 10%;
@@ -96,6 +97,7 @@ h2{
 }
 
 .inferior_esquerdo_dois {
+    display: block;
     position: absolute;
     width: 40%;
     height: 20%;
@@ -113,6 +115,7 @@ p#descTelaIni{
 }
 
 .logo {
+    display: block;
     position: absolute;
     width: 40%;
     height: 50%;
@@ -183,7 +186,7 @@ label {
     font-family: 'Noto sans', sans-serif;
     position: relative;
     text-shadow: 1.5px 1.5px 1px #042b5280;
-    left: 5%;
+    left: 10%;
 }
 
 input[type=text]{
@@ -194,4 +197,50 @@ input[type=text]{
     background-color: #f3f3f3;
     position: relative;
     left: 10%;
+}
+
+@media (max-width: 768px) {
+
+    .inferior_esquerdo_um {
+        display: none;
+    }
+
+    .inferior_esquerdo_dois {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding-left: 5px; /* Tamanho menor para o título */
+    }
+
+    .superior_direito {
+        left: 60%;
+        width: 130px;
+    }
+
+    h4 {
+        font-size: larger;
+        padding-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .inferior_direito_esqueceu {
+        left: 10%;
+        width: 80%;
+        height: 55%;
+
+    }
+    input[type=text]{
+        width: 250px;
+    }
+
+    input[type=submit]{
+        left: 17%;
+        background-color: #f3f3f3;
+    }
 }

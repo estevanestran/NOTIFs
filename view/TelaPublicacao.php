@@ -98,7 +98,7 @@ $categorias = Categoria::getAll();
                 <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>
                   <input type="text" id="subtitulo" name="subtitulo" required> <br><br>
                 <label for="corpo">CORPO DA NOTÍCIA</label><br>
-                <textarea id="corpo" name="corpo" style="width: 85%;"></textarea>
+                <textarea id="corpo" name="corpo"></textarea>
                 <br>
                 <label for="categoria">CATEGORIA DA NOTÍCIA</label>
                 <select name="categoria" id="categoria" required>
@@ -111,7 +111,7 @@ $categorias = Categoria::getAll();
                   <option value="Eventos">Eventos</option>
                   <option value="Oportunidades">Oportunidades</option>
                 </select>
-                <br><br>
+                <br>
                 <label for="foto">IMAGEM DE CAPA</label>
                 <input type="file" id="foto" name="foto">
                 <fieldset>
@@ -145,7 +145,7 @@ $categorias = Categoria::getAll();
         menubar: false,
         selector: 'textarea',
         plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | charmap | removeformat',
         })
     </script>
 

@@ -10,7 +10,7 @@
 /*PARTE SUPERIOR*/
 
 .superior {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -80,6 +80,7 @@ h4:hover {
 /*LADO ESQUERDO*/
 
 .inferior_esquerdo_um {
+    display: block;
     position: absolute;
     width: 40%;
     height: 10%;
@@ -97,6 +98,7 @@ h2{
 }
 
 .inferior_esquerdo_dois {
+    display: block;
     position: absolute;
     width: 40%;
     height: 20%;
@@ -114,6 +116,7 @@ p#descTelaIni{
 }
 
 .logo {
+    display: block;
     position: absolute;
     width: 40%;
     height: 50%;
@@ -226,4 +229,56 @@ input[type=password]{
     font-family: 'Noto sans', serif;
     left: 9%;
     color: #042B52;
+}
+
+@media (max-width: 768px) {
+
+    .inferior_esquerdo_um {
+        display: none;
+    }
+
+    .inferior_esquerdo_dois {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding-left: 5px; /* Tamanho menor para o título */
+    }
+
+    .superior_direito {
+        left: 60%;
+        width: 130px;
+    }
+
+    h4 {
+        font-size: larger;
+        padding-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .inferior_direito_cadastro {
+        left: 10%;
+        width: 80%;
+        height: 92%;
+        top: 5%;
+
+    }
+    input[type=text]{
+        width: 250px;
+    }
+
+    input[type=password]{
+        width: 250px;
+    }
+
+    input[type=submit]{
+        left: 17%;
+        background-color: #f3f3f3;
+    }
+
 }
