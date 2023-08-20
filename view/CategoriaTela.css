@@ -18,7 +18,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 110%;
     height: 12%;
     background-color: #042B52;
     border: 2.7px solid #042B52;
@@ -209,4 +209,143 @@ p#data > a {
 
 p#data > a:hover {
     text-decoration: underline;
+}
+
+/*responsividade*/
+
+.mobile-menu {
+    display: none; /* Oculta o menu em telas maiores */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Estilos do botão de hambúrguer */
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+/* Estilos do menu lateral para dispositivos móveis */
+.mobile-links {
+    display: none;
+    background-color: #f3f3f3;
+    position: absolute; /* Deve coincidir com a altura da barra superior */
+    left: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+    box-shadow: 0.5px 0.5px 0.5px #042B52;
+}
+
+/* Estilos para tornar visível o menu lateral quando o botão de hambúrguer é clicado */
+.show-menu .mobile-menu {
+    display: block;
+    transition: display 0.4s;
+}
+
+.show-menu .mobile-links {
+    display: block;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        left: 75%;
+        bottom: 15%;
+    }
+
+    h1 {
+        font-size: 50px;
+        padding-left: 5px; /* Tamanho menor para o título */
+    }
+
+    h5 {
+        top: 10%;
+        padding-bottom: 0;
+        padding-left: 2%;
+        color: #042B52;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .superior {
+        width: 115%;
+    }
+
+    .superior_direito {
+        display: none; /* Oculta o link do perfil */
+    }
+
+    .inferior {
+        top: 12%; /* Ajusta o espaço para o menu lateral */
+    }
+
+    .inferior_esquerdo {
+        display: none; /* Oculta o menu lateral */
+    }
+
+    .menu {
+        color: #042B52;
+        font-size: x-large;
+        line-height: 0.5px;
+    }
+
+    .menu-baixo-mobile {
+        position: absolute;
+        top: 70%;
+        width: 110%;
+    }
+
+    .opcoes a {
+        padding-left: 2%;
+        text-decoration: underline;
+    }
+
+    .inferior_direito_principal {
+        /*position: absolute;*/
+        top: 15%;
+        width: 100%; /* Ocupa toda a largura disponível */
+    }
+
+    .noticia {
+        position: absolute;
+        max-width: 100%;
+        width: 97%;
+        align-items: start;
+        right: 16.5%;
+    }
+
+    .noticia img {
+        max-width: 100%; /* Imagem de notícia se ajusta à largura da tela */
+    }
+
+    a#titulo {
+        font-size: xx-large;
+    }
+
+    p#subtitulo {
+        font-size: larger;
+    }
+
+    section,
+    article,
+    aside {
+        min-width: 100%;
+        left: 0; /* Ocupa toda a largura disponível */
+    }
 }

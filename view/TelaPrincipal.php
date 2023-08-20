@@ -23,9 +23,9 @@ $categoriasMenu = Categoria::getAll();
     <link rel="stylesheet" href="Principal.css">
     <script>
         function toggleMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.classList.toggle('show-menu');
-}
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('show-menu');
+        }
     </script>
     <title>Notifs</title>
 </head>
@@ -39,7 +39,7 @@ $categoriasMenu = Categoria::getAll();
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
-                </div>
+            </div>
             <div class="superior_direito">
                 <a href="TelaPerfil.php"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
             </div>

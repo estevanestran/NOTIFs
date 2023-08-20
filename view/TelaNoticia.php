@@ -58,6 +58,12 @@ if (isset($_GET['id'])){
         });
     });
     </script>
+    <script>
+        function toggleMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu.classList.toggle('show-menu');
+}
+    </script>
     <title>Notifs</title>
 </head>
 <body>
@@ -66,12 +72,17 @@ if (isset($_GET['id'])){
             <div class="superior_esquerdo">
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
             </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+            </div>
             <div class="superior_direito">
                 <a href="TelaPerfil.php"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
             </div>
         </div>
         <div class="inferior">
-            <div class="inferior_esquerdo">
+        <div class="inferior_esquerdo">
                 <div class="menu_topo">
                 <?php foreach($categorias as $categoria){
                 echo "<p><a id='menu' href='TelaCategoria.php?id=" . $categoria->getId() . "'>" . $categoria->getNome(); "</a></p>";
@@ -92,19 +103,48 @@ if (isset($_GET['id'])){
                     <?php endif; ?>
                 </div>
             </div>
+            <div class="mobile-menu">
+            <div class="mobile-links">
+                <!-- Coloque os links do menu aqui -->
+                <a href="TelaPerfil.php"><h5><i class="fa-solid fa-user fa-lg" style="color: #042B52;"></i><?php echo $nomeUser; ?> </h5></a><br>
+                <div class="opcoes">
+                <?php foreach($categorias as $categoria): ?>
+                    <p><a class="menu" href="TelaCategoria.php?id=<?php echo $categoria->getId(); ?>"><?php echo $categoria->getNome(); ?></a></p>
+                <?php endforeach; ?>
+                <div class="menu-baixo-mobile">
+                <?php if ($isComum): ?>
+                    <p><a class="menu" href="TelaPedir.php">Solicitar cargo</a></p>
+                <?php endif; ?>
+                <?php if ($isAdmin || $isPromoted): ?>
+                    <p><a class="menu" href="TelaPublicacao.php">Escrever notícia</a></p>
+                    <p><a class="menu" href="TelaPublicacao.php">Minhas notícias</a></p>
+                <?php endif; ?>
+                <?php if ($isAdmin): ?>
+                    <p><a class="menu" href="TelaSolicitacoes.php">Gerenciar cargos</a></p>
+                    <p><a class="menu" href="TelaDenuncias.php">Denúncias</a></p>
+                <?php endif; ?>
+                </div>
+                </div>
+            </div>
+            </div>
         <div class="inferior_direito_principal">
-            <div class="noticia">
                 <div class="alerta">
                 <button id="alertButton" data-noticia-id="<?php echo $noticiaEncontrada->getId(); ?>"><i class="fa-solid fa-triangle-exclamation fa-xl" style="color: #042b52;"></i></button>
                 </div>
+            <div class="noticia">
             <?php
                 $categoria_noticia = new Categoria_noticia();
                 $categoria_noticia->setId_noticia($noticiaEncontrada->getId());
                 $categoria_nome = $categoria_noticia->getNome();
                 ?>
                 <nav>
+                <div>
                 <h2><?php echo $noticiaEncontrada->getTitulo();?></h2>
+                <br>
+                <div class="subtitulo">
                 <p id="subtitulo"><?php echo $noticiaEncontrada->getSubtitulo(); ?></p>
+                </div>
+                </div>
                 <p id="data">
                         <?php echo $noticiaEncontrada->getData(); ?> &#8226; 
                         <a href='TelaCategoria.php?id=<?php echo $categoria_noticia->getCategoriaId(); ?>'><?php echo $categoria_nome; ?></a><?php $autorID = $noticiaEncontrada->getIdUsuario(); // Obtém o ID do autor
