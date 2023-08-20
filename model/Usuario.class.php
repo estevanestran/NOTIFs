@@ -224,6 +224,18 @@ include_once 'conexao.php';
             return $array;
         }
 
+        public function pegaId($id){
+            $pdo = conexao();
+
+            $sql = "SELECT id FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindParam(':id', $id);
+            $sql->execute();
+
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            return $result['id'];
+        }
+
         public function pegaEmail($id){
             $pdo = conexao();
 

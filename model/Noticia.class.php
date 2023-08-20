@@ -97,7 +97,7 @@ class Noticia{
             $extensao = strtolower(pathinfo($name, PATHINFO_EXTENSION));
             $endereco = $pasta . $nomeArquivo . "." . $extensao;
 
-            if($extensao != "jpg" && $extensao != "png"){
+            if($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg"){
                 die("Tipo de arquivo não aceito");
             }
 

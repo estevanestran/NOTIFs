@@ -1,10 +1,13 @@
 <?php 
+session_start();
+$idUser = null;
+
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
 
     include_once '../model/Usuario.class.php';
     $u = new Usuario();
 
-    $idUser = $u->pegaId($_SESSION['id']);
+    $idUser = $_SESSION['id'];
 
 }
 $acao = $_GET['acao'];
@@ -64,6 +67,7 @@ if($acao === 'publicar'){
             }
         }
     }
+    /*var_dump($idUser);*/
     header('Location:../view/TelaPrincipal.php');
 
 }
