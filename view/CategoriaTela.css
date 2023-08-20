@@ -48,7 +48,7 @@ h1 {
     position: absolute;
     height: 35px;
     top: 30%;
-    right: 5%;
+    right: 15%;
 }
 
 h5 {
@@ -144,9 +144,9 @@ a#minhas {
 
 .inferior_direito_principal {
     position: absolute;
-    width: 80%;
+    width: 90%;
     left: 15%;
-    top: 10%;
+    top: 21%;
 }
 
 .noticia {
@@ -158,8 +158,8 @@ a#minhas {
   }
   
 .noticia img {
-    max-width: 9em;
-    min-width: 9em;
+    max-width: 8.5em;
+    min-width: 8.5em;
     height: auto;
     margin-bottom: 10px;
   }
