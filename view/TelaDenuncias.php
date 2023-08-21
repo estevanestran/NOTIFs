@@ -62,11 +62,12 @@ $noticias = Noticia::getAlertas();
                     <div class="pedido">
                             <p class="nome">
                                 <?php echo "<a id='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><strong>Título: </strong>" . $noticia->getTitulo() . "</a>"?>
+                            </p>
                                 <div class="links">
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=apagar&id=" . $noticia->getId() . "'>Apagar notícia</a>" ?>
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=ignorar&id=" . $noticia->getId() . "'>Ignorar</a>" ?>
                                 </div>
-                            </p>
+                            
                     </div>
                 <?php } ?>
             </div>
