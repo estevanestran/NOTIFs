@@ -40,25 +40,6 @@ if (isset($_GET['id'])){
     <link rel="stylesheet" href="NoticiaTela.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $("#alertButton").on("click", function() {
-            var noticiaId = $(this).data("noticia-id");
-
-            $.ajax({
-                type: "POST",
-                url: "../controller/alerta.php",
-                data: { id: noticiaId },
-                success: function(response) {
-                    alert("Seu alerta foi encaminhado para análise do administrador.");
-                },
-                error: function() {
-                    alert("Erro ao alertar sobre a notícia");
-                }
-            });
-        });
-    });
-    </script>
-    <script>
         function toggleMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('show-menu');
@@ -128,22 +109,23 @@ if (isset($_GET['id'])){
             </div>
             </div>
         <div class="inferior_direito_principal">
-                <div class="alerta">
-                <button id="alertButton" data-noticia-id="<?php echo $noticiaEncontrada->getId(); ?>"><i class="fa-solid fa-triangle-exclamation fa-xl" style="color: #042b52;"></i></button>
-                </div>
             <div class="noticia">
+            <div class="alerta">
+                
+            </div>
             <?php
                 $categoria_noticia = new Categoria_noticia();
                 $categoria_noticia->setId_noticia($noticiaEncontrada->getId());
                 $categoria_nome = $categoria_noticia->getNome();
                 ?>
                 <nav>
-                <div>
+                <div class="titulo">
                 <h2><?php echo $noticiaEncontrada->getTitulo();?></h2>
+                <button id="alertButton" type="button" data-noticia-id="<?php echo $noticiaEncontrada->getId(); ?>"><i class="fa-solid fa-triangle-exclamation fa-xl" style="color: #042b52;"></i></button>
                 <br>
+                </div>
                 <div class="subtitulo">
                 <p id="subtitulo"><?php echo $noticiaEncontrada->getSubtitulo(); ?></p>
-                </div>
                 </div>
                 <p id="data">
                         <?php echo $noticiaEncontrada->getData(); ?> &#8226; 
@@ -163,6 +145,26 @@ if (isset($_GET['id'])){
 
         </div>
     </div>
+    <script>
+    $(document).ready(function() {
+        $("#alertButton").on("click", function() {
+            console.log("Clique no botão detectado");
+            var noticiaId = $(this).data("noticia-id");
+
+            $.ajax({
+                type: "POST",
+                url: "../controller/alerta.php",
+                data: { id: noticiaId },
+                success: function(response) {
+                    alert("Seu alerta foi encaminhado para análise do administrador.");
+                },
+                error: function() {
+                    alert("Erro ao alertar sobre a notícia");
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
 <?php else: header('Location: index.html'); endif;?>

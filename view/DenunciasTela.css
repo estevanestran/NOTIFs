@@ -159,9 +159,10 @@ h2 {
 }
 
 .pedido {
+    position: relative;
     display: flex;
     align-items: flex-start;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .nome {
@@ -193,7 +194,7 @@ a#titulo:hover {
 }
 
 .links {
-    position: absolute;
+    position: relative;
     left: 75%;
 }
 

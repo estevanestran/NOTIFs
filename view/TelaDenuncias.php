@@ -66,8 +66,7 @@ $noticias = Noticia::getAlertas();
                                 <div class="links">
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=apagar&id=" . $noticia->getId() . "'>Apagar notícia</a>" ?>
                                 <?php echo "<a class='acao' href='../controller/denuncias.php?acao=ignorar&id=" . $noticia->getId() . "'>Ignorar</a>" ?>
-                                </div>
-                            
+                                </div> 
                     </div>
                 <?php } ?>
             </div>

@@ -48,7 +48,7 @@ h1 {
     position: absolute;
     height: 35px;
     top: 30%;
-    right: 5%;
+    right: 15%;
 }
 
 h5 {
@@ -163,11 +163,17 @@ a#minhas {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    margin-top: 25px;
 }
 
 .noticia {
     position: relative;
     max-width: 1100px;
+  }
+
+  .titulo {
+    position: relative;
+    width: 100%;
   }
 
 .imagem {

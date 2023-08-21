@@ -40,6 +40,12 @@ $categoriasMenu = Categoria::getAll();
     }
 }
     </script>
+    <script>
+        function toggleMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('show-menu');
+        }
+    </script>
     <title>Notifs</title>
 </head>
 <body>
@@ -47,6 +53,11 @@ $categoriasMenu = Categoria::getAll();
         <div class="superior">
             <div class="superior_esquerdo">
                 <a href="TelaPrincipal.php"><h1 class="nome_site">NOTIFs</h1></a>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
             </div>
             <div class="superior_direito">
                 <a href="TelaPerfil.php"><h5><?php echo $nomeUser; ?>  <i class="fa-solid fa-user fa-lg" style="color: #d9d7d7;"></i></h5></a>
@@ -73,6 +84,30 @@ $categoriasMenu = Categoria::getAll();
                     <p><a href="TelaDenuncias.php" id="denuncias">Denúncias</a></p>
                     <?php endif; ?>
                 </div>
+            </div>
+            <div class="mobile-menu">
+            <div class="mobile-links">
+                <!-- Coloque os links do menu aqui -->
+                <a href="TelaPerfil.php"><h5><i class="fa-solid fa-user fa-lg" style="color: #042B52;"></i><?php echo $nomeUser; ?> </h5></a><br>
+                <div class="opcoes">
+                <?php foreach($categoriasMenu as $categoria): ?>
+                    <p><a class="menu" href="TelaCategoria.php?id=<?php echo $categoria->getId(); ?>"><?php echo $categoria->getNome(); ?></a></p>
+                <?php endforeach; ?>
+                <div class="menu-baixo-mobile">
+                <?php if ($isComum): ?>
+                    <p><a class="menu" href="TelaPedir.php">Solicitar cargo</a></p>
+                <?php endif; ?>
+                <?php if ($isAdmin || $isPromoted): ?>
+                    <p><a class="menu" href="TelaPublicacao.php">Escrever notícia</a></p>
+                    <p><a class="menu" href="TelaPublicacao.php">Minhas notícias</a></p>
+                <?php endif; ?>
+                <?php if ($isAdmin): ?>
+                    <p><a class="menu" href="TelaSolicitacoes.php">Gerenciar cargos</a></p>
+                    <p><a class="menu" href="TelaDenuncias.php">Denúncias</a></p>
+                <?php endif; ?>
+                </div>
+                </div>
+            </div>
             </div>
         <div class="inferior_direito_principal">
             <div class="perfil">
