@@ -1,5 +1,6 @@
 <?php 
 include_once 'conexao.php';
+include_once 'Noticia.class.php';
 
     class Usuario{
 
@@ -258,6 +259,18 @@ include_once 'conexao.php';
             
         }
 
+        public static function getNoticiaPorCurso($id){
+
+            $pdo = conexao();
+    
+            $stmt = $pdo->prepare('SELECT * FROM noticia WHERE id IN (SELECT id_noticia FROM curso_noticia WHERE id_curso = (SELECT id_curso FROM usuario WHERE id = :id))');
+
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        
+            return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+        }
+
         public function pegaEstado($id) {
             $pdo = conexao();
             $query = "SELECT estado FROM usuario WHERE id = :id";
@@ -278,6 +291,17 @@ include_once 'conexao.php';
 
             $result = $sql->fetch(PDO::FETCH_ASSOC);
             return $result['pedido'];
+        }
+
+        public function pegaCurso($id) {
+            $pdo = conexao();
+            $sql = "SELECT id_curso FROM usuario WHERE id = :id";
+            $sql = $pdo->prepare($sql);
+            $sql->bindParam(':id', $id, PDO::PARAM_INT);
+            $sql->execute();
+
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            return $result['id_curso'];
         }
 
     }

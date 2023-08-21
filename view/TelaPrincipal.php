@@ -7,7 +7,12 @@ include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
 
-$noticias = Noticia::getAll();
+if($servidor){
+    $noticias = Noticia::getAll();
+} else {
+    $id = $_SESSION['id'];
+    $noticias = Usuario::getNoticiaPorCurso($id);
+}
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();
 

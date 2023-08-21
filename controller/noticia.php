@@ -54,20 +54,21 @@ if($acao === 'publicar'){
     $CursoNoticia = new Curso_noticia();
 
     if (!empty($nomeCursos)) {
-        foreach ($nomeCursos as $nomeCurso){
-        $pdo = conexao();
-        $stmt = $pdo->prepare('SELECT id FROM curso WHERE nome = :curso');
-        $stmt->execute([':curso' => $nomeCurso]);
-        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        foreach ($nomeCursos as $nomeCurso) {
+            $pdo = conexao();
+            $stmt = $pdo->prepare('SELECT id FROM curso WHERE nome = :curso');
+            $stmt->execute([':curso' => $nomeCurso]);
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            
             if ($resultado) {
                 $idCurso = $resultado['id'];
                 $CursoNoticia->setId_curso($idCurso);
                 $CursoNoticia->setId_noticia($ultimoID);
                 $CursoNoticia->save();
+                
             }
         }
     }
-    /*var_dump($idUser);*/
     header('Location:../view/TelaPrincipal.php');
 
 }

@@ -22,5 +22,9 @@ if(isset($_SESSION['id']) && !empty($_SESSION['id'])){
     $pedidoUser = $u->pegaPedido($_SESSION['id']);
     $naoPediu = $pedidoUser == 0;
     $pediu = $pedidoUser == 1;
+
+    $teste = $u->pegaCurso($_SESSION['id']);
+    $servidor = $teste == 16;
+    $aluno = $teste != 16;
 }
 ?>
