@@ -26,9 +26,9 @@ $categorias = Categoria::getAll();
     <script src="https://kit.fontawesome.com/f61e3910a0.js" crossorigin="anonymous"></script>
     <script>
         function toggleMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.classList.toggle('show-menu');
-}
+          const mobileMenu = document.querySelector('.mobile-menu');
+          mobileMenu.classList.toggle('show-menu');
+        }
     </script>
     <title>Notifs</title>
 </head>
@@ -131,6 +131,7 @@ $categorias = Categoria::getAll();
                 <input class="caixas" type="checkbox" name="curso[]" value="Educação: integração de saberes"><label for="curso">EIS</label>
                 <br>
                 <input class="caixas" type="checkbox" name="curso[]" value="Linguagens contemporâneas e ensino"><label for="curso">LCE</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Automação industrial"><label for="curso">TAI</label>
                 <input class="caixas" type="checkbox" name="curso[]" value="PROFMAT"><label for="curso">PROFMAT</label>
                 </fieldset> <br><br><br><br>
                 <input type="hidden" id="id" name="id">

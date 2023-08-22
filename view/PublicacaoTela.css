@@ -219,6 +219,10 @@ fieldset > label {
 
 /*responsividade*/
 
+.escolhas-mobile {
+    display: none;
+}
+
 .mobile-menu {
     display: none; /* Oculta o menu em telas maiores */
 }
@@ -340,10 +344,14 @@ fieldset > label {
     }
 
     fieldset {
-        top: 130%;
+        top: 146%;
         margin-top: 47%;
         left: 0;
         width: 90%;
         margin-left: -45%;
+    }
+
+    div.tox.tox-tinymce {
+        width: 120%;
     }
 }

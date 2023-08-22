@@ -2,16 +2,24 @@
 include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
-    include_once '../controller/verifica.php';
+include_once '../controller/verifica.php';
 include_once '../model/Categoria.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Noticia.class.php';
 
 if(isset($_GET['id'])) {
     $categoria_id = $_GET['id'];
-    $noticias = Noticia::getByCategoryId($categoria_id); // Implemente a função que busca notícias por categoria
-} else {
+    if($servidor){
+        $noticias = Noticia::getByCategoryId($categoria_id);
+    } else {
+        $id = $_SESSION['id'];
+        $noticias = Usuario::getNoticiaPorCursoECategoria($id, $categoria_id);
+    }
+} elseif($servidor) {
     $noticias = Noticia::getAll();
+} else {
+    $id = $_SESSION['id'];
+    $noticias = Usuario::getNoticiaPorCurso($id);
 }
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();

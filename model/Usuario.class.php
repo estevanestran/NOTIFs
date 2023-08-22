@@ -271,6 +271,20 @@ include_once 'Noticia.class.php';
             return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
         }
 
+        public static function getNoticiaPorCursoECategoria($id, $categoria_id){
+
+            $pdo = conexao();
+            $stmt = $pdo->prepare('SELECT * FROM noticia n
+                                   INNER JOIN categoria_noticia cn ON n.id = cn.id_noticia
+                                   WHERE id IN (SELECT id_noticia FROM curso_noticia WHERE id_curso = (SELECT id_curso FROM usuario WHERE id = :id)) AND cn.id_categoria = :categoria_id');
+
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':categoria_id', $categoria_id, PDO::PARAM_INT);
+            $stmt->execute();
+        
+            return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+        }
+
         public function pegaEstado($id) {
             $pdo = conexao();
             $query = "SELECT estado FROM usuario WHERE id = :id";
