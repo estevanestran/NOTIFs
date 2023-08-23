@@ -6,13 +6,8 @@ include_once '../controller/verifica.php';
 include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
+include_once '../controller/pesquisa.php';
 
-if($servidor){
-    $noticias = Noticia::getAll();
-} else {
-    $id = $_SESSION['id'];
-    $noticias = Usuario::getNoticiaPorCurso($id);
-}
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();
 
@@ -50,12 +45,6 @@ $categoriasMenu = Categoria::getAll();
             </div>
         </div>
         <div class="inferior">
-            <div class="pesquisa">
-                <form action="../controller/pesquisa.php" method="GET">
-                  <button id="botao-pesquisa"><i class="fa fa-search"></i></button>
-                  <input type="text" id="pesquisado" name="termo_pesquisa" class="form-control form-input" placeholder="Pesquise aqui">
-                </form>
-            </div>
             <div class="inferior_esquerdo">
                 <div class="menu_topo">
                 <?php foreach($categoriasMenu as $categoria){
@@ -104,7 +93,7 @@ $categoriasMenu = Categoria::getAll();
         </div>
         <div class="inferior_direito_principal">
             <div class="noticia">
-                <?php foreach ($noticias as $noticia) {
+                <?php foreach ($resultados as $noticia) {
                 $categoria_noticia = new Categoria_noticia();
                 $categoria_noticia->setId_noticia($noticia->getId());
                 $categoria_nome = $categoria_noticia->getNome();

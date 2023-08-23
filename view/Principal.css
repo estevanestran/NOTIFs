@@ -72,13 +72,56 @@ h5 {
     left: 0;
 }
 
+/*BARRA DE PESQUISA*/
+
+.pesquisa{
+    position: relative;
+
+}
+
+button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-color: var(--bs-body-bg);
+}
+
+.pesquisa .fa-search{
+    position: absolute;
+    top: 55%;
+    left: 77.5%;
+    color: #f3f3f3;
+}
+
+.pesquisa-input{
+    position: absolute;
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-control{
+    position: relative;
+    width: 15%;
+    left: 79%;
+}
+
+.pesquisa-input:focus{
+    box-shadow: none;
+    border:none;
+}
+
 /*MENU LATERAL*/
 
 .inferior_esquerdo {
     position: relative;
     width: 10%;
     height: 82%;
-    top: 10%;
+    top: 1%;
     left: 2%;
     background-color: #042B52;
     box-shadow: 1px 1px 15px #323232;
@@ -164,7 +207,6 @@ a#minhas {
     margin-bottom: 10px;
   }
 
-
 section {
    position: relative;
    left: 2%;
@@ -172,7 +214,7 @@ section {
    max-width: 800px;
 }
 
-  a#titulo {
+.titulo {
     font-family: 'Noto sans', sans-serif;
     font-size: xx-large;
     font-weight: 600;
@@ -186,7 +228,7 @@ article {
     max-width: 800px;
 }
 
-p#subtitulo {
+.subtitulo {
     color: #323232;
     font-weight: 400;
     font-size: large;
@@ -197,17 +239,17 @@ aside {
     left: 2%;
 }
 
-p#data {
+.data {
     color: #042B52;
     font-size: large;
 }
 
-p#data > a {
+.data > a {
     color: #042B52;
     font-size: large;
 }
 
-p#data > a:hover {
+.data > a:hover {
     text-decoration: underline;
 }
 
@@ -295,6 +337,10 @@ p#data > a:hover {
         top: 12%; /* Ajusta o espaço para o menu lateral */
     }
 
+    .pesquisa {
+        display: none;
+    }
+
     .inferior_esquerdo {
         display: none; /* Oculta o menu lateral */
     }
@@ -334,11 +380,11 @@ p#data > a:hover {
         max-width: 100%; /* Imagem de notícia se ajusta à largura da tela */
     }
 
-    a#titulo {
+    .titulo {
         font-size: xx-large;
     }
 
-    p#subtitulo {
+    .subtitulo {
         font-size: larger;
     }
 
