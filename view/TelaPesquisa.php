@@ -3,10 +3,10 @@ include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
 
 include_once '../controller/verifica.php';
+include_once '../controller/pesquisa.php';
 include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
-include_once '../controller/pesquisa.php';
 
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();
@@ -93,7 +93,10 @@ $categoriasMenu = Categoria::getAll();
         </div>
         <div class="inferior_direito_principal">
             <div class="noticia">
-                <?php foreach ($resultados as $noticia) {
+                <?php if (isset($_SESSION['resultados_pesquisa']) && !empty($_SESSION['resultados_pesquisa'])) {
+                $resultados = $_SESSION['resultados_pesquisa'];
+                // Recupere os resultados da pesquisa da variável de sessão.
+                foreach ($resultados as $noticia) {
                 $categoria_noticia = new Categoria_noticia();
                 $categoria_noticia->setId_noticia($noticia->getId());
                 $categoria_nome = $categoria_noticia->getNome();
@@ -109,7 +112,14 @@ $categoriasMenu = Categoria::getAll();
                         </p>
                 </aside>
                 </nav>
-                <?php } ?>
+                <?php } 
+                unset($_SESSION['resultados_pesquisa']);
+
+                } else {
+                // Caso não haja resultados da pesquisa, você pode exibir uma mensagem de "Nenhum resultado encontrado".
+                echo "Nenhum resultado encontrado.";
+                }
+                ?>
             </div>
         </div>
     </div>
