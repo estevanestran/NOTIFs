@@ -59,7 +59,7 @@ $categoriasMenu = Categoria::getAll();
                     <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
-                    <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <p><a href="TelaMinhas.php" id="minhas">Minhas notícias</a></p>
                     <?php endif; ?>
                     <?php if ($isAdmin): ?>
                     <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
@@ -81,7 +81,7 @@ $categoriasMenu = Categoria::getAll();
                 <?php endif; ?>
                 <?php if ($isAdmin || $isPromoted): ?>
                     <p><a class="menu" href="TelaPublicacao.php">Escrever notícia</a></p>
-                    <p><a class="menu" href="TelaPublicacao.php">Minhas notícias</a></p>
+                    <p><a class="menu" href="TelaMinhas.php">Minhas notícias</a></p>
                 <?php endif; ?>
                 <?php if ($isAdmin): ?>
                     <p><a class="menu" href="TelaSolicitacoes.php">Gerenciar cargos</a></p>
