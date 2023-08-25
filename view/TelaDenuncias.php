@@ -58,7 +58,7 @@ $noticias = Noticia::getAlertas();
                     <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
-                    <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
+                    <p><a href="TelaMinhas.php" id="minhas">Minhas notícias</a></p>
                     <?php endif; ?>
                     <?php if ($isAdmin): ?>
                     <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>

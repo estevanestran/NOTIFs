@@ -105,6 +105,7 @@ a#menu {
 .menu_baixo {
     position: absolute;
     bottom: 0.1%;
+    width: 102%;
 }
 
 .menu_baixo p {
