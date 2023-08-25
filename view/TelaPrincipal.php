@@ -112,7 +112,7 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 <?php echo "<a class='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><img src='" . $noticia->getFoto() . "'></a>"; ?>
                 <nav>
-                <section><a class='titulo' href='Noticia.php?id=<?php echo $noticia->getId(); ?>'><?php echo $noticia->getTitulo(); ?></a></section>
+                <section><a class='titulo' href='TelaNoticia.php?id=<?php echo $noticia->getId(); ?>'><?php echo $noticia->getTitulo(); ?></a></section>
                 <article><p class="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
                 <aside><p class="data">
                         <?php echo $noticia->getData(); ?> &#8226; 

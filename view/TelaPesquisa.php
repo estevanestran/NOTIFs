@@ -45,7 +45,7 @@ $categoriasMenu = Categoria::getAll();
             </div>
         </div>
         <div class="inferior">
-            <div class="inferior_esquerdo">
+            <div class="inferior_esquerdo" style="top: 10%;">
                 <div class="menu_topo">
                 <?php foreach($categoriasMenu as $categoria){
                 echo "<p><a id='menu' href='TelaCategoria.php?id=" . $categoria->getId() . "'>" . $categoria->getNome(); "</a></p>";
