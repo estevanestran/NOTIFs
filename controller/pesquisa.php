@@ -4,20 +4,35 @@ include_once '../model/conexao.php';
 include_once '../model/Noticia.class.php';
 include_once 'verifica.php';
 
+$resultados=[];
+
 if (isset($_GET['termo_pesquisa'])) {
     $pdo = conexao();
     if($servidor){
     $termo_pesquisa = '%' . $_GET['termo_pesquisa'] . '%'; // Adicione % para corresponder a qualquer parte do título.
 
     // Construa a consulta SQL para encontrar notícias com o termo de pesquisa no título.
-    $sql = "SELECT * FROM noticia WHERE titulo LIKE :termo_pesquisa";
+    $sql = "SELECT * FROM noticia WHERE titulo LIKE :termo_pesquisa OR corpo LIKE :termo_pesquisa";
 
     // Execute a consulta usando prepared statements.
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':termo_pesquisa', $termo_pesquisa, PDO::PARAM_STR);
+    $stmt->bindParam(':termo_pesquisa', $termo_pesquisa);
     $stmt->execute();
 
-    $resultados = $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+    $query = $stmt->fetchAll(); 
+    foreach ($query as $linha){
+        $noticia = new Noticia();
+        $noticia->setTitulo($linha['titulo']);
+        $noticia->setSubtitulo($linha['subtitulo']);
+        $noticia->setCorpo($linha['corpo']);
+        $noticia->setId($linha['id']);
+        $noticia->setData($linha['data_noticia']);
+        $noticia->setIdUsuario($linha['id_usuario']);
+        $noticia->setFoto($linha['foto']);
+        $noticia->setAlerta($linha['alerta']);
+        $resultados[] = $noticia;
+    }
+    //var_dump($resultados);
 
     // Agora, você tem os resultados da pesquisa em $resultados.
     } else {
@@ -36,9 +51,10 @@ if (isset($_GET['termo_pesquisa'])) {
         // Agora, você tem os resultados da pesquisa em $resultados.
     }
 
-    $_SESSION['resultados_pesquisa'] = $resultados;
+    /*$_SESSION['resultados_pesquisa'] = $resultados;
     header('Location:../view/TelaPesquisa.php');
-    exit();
+    exit();*/
+
 }
 
 ?>

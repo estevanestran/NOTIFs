@@ -109,6 +109,7 @@ class Noticia{
             try{
             $stmt = $pdo->prepare('INSERT INTO noticia (titulo, subtitulo, corpo, data_noticia, id_usuario, foto, alerta) VALUES(:titulo, :subtitulo, :corpo, :data_noticia, :id_usuario, :foto, :alerta)');
 
+
             $stmt->execute([
                 ':titulo' => $this->titulo,
                 ':subtitulo' => $this->subtitulo,
@@ -134,12 +135,13 @@ class Noticia{
         $pdo = conexao();
         $lista = [];
         foreach($pdo->query('SELECT * FROM noticia ORDER BY id DESC') as $linha){
+            $timestamp = strtotime($linha['data_noticia']);
             $noticia = new Noticia();
             $noticia->setTitulo($linha['titulo']);
             $noticia->setSubtitulo($linha['subtitulo']);
             $noticia->setCorpo($linha['corpo']);
             $noticia->setId($linha['id']);
-            $noticia->setData($linha['data_noticia']);
+            $noticia->setData(date('d-m-Y', $timestamp));
             $noticia->setIdUsuario($linha['id_usuario']);
             $noticia->setFoto($linha['foto']);
             $noticia->setAlerta($linha['alerta']);

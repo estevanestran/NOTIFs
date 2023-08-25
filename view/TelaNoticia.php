@@ -111,7 +111,7 @@ if (isset($_GET['id'])){
         <div class="inferior_direito_principal">
             <div class="noticia">
             <div class="alerta">
-                
+            <button id="alertaButton" type="button" data-noticia-id="<?php echo $noticiaEncontrada->getId(); ?>"><i class="fa-solid fa-triangle-exclamation fa-xl" style="color: #042b52;"></i></button>
             </div>
             <?php
                 $categoria_noticia = new Categoria_noticia();
@@ -148,6 +148,25 @@ if (isset($_GET['id'])){
     <script>
     $(document).ready(function() {
         $("#alertButton").on("click", function() {
+            console.log("Clique no botão detectado");
+            var noticiaId = $(this).data("noticia-id");
+
+            $.ajax({
+                type: "POST",
+                url: "../controller/alerta.php",
+                data: { id: noticiaId },
+                success: function(response) {
+                    alert("Seu alerta foi encaminhado para análise do administrador.");
+                },
+                error: function() {
+                    alert("Erro ao alertar sobre a notícia");
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $("#alertaButton").on("click", function() {
             console.log("Clique no botão detectado");
             var noticiaId = $(this).data("noticia-id");
 

@@ -93,8 +93,8 @@ $categoriasMenu = Categoria::getAll();
         </div>
         <div class="inferior_direito_principal">
             <div class="noticia">
-                <?php if (isset($_SESSION['resultados_pesquisa']) && !empty($_SESSION['resultados_pesquisa'])) {
-                $resultados = $_SESSION['resultados_pesquisa'];
+                <?php if (!empty($resultados)) {
+                //$resultados = $_SESSION['resultados_pesquisa'];
                 // Recupere os resultados da pesquisa da variável de sessão.
                 foreach ($resultados as $noticia) {
                 $categoria_noticia = new Categoria_noticia();

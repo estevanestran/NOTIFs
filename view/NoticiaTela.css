@@ -151,6 +151,7 @@ a#minhas {
 }
 
 .alerta {
+    display: none;
     position: absolute;
     right: 10%;
   }
@@ -350,7 +351,9 @@ h6 {
     }
 
     .alerta {
-        bottom: 10%;
+        display: block;
+        bottom: 100%;
+        left: 95%;
     }
 
     .noticia img {
@@ -368,5 +371,9 @@ h6 {
     .subtitulo {
         position: relative;
         margin-top: 40%;
+    }
+
+    button#alertButton {
+        display: none;
     }
 }

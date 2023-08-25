@@ -51,7 +51,7 @@ $categoriasMenu = Categoria::getAll();
         </div>
         <div class="inferior">
             <div class="pesquisa">
-                <form action="../controller/pesquisa.php" method="GET">
+                <form action="TelaPesquisa.php" method="GET">
                   <button id="botao-pesquisa"><i class="fa fa-search"></i></button>
                   <input type="text" id="pesquisado" name="termo_pesquisa" class="form-control form-input" placeholder="Pesquise aqui">
                 </form>
@@ -112,7 +112,7 @@ $categoriasMenu = Categoria::getAll();
                 ?>
                 <?php echo "<a class='titulo' href='TelaNoticia.php?id=" . $noticia->getId() . "'><img src='" . $noticia->getFoto() . "'></a>"; ?>
                 <nav>
-                <section><a class='titulo' href='TelaNoticia.php?id=<?php echo $noticia->getId(); ?>'><?php echo $noticia->getTitulo(); ?></a></section>
+                <section><a class='titulo' href='Noticia.php?id=<?php echo $noticia->getId(); ?>'><?php echo $noticia->getTitulo(); ?></a></section>
                 <article><p class="subtitulo"><?php echo $noticia->getSubtitulo(); ?></p></article>
                 <aside><p class="data">
                         <?php echo $noticia->getData(); ?> &#8226; 
