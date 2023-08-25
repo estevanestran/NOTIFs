@@ -100,6 +100,25 @@ $categorias = Categoria::getAll();
                 <label for="corpo">CORPO DA NOTÍCIA</label><br>
                 <textarea id="corpo" name="corpo"></textarea>
                 <br>
+                <label for="curso" style="color: #042B52; font-size: larger;">CURSOS ALVO</label><br>
+                <input class="caixas" type="checkbox" name="curso[]" value="Administração"><label for="curso" class="nomecurso">ADM</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Desenvolvimento de sistemas"><label for="curso" class="nomecurso">DS</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Eletrônica"><label for="curso" class="nomecurso">Eletrônica</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Engenharia eletrônica"><label for="curso" class="nomecurso">EngEle</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso[]" value="Análise e desenvolvimento de sistemas"><label for="curso" class="nomecurso">TADS</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Logística"><label for="curso" class="nomecurso">Logística</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Matemática"><label for="curso" class="nomecurso">Matemática</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso[]" value="Comércio"><label for="curso" class="nomecurso">Comércio</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Manutenção e suporte em informática"><label for="curso" class="nomecurso">TMSI</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Gestão de projetos e inovação"><label for="curso" class="nomecurso">GPI</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Educação: integração de saberes"><label for="curso" class="nomecurso">EIS</label>
+                <br>
+                <input class="caixas" type="checkbox" name="curso[]" value="Linguagens contemporâneas e ensino"><label for="curso" class="nomecurso">LCE</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="Automação industrial"><label for="curso" class="nomecurso">TAI</label>
+                <input class="caixas" type="checkbox" name="curso[]" value="PROFMAT"><label for="curso" class="nomecurso">PROFMAT</label>
+                <br>
                 <label for="categoria">CATEGORIA DA NOTÍCIA</label>
                 <select name="categoria" id="categoria" required>
                   <option value="">Selecione...</option>
@@ -114,26 +133,6 @@ $categorias = Categoria::getAll();
                 <br>
                 <label for="foto">IMAGEM DE CAPA</label>
                 <input type="file" id="foto" name="foto">
-                <fieldset>
-                <label for="curso" style="color: #042B52; font-size: larger;">CURSOS ALVO</label><br>
-                <input class="caixas" type="checkbox" name="curso[]" value="Administração"><label for="curso">ADM</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Desenvolvimento de sistemas"><label for="curso">DS</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Eletrônica"><label for="curso">Eletrônica</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Engenharia eletrônica"><label for="curso">EngEle</label>
-                <br>
-                <input class="caixas" type="checkbox" name="curso[]" value="Análise e desenvolvimento de sistemas"><label for="curso">TADS</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Logística"><label for="curso">Logística</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Matemática"><label for="curso">Matemática</label>
-                <br>
-                <input class="caixas" type="checkbox" name="curso[]" value="Comércio"><label for="curso">Comércio</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Manutenção e suporte em informática"><label for="curso">TMSI</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Gestão de projetos e inovação"><label for="curso">GPI</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Educação: integração de saberes"><label for="curso">EIS</label>
-                <br>
-                <input class="caixas" type="checkbox" name="curso[]" value="Linguagens contemporâneas e ensino"><label for="curso">LCE</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="Automação industrial"><label for="curso">TAI</label>
-                <input class="caixas" type="checkbox" name="curso[]" value="PROFMAT"><label for="curso">PROFMAT</label>
-                </fieldset> <br><br><br><br>
                 <input type="hidden" id="id" name="id">
                 <input type="hidden" id="alerta" name="alerta" value="0">
                 <input type="submit" id="botao" value="PUBLICAR" onclick="validarFormulario(event)">

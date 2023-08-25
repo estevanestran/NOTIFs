@@ -192,7 +192,6 @@ input#subtitulo {
 
 input[type=checkbox]{
     position: relative;
-    left: 50%;
 }
 
 select{
@@ -204,15 +203,7 @@ input[type=file]{
     font-family: 'Noto sans', sans-serif;
 }
 
-fieldset {
-    position: absolute;
-    top: 145%;
-    left: 63%;
-}
-
-fieldset > label {
-    position: relative;
-    left: 50%;
+.nomecurso {
     font-size: large;
     color: #323232;
 }
@@ -332,7 +323,7 @@ fieldset > label {
 
     input[type=submit]{
         left: 20%;
-        margin-top: 30%;
+        margin-top: 10%;
     }
 
     input[type=text]{
