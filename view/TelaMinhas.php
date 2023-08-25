@@ -7,12 +7,8 @@ include_once '../model/Noticia.class.php';
 include_once '../model/Categoria_noticia.class.php';
 include_once '../model/Categoria.class.php';
 
-if($servidor){
-    $noticias = Noticia::getAll();
-} else {
-    $id = $_SESSION['id'];
-    $noticias = Usuario::getNoticiaPorCurso($id);
-}
+$id_usuario = $_SESSION['id'];
+$noticias = Noticia::getNoticiaPorAutor($id_usuario);
 $categorias = Categoria_noticia::getAll();
 $categoriasMenu = Categoria::getAll();
 
@@ -50,13 +46,7 @@ $categoriasMenu = Categoria::getAll();
             </div>
         </div>
         <div class="inferior">
-            <div class="pesquisa">
-                <form action="TelaPesquisa.php" method="GET">
-                  <button id="botao-pesquisa"><i class="fa fa-search"></i></button>
-                  <input type="text" id="pesquisado" name="termo_pesquisa" class="form-control form-input" placeholder="Pesquise aqui">
-                </form>
-            </div>
-            <div class="inferior_esquerdo">
+            <div class="inferior_esquerdo" style="top: 10%;">
                 <div class="menu_topo">
                 <?php foreach($categoriasMenu as $categoria){
                 echo "<p><a id='menu' href='TelaCategoria.php?id=" . $categoria->getId() . "'>" . $categoria->getNome(); "</a></p>";
@@ -69,7 +59,7 @@ $categoriasMenu = Categoria::getAll();
                     <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
-                    <p><a href="TelaMinhas.php" id="minhas">Minhas notícias</a></p>
+                    <p><a href="TelaPublicacao.php" id="minhas">Minhas notícias</a></p>
                     <?php endif; ?>
                     <?php if ($isAdmin): ?>
                     <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>

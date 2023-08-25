@@ -221,6 +221,32 @@ class Noticia{
         $result = $sql->fetch(PDO::FETCH_ASSOC);
         return " &#8226; Publicado por " . $result['nome'];
     }
+
+    public static function getNoticiaPorAutor($id_usuario) {
+
+        $pdo = conexao();
+
+        $sql = "SELECT * FROM noticia WHERE id_usuario = :id_usuario";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue(':id_usuario', $id_usuario, PDO::PARAM_INT);
+        $sql->execute();
+
+        $query = $sql->fetchAll();
+        foreach ($query as $linha){
+            $noticia = new Noticia();
+            $noticia->setTitulo($linha['titulo']);
+            $noticia->setSubtitulo($linha['subtitulo']);
+            $noticia->setCorpo($linha['corpo']);
+            $noticia->setId($linha['id']);
+            $noticia->setData($linha['data_noticia']);
+            $noticia->setIdUsuario($linha['id_usuario']);
+            $noticia->setFoto($linha['foto']);
+            $noticia->setAlerta($linha['alerta']);
+            $resultados[] = $noticia;
+        }
+
+        return $resultados;
+    }
 }
 
 ?>
