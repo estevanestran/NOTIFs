@@ -1,4 +1,3 @@
-<!-- 100% PRONTO -->
 <?php 
 include_once '../model/conexao.php';
 if(isset($_SESSION['id']) && !empty($_SESSION['id'])):
@@ -59,7 +58,7 @@ $categorias = Categoria::getAll();
                     <?php endif; ?>
                     <?php if ($isAdmin || $isPromoted): ?>
                     <p><a href="TelaPublicacao.php" id="escrever">Escrever notícia</a></p>
-                    <p><a href="TelaMinhas.php.php" id="minhas">Minhas notícias</a></p>
+                    <p><a href="TelaMinhas.php" id="minhas">Minhas notícias</a></p>
                     <?php endif; ?>
                     <?php if ($isAdmin): ?>
                     <p><a href="TelaSolicitacoes.php" id="solicitacoes">Gerenciar cargos</a></p>
