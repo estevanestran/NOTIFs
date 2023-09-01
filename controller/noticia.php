@@ -70,6 +70,5 @@ if($acao === 'publicar'){
         }
     }
     header('Location:../view/TelaPrincipal.php');
-
 }
 ?>

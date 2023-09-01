@@ -201,7 +201,7 @@ class Noticia{
         $pdo = conexao();
         $sql = "SELECT * FROM noticia n 
                 INNER JOIN categoria_noticia cn ON n.id = cn.id_noticia
-                WHERE cn.id_categoria = :categoria_id";
+                WHERE cn.id_categoria = :categoria_id ORDER BY n.id DESC";
     
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':categoria_id', $categoria_id, PDO::PARAM_INT);

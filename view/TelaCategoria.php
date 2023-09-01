@@ -58,6 +58,12 @@ $categoriasMenu = Categoria::getAll();
             </div>
         </div>
         <div class="inferior">
+            <div class="pesquisa">
+                <form action="TelaPesquisa.php" method="GET">
+                  <button id="botao-pesquisa"><i class="fa fa-search"></i></button>
+                  <input type="text" id="pesquisado" name="termo_pesquisa" class="form-control form-input" placeholder="Pesquise aqui">
+                </form>
+            </div>
             <div class="inferior_esquerdo">
                 <div class="menu_topo">
                 <?php foreach($categoriasMenu as $categoria){
