@@ -61,9 +61,9 @@ include_once 'Noticia.class.php';
         }
 
         public function setEmail($email){
-            if(str_contains($email, 'canoas.ifrs.edu.br')){
+            //if(str_contains($email, 'canoas.ifrs.edu.br')){
                 $this->email = $email;
-            }
+            //}
         }
 
         public function getEmail(){

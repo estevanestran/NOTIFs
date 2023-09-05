@@ -60,7 +60,7 @@
             </div>
             <div class="inferior_direito_cadastro">
                 <h3>Cadastro</h3>
-                <form action="../controller/usuario.php?acao=cadastrar" method="post" onsubmit="validarFormulario(event)">
+                <form action="../controller/usuario.php?acao=cadastrar" method="post" >
                     <label for="email">E-mail institucional</label><br>
                     <input type="text" id="email" name="email" required><br><br>
                     <label for="nome">Nome completo</label><br>
@@ -102,7 +102,7 @@
                       </label>
                       <input type="hidden" id="id_curso" name="id_curso">
                     <br><br>
-                    <input type="submit" id="botao" value="Finalizar" onclick="validarFormulario()"><br><br>
+                    <input type="submit" id="botao" value="Finalizar" ><br><br>
                     
                 </form>                
                 <p id="jatem">Já tem uma conta? <a id="caminhoAlt" href="index.html">Faça login</a></p>

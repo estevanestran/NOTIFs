@@ -9,6 +9,57 @@
     <title>Notifs</title>
 </head>
 <body>
+<?php
+include_once "../model/conexao.php";
+$pdo = conexao();
+if(isset($_POST['email'])){
+    $padrao = '/^[\p{L}a-zA-Z0-9\s.,!?@´]+$/u';
+    $email = filter_var ($_POST['email'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => $padrao)));
+    
+    $sql = "SELECT * FROM usuario where email = '" . $email . "';"; 
+    $sql = $pdo->query($sql);
+    $qtd = $sql->rowCount();
+
+    if($qtd==0){
+        echo "Email incorreto ou não cadastrado";
+    }else{
+        $algoritmo = 'sha256'; 
+        $new = substr(md5(time()), 0, 6);
+        $senha = hash($algoritmo, $new);
+        
+        // Destinatário (endereço de e-mail do usuário)
+        $destinatario = $email; // Defina o destinatário
+        
+        // Assunto do e-mail
+        $assunto = "NOTIFS - Recuperação de Senha";
+        
+        // Mensagem de e-mail (conteúdo)
+        $mensagem = "Sua nova senha é: " . $new; // Inclua a nova senha
+        
+        // Cabeçalhos
+        $headers = "From: notifs2023@gmail.com" . "\r\n" .
+                   "Reply-To: no-reply@gmail.com" . "\r\n" . // Corrija o endereço de e-mail de resposta
+                   "X-Mailer: PHP/" . phpversion();
+                   
+        if(mail($destinatario, $assunto, $mensagem, $headers)){
+            $sql = "UPDATE usuario SET senha = ? WHERE email = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $senha, $email);
+            
+            if ($stmt->execute()) {
+                ?>
+                <p>E-mail de recuperação de senha enviado com sucesso. <br>Verifique sua caixa de entrada e faça login com a nova senha!</p>
+                <br>
+                <a href="index.html"><div class="button"><p>Fazer Login</p></div></a>
+            <?php
+            } else {
+                echo "Erro ao atualizar a senha. Tente novamente ou entre em contato através do e-mail notifs2023@gmail.com";
+            }
+
+        }
+    }
+}else{
+?>
     <div class="container">
         <div class="superior">
             <div class="superior_esquerdo">
@@ -42,5 +93,6 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 </body>
 </html>
