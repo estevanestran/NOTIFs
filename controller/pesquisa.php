@@ -21,12 +21,13 @@ if (isset($_GET['termo_pesquisa'])) {
 
     $query = $stmt->fetchAll(); 
     foreach ($query as $linha){
+        $timestamp = strtotime($linha['data_noticia']);
         $noticia = new Noticia();
         $noticia->setTitulo($linha['titulo']);
         $noticia->setSubtitulo($linha['subtitulo']);
         $noticia->setCorpo($linha['corpo']);
         $noticia->setId($linha['id']);
-        $noticia->setData($linha['data_noticia']);
+        $noticia->setData(date('d-m-Y', $timestamp));
         $noticia->setIdUsuario($linha['id_usuario']);
         $noticia->setFoto($linha['foto']);
         $noticia->setAlerta($linha['alerta']);
@@ -44,12 +45,13 @@ if (isset($_GET['termo_pesquisa'])) {
     
         $query = $stmt->fetchAll(); 
         foreach ($query as $linha){
+            $timestamp = strtotime($linha['data_noticia']);
             $noticia = new Noticia();
             $noticia->setTitulo($linha['titulo']);
             $noticia->setSubtitulo($linha['subtitulo']);
             $noticia->setCorpo($linha['corpo']);
             $noticia->setId($linha['id']);
-            $noticia->setData($linha['data_noticia']);
+            $noticia->setData(date('d-m-Y', $timestamp));
             $noticia->setIdUsuario($linha['id_usuario']);
             $noticia->setFoto($linha['foto']);
             $noticia->setAlerta($linha['alerta']);

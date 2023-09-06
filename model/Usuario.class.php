@@ -268,7 +268,22 @@ include_once 'Noticia.class.php';
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
         
-            return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+            $query = $stmt->fetchAll();
+            foreach ($query as $linha){
+                $timestamp = strtotime($linha['data_noticia']);
+                $noticia = new Noticia();
+                $noticia->setTitulo($linha['titulo']);
+                $noticia->setSubtitulo($linha['subtitulo']);
+                $noticia->setCorpo($linha['corpo']);
+                $noticia->setId($linha['id']);
+                $noticia->setData(date('d-m-Y', $timestamp));
+                $noticia->setIdUsuario($linha['id_usuario']);
+                $noticia->setFoto($linha['foto']);
+                $noticia->setAlerta($linha['alerta']);
+                $resultados[] = $noticia;
+            }
+        
+            return $resultados;
         }
 
         public static function getNoticiaPorCursoECategoria($id, $categoria_id){
@@ -282,7 +297,22 @@ include_once 'Noticia.class.php';
             $stmt->bindValue(':categoria_id', $categoria_id, PDO::PARAM_INT);
             $stmt->execute();
         
-            return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+            $query = $stmt->fetchAll();
+            foreach ($query as $linha){
+                $timestamp = strtotime($linha['data_noticia']);
+                $noticia = new Noticia();
+                $noticia->setTitulo($linha['titulo']);
+                $noticia->setSubtitulo($linha['subtitulo']);
+                $noticia->setCorpo($linha['corpo']);
+                $noticia->setId($linha['id']);
+                $noticia->setData(date('d-m-Y', $timestamp));
+                $noticia->setIdUsuario($linha['id_usuario']);
+                $noticia->setFoto($linha['foto']);
+                $noticia->setAlerta($linha['alerta']);
+                $resultados[] = $noticia;
+            }
+        
+            return $resultados;
         }
 
         public function pegaEstado($id) {
