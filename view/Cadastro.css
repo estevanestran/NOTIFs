@@ -48,7 +48,7 @@ h1 {
     transition: background-color .4s;
 }
 
-.superior_direito:hover{
+.superior_direito:hover {
     background-color: #042B52;
 }
 
@@ -88,7 +88,7 @@ h4:hover {
     top: 12%;
 }
 
-h2{
+h2 {
     color: #042B52;
     font-family: 'Noto sans', sans-serif;
     font-weight: 700;
@@ -106,7 +106,7 @@ h2{
     top: 22%;
 }
 
-#descTelaIni{
+#descTelaIni {
     font-weight: 200;
     color: #323232;
     font-size: 25px;
@@ -146,7 +146,7 @@ h3 {
     text-shadow: 2px 2px 2px #042b5280;
 }
 
-a#caminhoAlt{
+a#caminhoAlt {
     font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
@@ -170,7 +170,7 @@ p#jatem {
 
 /*FORMULÁRIO*/
 
-input[type=submit]{
+input[type=submit] {
     width: 200px;
     font-family: 'Noto sans', sans-serif;
     color: #042B52;
@@ -181,10 +181,10 @@ input[type=submit]{
     transition: background-color .4s;
 }
 
-input#botao:hover{
+input#botao:hover {
     background-color: #042B52;
     color: #f3f3f3;
-    
+
 }
 
 label {
@@ -199,7 +199,7 @@ label[for=checkbox] {
     width: 90%;
 }
 
-input[type=text]{
+input[type=text] {
     width: 82%;
     height: 33px;
     border: 1.5px solid #f3f3f3;
@@ -209,7 +209,7 @@ input[type=text]{
     left: 12%;
 }
 
-input[type=password]{
+input[type=password] {
     width: 82%;
     height: 33px;
     border: 1.5px solid #e9cef4;
@@ -219,8 +219,8 @@ input[type=password]{
     left: 12%;
 }
 
-.radio-group input[type="radio"]{
-    vertical-align: middle; 
+.radio-group input[type="radio"] {
+    vertical-align: middle;
 }
 
 .radio-group label {
@@ -252,7 +252,8 @@ input[type=password]{
 
     h1 {
         font-size: 50px;
-        padding-left: 5px; /* Tamanho menor para o título */
+        padding-left: 5px;
+        /* Tamanho menor para o título */
     }
 
     .superior_direito {
@@ -273,15 +274,16 @@ input[type=password]{
         top: 5%;
 
     }
-    input[type=text]{
+
+    input[type=text] {
         width: 250px;
     }
 
-    input[type=password]{
+    input[type=password] {
         width: 250px;
     }
 
-    input[type=submit]{
+    input[type=submit] {
         left: 17%;
         background-color: #f3f3f3;
     }

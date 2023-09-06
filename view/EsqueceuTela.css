@@ -51,7 +51,7 @@ h1 {
     transition: background-color .4s;
 }
 
-.superior_direito:hover{
+.superior_direito:hover {
     background-color: #042B52;
 }
 
@@ -91,7 +91,7 @@ h4:hover {
     top: 12%;
 }
 
-h2{
+h2 {
     color: #042B52;
     font-family: 'Noto sans', sans-serif;
     font-weight: 700;
@@ -109,7 +109,7 @@ h2{
     top: 22%;
 }
 
-p#descTelaIni{
+p#descTelaIni {
     font-weight: 200;
     color: #323232;
     font-size: 25px;
@@ -148,13 +148,14 @@ h3 {
     text-align: center;
     text-shadow: 1px 1px 1px black;
 }
-p#recuperar{
+
+p#recuperar {
     padding-left: 5%;
     color: #d9d7d7;
     font-family: 'Noto sans', sans-serif;
 }
 
-a#caminhoAlt{
+a#caminhoAlt {
     font-family: 'Noto sans', sans-serif;
     color: #f3f3f3;
     text-shadow: 1.5px 1.5px 1px #042b5280;
@@ -166,22 +167,6 @@ p#naotem {
     text-align: center;
 }
 
-a#button {
-    width: 200px;
-    font-family: 'Noto sans', sans-serif;
-    color: #042B52;
-    border: 1.5px solid white;
-    border-radius: 15px;
-    position: relative;
-    left: 28%;
-    transition: background-color .4s;
-}
-
-a#button:hover {
-    background-color: #042B52;
-    color: #f3f3f3;  
-}
-
 p#enviado {
     color: #f3f3f3;
     text-align: center;
@@ -191,7 +176,7 @@ p#enviado {
 /*FORMULÁRIO*/
 
 input[type=submit] {
-    width: 200px;
+    width: 40%;
     font-family: 'Noto sans', sans-serif;
     color: #042B52;
     border: 1.5px solid white;
@@ -204,7 +189,7 @@ input[type=submit] {
 input#botao:hover {
     background-color: #042B52;
     color: #f3f3f3;
-    
+
 }
 
 label {
@@ -215,7 +200,7 @@ label {
     left: 10%;
 }
 
-input[type=text]{
+input[type=text] {
     width: 80%;
     height: 33px;
     border: 1.5px solid #f3f3f3;
@@ -241,7 +226,8 @@ input[type=text]{
 
     h1 {
         font-size: 50px;
-        padding-left: 5px; /* Tamanho menor para o título */
+        padding-left: 5px;
+        /* Tamanho menor para o título */
     }
 
     .superior_direito {
@@ -261,11 +247,12 @@ input[type=text]{
         height: 55%;
 
     }
-    input[type=text]{
+
+    input[type=text] {
         width: 250px;
     }
 
-    input[type=submit]{
+    input[type=submit] {
         left: 17%;
         background-color: #f3f3f3;
     }

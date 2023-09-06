@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,14 +9,19 @@
     <link rel="stylesheet" href="EsqueceuTela.css">
     <title>Notifs</title>
 </head>
+
 <body>
     <div class="container">
         <div class="superior">
             <div class="superior_esquerdo">
-                <a href="index.html"><h1 class="nome_site">NOTIFs</h1></a>
+                <a href="index.html">
+                    <h1 class="nome_site">NOTIFs</h1>
+                </a>
             </div>
             <div class="superior_direito">
-                <a href="index.html"><h4>Faça login</h4></a>
+                <a href="index.html">
+                    <h4>Faça login</h4>
+                </a>
             </div>
         </div>
         <div class="inferior">
@@ -30,69 +36,67 @@
             </div>
             <div class="inferior_direito_esqueceu">
                 <?php
-include_once "../model/conexao.php";
-$pdo = conexao();
-if(isset($_POST['email'])){
-    $padrao = '/^[\p{L}a-zA-Z0-9\s.,!?@´]+$/u';
-    $email = filter_var ($_POST['email'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => $padrao)));
-    
-    $sql = "SELECT * FROM usuario where email = '" . $email . "';"; 
-    $sql = $pdo->query($sql);
-    $qtd = $sql->rowCount();
+                include_once "../model/conexao.php";
+                $pdo = conexao();
+                if (isset($_POST['email'])) {
+                    $padrao = '/^[\p{L}a-zA-Z0-9\s.,!?@´]+$/u';
+                    $email = filter_var($_POST['email'], FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => $padrao)));
 
-    if($qtd==0){
-        echo "Email incorreto ou não cadastrado";
-    }else{
-        $new = substr(md5(time()), 0, 6);
-        $senhaHash = password_hash($new, PASSWORD_DEFAULT);
-        
-        // Destinatário (endereço de e-mail do usuário)
-        $destinatario = $email; // Defina o destinatário
-        
-        // Assunto do e-mail
-        $assunto = "NOTIFS - Recuperação de Senha";
-        
-        // Mensagem de e-mail (conteúdo)
-        $mensagem = "Sua nova senha é: " . $new; // Inclua a nova senha
-        
-        // Cabeçalhos
-        $headers = "From: notifs@notifs.online" . "\r\n" .
-                   "Reply-To: no-reply@gmail.com" . "\r\n" . // Corrija o endereço de e-mail de resposta
-                   "X-Mailer: PHP/" . phpversion();
-                   
-        if(mail($destinatario, $assunto, $mensagem, $headers)){
-            $sql = "UPDATE usuario SET senha = ? WHERE email = ?";
-            $stmt = $pdo->prepare($sql);
-            $stmt->bindValue(1, $senhaHash, PDO::PARAM_STR);
-            $stmt->bindValue(2, $email, PDO::PARAM_STR);
-            
-            if ($stmt->execute()) {
+                    $sql = "SELECT * FROM usuario where email = '" . $email . "';";
+                    $sql = $pdo->query($sql);
+                    $qtd = $sql->rowCount();
+
+                    if ($qtd == 0) {
+                        echo "Email incorreto ou não cadastrado";
+                    } else {
+                        $new = substr(md5(time()), 0, 6);
+                        $senhaHash = password_hash($new, PASSWORD_DEFAULT);
+
+                        // Destinatário (endereço de e-mail do usuário)
+                        $destinatario = $email; // Defina o destinatário
+
+                        // Assunto do e-mail
+                        $assunto = "NOTIFS - Recuperação de Senha";
+
+                        // Mensagem de e-mail (conteúdo)
+                        $mensagem = "Sua nova senha é: " . $new; // Inclua a nova senha
+
+                        // Cabeçalhos
+                        $headers = "From: notifs@notifs.online" . "\r\n" .
+                            "Reply-To: no-reply@gmail.com" . "\r\n" . // Corrija o endereço de e-mail de resposta
+                            "X-Mailer: PHP/" . phpversion();
+
+                        if (mail($destinatario, $assunto, $mensagem, $headers)) {
+                            $sql = "UPDATE usuario SET senha = ? WHERE email = ?";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->bindValue(1, $senhaHash, PDO::PARAM_STR);
+                            $stmt->bindValue(2, $email, PDO::PARAM_STR);
+
+                            if ($stmt->execute()) {
                 ?>
-                <p id="enviado">Seu e-mail de recuperação de senha já foi enviado, junto de uma nova senha. <br>Verifique sua caixa de entrada e faça login com a nova senha!</p>
-                <br>
-                <div class="superior_direito" style="top: 60%; left: 30%;"><a href="index.html"><p>Fazer Login</p></a></div>
-            <?php
-            } else {
-                echo "Erro ao atualizar a senha. Tente novamente ou entre em contato através do e-mail notifs@notifs.online";
-            }
-
-        }
-    }
-}else{
-?>
-                <h3>Recuperação de senha</h3>
-                <br>
-                <p id="recuperar">Informe o seu e-mail e, então, te enviaremos uma nova senha de recuperação.</p>
-                <br>
-                <form action="" method="post">
-                    <label for="email">E-mail institucional</label><br>
-                    <input type="text" id="email" name="email" required><br><br>
-                    <input type="submit" id="botao" value="Enviar"><br><br>
-                </form>
-                <p id="naotem">Não tem uma conta? <a id="caminhoAlt" href="TelaCadastro.html">Cadastre-se</a></p>
+                                <p id="enviado">Seu e-mail de recuperação de senha já foi enviado, junto de uma nova senha. <br>Verifique sua caixa de entrada e faça login com a nova senha!</p>
+                    <?php
+                            } else {
+                                echo "Erro ao atualizar a senha. Tente novamente ou entre em contato através do e-mail notifs@notifs.online";
+                            }
+                        }
+                    }
+                } else {
+                    ?>
+                    <h3>Recuperação de senha</h3>
+                    <br>
+                    <p id="recuperar">Informe o seu e-mail e, então, te enviaremos uma nova senha de recuperação.</p>
+                    <br>
+                    <form action="" method="post">
+                        <label for="email">E-mail institucional</label><br>
+                        <input type="text" id="email" name="email" required><br><br>
+                        <input type="submit" id="botao" value="Enviar"><br><br>
+                    </form>
+                    <p id="naotem">Não tem uma conta? <a id="caminhoAlt" href="TelaCadastro.html">Cadastre-se</a></p>
             </div>
         </div>
     </div>
-    <?php } ?>
+<?php } ?>
 </body>
+
 </html>
