@@ -116,13 +116,13 @@ $categoriasMenu = Categoria::getAll();
                 <form action="../controller/mudaperfil.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                     <label for="nome">Nome completo</label><br>
-                    <input type="text" id="nome" name="nome" placeholder="<?php echo $nomeUser; ?>" readonly><br>
+                    <input type="text" id="nome" name="nome" placeholder="<?php echo $nomeUser; ?>" readonly required><br>
                     <label for="email">E-mail institucional</label><br>
                     <input type="text" id="email" name="email" placeholder="<?php echo $emailUser; ?>" readonly><br>
                     <label for="curso" id="labelcurso">Curso</label><br>
                     <input type="text" id="curso" name="curso" placeholder="<?php echo $cursoUser; ?>" readonly><br>
                     <label for="senha" id="labelsenha" style="display: none;">Senha</label>
-                    <input type="password" id="senha" name="senha" style="display: none;"><br>
+                    <input type="password" id="senha" name="senha" style="display: none;" required><br>
                     <input type="submit" id="botao" value="Salvar mudanças" style="display: none;">
                 </form>
                 <a href="../controller/logout.php">Sair</a>
