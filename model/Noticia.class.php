@@ -98,7 +98,7 @@ class Noticia{
             $endereco = $pasta . $nomeArquivo . "." . $extensao;
 
             if($extensao != "jpg" && $extensao != "png" && $extensao != "jpeg"){
-                die("Tipo de arquivo não aceito");
+                die("Tipo de arquivo n達o aceito");
             }
 
             $deu_certo = move_uploaded_file($foto["tmp_name"], $pasta . $nomeArquivo . "." . $extensao);
@@ -193,7 +193,7 @@ class Noticia{
             return null;
         }
     } catch (PDOException $e) {
-        die("Erro na conexão com o banco de dados: " . $e->getMessage());
+        die("Erro na conex達o com o banco de dados: " . $e->getMessage());
     }
     }
 
@@ -207,7 +207,22 @@ class Noticia{
         $stmt->bindValue(':categoria_id', $categoria_id, PDO::PARAM_INT);
         $stmt->execute();
     
-        return $stmt->fetchAll(PDO::FETCH_CLASS, 'Noticia');
+        $query = $stmt->fetchAll();
+        foreach ($query as $linha){
+            $timestamp = strtotime($linha['data_noticia']);
+            $noticia = new Noticia();
+            $noticia->setTitulo($linha['titulo']);
+            $noticia->setSubtitulo($linha['subtitulo']);
+            $noticia->setCorpo($linha['corpo']);
+            $noticia->setId($linha['id']);
+            $noticia->setData(date('d-m-Y', $timestamp));
+            $noticia->setIdUsuario($linha['id_usuario']);
+            $noticia->setFoto($linha['foto']);
+            $noticia->setAlerta($linha['alerta']);
+            $resultados[] = $noticia;
+        }
+
+        return $resultados;
     }
 
     public function pegaNomeAutor($id){
@@ -226,19 +241,20 @@ class Noticia{
 
         $pdo = conexao();
 
-        $sql = "SELECT * FROM noticia WHERE id_usuario = :id_usuario";
+        $sql = "SELECT * FROM noticia WHERE id_usuario = :id_usuario ORDER BY id DESC";
         $sql = $pdo->prepare($sql);
         $sql->bindValue(':id_usuario', $id_usuario, PDO::PARAM_INT);
         $sql->execute();
 
         $query = $sql->fetchAll();
         foreach ($query as $linha){
+            $timestamp = strtotime($linha['data_noticia']);
             $noticia = new Noticia();
             $noticia->setTitulo($linha['titulo']);
             $noticia->setSubtitulo($linha['subtitulo']);
             $noticia->setCorpo($linha['corpo']);
             $noticia->setId($linha['id']);
-            $noticia->setData($linha['data_noticia']);
+            $noticia->setData(date('d-m-Y', $timestamp));
             $noticia->setIdUsuario($linha['id_usuario']);
             $noticia->setFoto($linha['foto']);
             $noticia->setAlerta($linha['alerta']);

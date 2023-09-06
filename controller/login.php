@@ -15,7 +15,7 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) &
         } else {
             header('Location: ../view/index.html');
         }
-    } else {
+    } else {        
         header('Location: ../view/index.html');
     }
 } else {

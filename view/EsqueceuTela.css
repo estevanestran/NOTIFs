@@ -7,6 +7,10 @@
     height: 100%;
 }
 
+body {
+    background-color: #d9d7d7;
+}
+
 /*PARTE SUPERIOR*/
 .superior {
     position: absolute;
@@ -119,8 +123,8 @@ p#descTelaIni{
     position: absolute;
     width: 40%;
     height: 50%;
-    top: 22.5%;
-    left: 9%;
+    top: 38%;
+    left: 17%;
 }
 
 /*LADO DIREITO*/
@@ -162,9 +166,7 @@ p#naotem {
     text-align: center;
 }
 
-/*FORMULÁRIO*/
-
-input[type=submit]{
+a#button {
     width: 200px;
     font-family: 'Noto sans', sans-serif;
     color: #042B52;
@@ -175,7 +177,31 @@ input[type=submit]{
     transition: background-color .4s;
 }
 
-input#botao:hover{
+a#button:hover {
+    background-color: #042B52;
+    color: #f3f3f3;  
+}
+
+p#enviado {
+    color: #f3f3f3;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/*FORMULÁRIO*/
+
+input[type=submit] {
+    width: 200px;
+    font-family: 'Noto sans', sans-serif;
+    color: #042B52;
+    border: 1.5px solid white;
+    border-radius: 15px;
+    position: relative;
+    left: 28%;
+    transition: background-color .4s;
+}
+
+input#botao:hover {
     background-color: #042B52;
     color: #f3f3f3;
     
