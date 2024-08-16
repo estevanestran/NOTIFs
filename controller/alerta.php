@@ -16,5 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     } else {
         // Pode retornar algum JSON de erro, se necessário
     }
-}
-?>
+} //teste
+?> 
