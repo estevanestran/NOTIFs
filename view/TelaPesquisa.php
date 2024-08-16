@@ -119,7 +119,6 @@ $categoriasMenu = Categoria::getAll();
                 </aside>
                 </nav>
                 <?php } 
-                unset($_SESSION['resultados_pesquisa']);
 
                 } else {
                 // Caso não haja resultados da pesquisa, você pode exibir uma mensagem de "Nenhum resultado encontrado".

@@ -12,7 +12,7 @@ if (isset($_GET['termo_pesquisa'])) {
     $termo_pesquisa = '%' . $_GET['termo_pesquisa'] . '%'; // Adicione % para corresponder a qualquer parte do título.
 
     // Construa a consulta SQL para encontrar notícias com o termo de pesquisa no título.
-    $sql = "SELECT * FROM noticia WHERE titulo LIKE :termo_pesquisa OR corpo LIKE :termo_pesquisa OR subtitulo LIKE :termo_pesquisa ORDER BY id DESC";
+    $sql = "SELECT * FROM noticia WHERE LOWER (titulo) LIKE LOWER (:termo_pesquisa) OR LOWER (corpo) LIKE LOWER (:termo_pesquisa) OR LOWER (subtitulo) LIKE LOWER (:termo_pesquisa) ORDER BY id DESC";
 
     // Execute a consulta usando prepared statements.
     $stmt = $pdo->prepare($sql);
@@ -36,7 +36,7 @@ if (isset($_GET['termo_pesquisa'])) {
     } else {
         $termo_pesquisa = '%' . $_GET['termo_pesquisa'] . '%';
         $id = $_SESSION['id'];
-        $sql = "SELECT * FROM noticia WHERE titulo LIKE :termo_pesquisa OR corpo LIKE :termo_pesquisa OR subtitulo LIKE :termo_pesquisa AND id IN (SELECT id_noticia FROM curso_noticia WHERE id_curso = (SELECT id_curso FROM usuario WHERE id = :id)) ORDER BY id DESC";
+        $sql = "SELECT * FROM noticia WHERE LOWER (titulo) LIKE LOWER (:termo_pesquisa) OR LOWER (corpo) LIKE LOWER (:termo_pesquisa) OR LOWER (subtitulo) LIKE LOWER (:termo_pesquisa) AND id IN (SELECT id_noticia FROM curso_noticia WHERE id_curso = (SELECT id_curso FROM usuario WHERE id = :id)) ORDER BY id DESC";
     
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':termo_pesquisa', $termo_pesquisa);

@@ -218,6 +218,7 @@ input[type=submit]{
     width: 200px;
     font-family: 'Noto sans', sans-serif;
     color: #042B52;
+    background-color: #f3f3f3;
     border: 1.5px solid #042B52;
     border-radius: 8px;
     position: relative;

@@ -95,7 +95,7 @@ $categorias = Categoria::getAll();
                 <label for="titulo">TÍTULO DA NOTÍCIA</label><br>
                   <input type="text" id="titulo" name="titulo" required> <br><br>
                 <label for="subtitulo">SUBTÍTULO DA NOTÍCIA</label><br>
-                  <input type="text" id="subtitulo" name="subtitulo" required> <br><br>
+                  <input type="text" id="subtitulo" name="subtitulo"> <br><br>
                 <label for="corpo">CORPO DA NOTÍCIA</label><br>
                 <textarea id="corpo" name="corpo"></textarea>
                 <br>
@@ -121,7 +121,7 @@ $categorias = Categoria::getAll();
                 <label for="categoria">CATEGORIA DA NOTÍCIA</label>
                 <select name="categoria" id="categoria" required>
                   <option value="">Selecione...</option>
-                  <option value="Auxilios">Auxílios</option>
+                  <option value="Auxílios">Auxílios</option>
                   <option value="Bolsas">Bolsas</option>
                   <option value="Comunicados">Comunicados</option>
                   <option value="Cursos">Cursos</option>
