@@ -8,7 +8,7 @@ $resultados=[];
 
 if (isset($_GET['termo_pesquisa'])) {
     $pdo = conexao();
-    if($servidor){
+    if($servidor){ 
     $termo_pesquisa = '%' . $_GET['termo_pesquisa'] . '%'; // Adicione % para corresponder a qualquer parte do título.
 
     // Construa a consulta SQL para encontrar notícias com o termo de pesquisa no título.
